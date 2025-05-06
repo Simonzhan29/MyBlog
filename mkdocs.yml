@@ -1,0 +1,7 @@
+site_name: My Docs
+theme:
+  name: material
+
+nav:
+  - 首页: index.md         # 首页导航项
+  - 关于我: about.md        # 新增的关于页面导航项
