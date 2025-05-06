@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../dev/python-101/">
+        <link rel="prev" href="../../about/">
       
       
-        <link rel="next" href="../life/">
+        <link rel="next" href="../../dev/Dev/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Coffee thoughts - Simon's Blog</title>
+        <title>MkDocs Material 博客搭建教程笔记 - Simon's Blog</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mkdocs-material" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coffee thoughts
+              MkDocs Material 博客搭建教程笔记
             
           </span>
         </div>
@@ -228,8 +233,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -240,11 +247,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -260,7 +267,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Material MkDocs学习
@@ -271,10 +278,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/1%20%E5%AE%89%E8%A3%85/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MkDocs Material 博客搭建教程笔记
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -285,6 +314,116 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 需求分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 方案对比
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-python-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 安装环境（Python + MkDocs）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 项目初始化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 修改 mkdocs.yml，添加主题支持和网站图标：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 本地预览与编辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 添加自定义页面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 部署至 GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cloudflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 配置自定义域名（Cloudflare）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 自动目录导航 + 分类结构
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -420,8 +559,6 @@
       
   
   
-    
-  
   
   
     
@@ -434,11 +571,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -454,7 +591,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Life
@@ -465,17 +602,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../life/coffee-thoughts/" class="md-nav__link">
         
   
   
@@ -486,7 +616,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -499,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../life/" class="md-nav__link">
+      <a href="../../life/life/" class="md-nav__link">
         
   
   
@@ -522,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../travel-japan/" class="md-nav__link">
+      <a href="../../life/travel-japan/" class="md-nav__link">
         
   
   
@@ -681,6 +810,106 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 需求分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 方案对比
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-python-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 安装环境（Python + MkDocs）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 项目初始化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 修改 mkdocs.yml，添加主题支持和网站图标：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 本地预览与编辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 添加自定义页面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 部署至 GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cloudflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 配置自定义域名（Cloudflare）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 自动目录导航 + 分类结构
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -696,9 +925,249 @@
 
 
 
-  <h1>Coffee thoughts</h1>
-
-
+<h1 id="mkdocs-material">MkDocs Material 博客搭建教程笔记</h1>
+<p>记录时间：2025-05-06</p>
+<blockquote>
+<p>本文记录基于 Windows + VS Code 环境，使用 MkDocs + Material 主题，从零开始搭建一个技术博客网站，并成功发布至 GitHub Pages + 自定义域名。</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 需求分析</h2>
+<ul>
+<li>基于Markdown的</li>
+<li>本地可编辑和维护，基于VScode编辑，方便编程和记录同时进行</li>
+<li>能同步到云上，随时通过浏览器访问。</li>
+<li>能自适应中各种终端设备</li>
+</ul>
+<h2 id="2">2. 方案对比</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Jekyll+Just The Docs</th>
+<th>MkDocs + Material</th>
+<th>Hexo</th>
+<th>Hugo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言依赖</td>
+<td>Ruby</td>
+<td>Python</td>
+<td>Node.js</td>
+<td>Go</td>
+</tr>
+<tr>
+<td>本地运行支持</td>
+<td>jekyll serve</td>
+<td>mkdocs serve</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>主题美观性</td>
+<td>简洁文档风</td>
+<td>极美 Material 设计</td>
+<td>多样主题</td>
+<td>现代化</td>
+</tr>
+<tr>
+<td>手机适配</td>
+<td>响应式</td>
+<td>响应式</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>插件生态</td>
+<td>中等</td>
+<td>小但现代化</td>
+<td>多（不稳定）</td>
+<td>中等</td>
+</tr>
+</tbody>
+</table>
+<p><strong>✅MkDocs + Material（本文选择）：</strong>
+- 专为文档/知识库打造，现代化 UI，搜索强大
+- 本地预览 mkdocs serve 快速、简洁
+- 支持 dark mode，响应式体验优秀
+- GitHub Actions 可自动部署至 GitHub Pages
+- 需要 Python 环境</p>
+<p><strong>Jekyll + Just the Docs：</strong>
+- GitHub Pages 原生支持，部署几乎零配置
+- 结构适合技术笔记类博客
+- Markdown 编写自然，支持本地运行
+- 依赖 Ruby 环境，Windows 安装稍繁琐</p>
+<h2 id="3-python-mkdocs">3. 安装环境（Python + MkDocs）</h2>
+<ol>
+<li>安装 Python（适用于 Windows）</li>
+<li>访问官网下载安装程序：<a href="https://www.python.org/downloads/">Python下载</a></li>
+<li>安装时请务必勾选：「Add Python to PATH」，再点击安装。</li>
+<li>安装完成后，打开命令提示符（Win + R → 输入 cmd），输入：</li>
+</ol>
+<p><code>bash
+   python --version #输出类似：Python 3.12.x，表示安装成功。</code>
+2. 安装 MkDocs 和 Material 主题
+   - 在命令行中依次输入以下命令：
+  <code>bash
+  pip install mkdocs-material
+  pip install ghp-import 
+  mkdocs --version #显示如：mkdocs, version 1.x.x 表示成功。</code></p>
+<h2 id="4">4. 项目初始化</h2>
+<pre><code class="language-bash"># 创建博客目录
+cd D:/Study/WebStudyNote
+mkdir MyBlog
+cd MyBlog
+# 初始化 MkDocs 项目
+mkdocs new .
+</code></pre>
+<p>这会生成以下结构：</p>
+<pre><code class="language-pgsql">MyBlog/
+├── docs/
+│   └── index.md     ← 首页内容
+└── mkdocs.yml       ← 配置文件
+</code></pre>
+<h2 id="5-mkdocsyml">5. 修改 <code>mkdocs.yml</code>，添加主题支持和网站图标：</h2>
+<ul>
+<li>准备一个小图标文件（建议 32x32 或 64x64 的 .ico 文件），命名为：favicon.ico</li>
+<li>放入你的项目目录下的 docs/ 文件夹</li>
+<li>在 mkdocs.yml 文件中添加或修改如下内容：</li>
+</ul>
+<pre><code class="language-yaml">site_name: MyBlog
+theme:
+  name: material # Material 主题支持
+  favicon: favicon.ico # 添加网站图标
+</code></pre>
+<hr />
+<h2 id="6">6. 本地预览与编辑</h2>
+<pre><code class="language-bash"># 启动本地服务预览
+mkdocs serve
+</code></pre>
+<ul>
+<li>浏览器中打开 http://127.0.0.1:8000。 如果能看到一个首页，写着 "Welcome to MkDocs"，就表示部署成功。</li>
+<li>编辑 <code>docs/index.md</code> 和新建如 <code>docs/about.md</code> 即可实时刷新浏览器查看效果。</li>
+</ul>
+<h2 id="7">7. 添加自定义页面</h2>
+<pre><code class="language-bash"># 示例添加关于页面
+docs/
+├── index.md
+└── about.md
+</code></pre>
+<ul>
+<li>请在 docs/ 目录中创建一个名为 about.md 的文件，并写入如下内容：
+  <code>makdown
+  # 关于我：你好！我是 Simon，这是我的技术学习笔记站点。</code></li>
+<li>在 <code>mkdocs.yml</code> 中配置导航（或使用插件自动导航）：</li>
+</ul>
+<pre><code class="language-yaml">nav:
+  - 首页: index.md
+  - 关于我: about.md
+</code></pre>
+<p><em>注释说明：</em>
+- nav 是用来配置导航栏的列表。
+- 每一项是“页面标题: 对应的 Markdown 文件路径”。
+- 修改完成后，请重新启动预览。</p>
+<h2 id="8-github-pages">8. 部署至 GitHub Pages</h2>
+<ul>
+<li>提前准备
+  请先登录你的 GitHub 账户，创建一个公开仓库，例如命名为 myblog，不要勾选 README。创建完仓库后，复制你的仓库地址，例如：
+  <code>arduino
+  https://github.com/your-username/myblog.git</code></li>
+<li>在 PowerShell 执行以下命令：你当前路径应为：D:\ Study\MyBlog</li>
+</ul>
+<pre><code class="language-bash"># 初始化 git 并推送
+git init
+git remote add origin https://github.com/你的用户名/MyBlog.git
+git add .
+git commit -m &quot;init blog&quot;
+git branch -M main
+git push -u origin main
+</code></pre>
+<ul>
+<li>发布至 GitHub Pages：</li>
+</ul>
+<pre><code class="language-bash"># 构建 + 发布
+mkdocs build
+ghp-import -n -p -f site
+</code></pre>
+<ul>
+<li>
+<p>GitHub Pages 设置：</p>
+</li>
+<li>
+<p>Source: <code>gh-pages</code> 分支</p>
+</li>
+<li>自定义域名：<code>你自己的域名xxx.com</code></li>
+<li>勾选 <code>Enforce HTTPS</code></li>
+</ul>
+<h2 id="9-cloudflare">9. 配置自定义域名（Cloudflare）</h2>
+<ul>
+<li>添加 <code>docs/CNAME</code>文件，CNAME 内容为：</li>
+</ul>
+<pre><code>你自己的域名xxx.com
+</code></pre>
+<ul>
+<li>Cloudflare 添加 DNS 记录：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>内容</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNAME</td>
+<td>xxx</td>
+<td>你仓库名称.github.io</td>
+<td>DNS Only</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>启用 Cloudflare HTTPS：</p>
+</li>
+<li>
+<p>Always Use HTTPS </p>
+</li>
+<li>Automatic HTTPS Rewrite </li>
+</ul>
+<h2 id="10">10. 自动目录导航 + 分类结构</h2>
+<ul>
+<li>自动导航插件推荐：</li>
+</ul>
+<pre><code class="language-bash">pip install mkdocs-awesome-pages-plugin
+</code></pre>
+<ul>
+<li>配置 <code>mkdocs.yml</code>：增加启用插件代码</li>
+</ul>
+<pre><code class="language-yaml">plugins:
+  - search
+  - awesome-pages
+</code></pre>
+<ul>
+<li>目录结构示例：</li>
+</ul>
+<pre><code class="language-text">docs/
+├── dev/
+│   ├── .pages ← 新增文件
+│   └── python-101.md
+├── life/
+└── notes/
+</code></pre>
+<ul>
+<li><code>.pages</code> 示例内容：</li>
+</ul>
+<pre><code class="language-yaml">title: 技术开发
+nav:
+  - Python 入门: python-101.md
+</code></pre>
+<hr />
+<p><strong>以上内容已经完成配置并成功运行。如有问题，欢迎联系我交流！</strong></p>
 
 
 
