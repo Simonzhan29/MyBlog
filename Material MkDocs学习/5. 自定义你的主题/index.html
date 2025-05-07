@@ -1077,17 +1077,16 @@
 <li>添加自定义图标、图片或脚本：放在 assets/ 目录下
 可定制的模板片段（partials）包括页眉页脚、导航菜单、搜索框、评论区、语言切换、版权信息等。</li>
 </ul>
-<h3 id="blocks">覆盖模板块（Blocks）<small>推荐方式</small></h3>
+<h3 id="blocks">覆盖模板块（Blocks）推荐方式</h3>
 <p>更推荐的方式是使用 Jinja2 模板继承机制，通过 block 标签只修改部分内容，保留原有结构。
-<strong>示例：修改页面 <title> 标题</strong></p>
-<pre><code class="language-html">{% extends &quot;base.html&quot; %}
-
+<strong>示例：修改页面 标题</strong></p>
+<pre><code>{% extends &quot;base.html&quot; %}
 {% block htmltitle %}
   &lt;title&gt;自定义标题 - 我的文档&lt;/title&gt;
 {% endblock %}
 </code></pre>
 <p>放入文件：overrides/main.html
-此操作只会替换 <head> 中 <title> 的内容，其它页面结构不受影响。</p>
+此操作只会替换 head 中 title 的内容，其它页面结构不受影响。</p>
 <p><strong>示例：在页面中添加第三方脚本</strong>
 你可以通过 scripts 区块在文档页面底部插入额外脚本：</p>
 <pre><code class="language-html">{% extends &quot;base.html&quot; %}
@@ -1113,7 +1112,7 @@
 | <code>footer</code>          | 页脚  |
 | <code>header</code>          | 固定顶部栏                      |
 | <code>hero</code>            | 首页宣传横幅            |
-| <code>htmltitle</code>       | 网页标题 <title> 标签                         |
+| <code>htmltitle</code>       | 网页标题 title 标签                         |
 | <code>libs</code>            | JS 库加载（头部）         |
 | <code>outdated</code>        | 版本警告                       |
 | <code>scripts</code>         | JS 文件加载（底部）       |
