@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto Condensed";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -762,6 +762,93 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. MySQL主从设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 读写分离 – 提升性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 数据冗余 – 提高安全性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 支持热备 – 不中断业务地进行维护
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 便于扩展和分布式部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-discuz-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结：Discuz! 项目的数据库部署推荐方案（2025年版）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mysql-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. MySQL 主库（Master）配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 复制数据前，锁表并获取主库同步位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-slave" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 从库（Slave）配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Discuz! 中的读写分离配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -771,6 +858,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Discuz! X2.5读写分离">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 配置读写分离的排除表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 配置第一个从库信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 如需添加第二个从库，继续追加如下配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 修改完成后保存文件，系统会自动启用读写分离，无需额外操作。
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -779,6 +908,57 @@
       4. Discuz! X2.5安全配置指引
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Discuz! X2.5安全配置指引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 系统安装阶段安全配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-php-phpini" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. PHP 配置加强（php.ini）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 数据库安全
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Discuz! 站点目录安全加固
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结：Discuz! 安全部署三层策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1605,6 +1785,93 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. MySQL主从设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 读写分离 – 提升性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 数据冗余 – 提高安全性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 支持热备 – 不中断业务地进行维护
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 便于扩展和分布式部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-discuz-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结：Discuz! 项目的数据库部署推荐方案（2025年版）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mysql-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. MySQL 主库（Master）配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 复制数据前，锁表并获取主库同步位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-slave" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 从库（Slave）配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Discuz! 中的读写分离配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1614,6 +1881,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Discuz! X2.5读写分离">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 配置读写分离的排除表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 配置第一个从库信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 如需添加第二个从库，继续追加如下配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 修改完成后保存文件，系统会自动启用读写分离，无需额外操作。
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1622,6 +1931,57 @@
       4. Discuz! X2.5安全配置指引
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Discuz! X2.5安全配置指引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 系统安装阶段安全配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-php-phpini" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. PHP 配置加强（php.ini）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 数据库安全
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Discuz! 站点目录安全加固
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结：Discuz! 安全部署三层策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1708,8 +2068,374 @@
 </tbody>
 </table>
 <h2 id="2-mysql">2. MySQL主从设置<a class="headerlink" href="#2-mysql" title="Permanent link">&para;</a></h2>
+<p>进行 MySQL 主从配置（Replication） 的目的主要是为了解决 性能瓶颈、数据安全、扩展性 三个方面的问题，尤其是在高并发网站（如 Discuz!）部署中尤为重要。</p>
+<p>以下是从架构、运维和性能三个维度讲解为什么要配置 MySQL 主从：</p>
+<h3 id="1">1. 读写分离 – 提升性能<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p><strong>说明：</strong>  </p>
+<ul>
+<li>在 MySQL 主从架构中，主库（Master）负责写操作，如：发帖、注册、评论等；</li>
+<li>从库（Slave）负责读操作，如：访问帖子、浏览列表、查看用户资料等。</li>
+</ul>
+<p><strong>优势：</strong>  </p>
+<ul>
+<li>将查询压力分散到多个从库，避免主库 CPU 和 I/O 过载；</li>
+<li>支持横向扩展，从库可根据访问量增加节点（负载均衡）；</li>
+<li>在 Discuz! 中开启“读写分离”可直接利用这一优势。</li>
+</ul>
+<h3 id="2">2. 数据冗余 – 提高安全性<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p><strong>说明：</strong>  </p>
+<ul>
+<li>从库保存主库的实时备份副本；</li>
+<li>即使主库数据损坏或丢失，也可以从从库中恢复。</li>
+</ul>
+<p><strong>优势：</strong>  </p>
+<ul>
+<li>提高灾难恢复能力（Disaster Recovery）；</li>
+<li>支持定点恢复（通过 binlog 和 position）；</li>
+<li>可搭配 延迟复制 防止误操作（例如删库）同步。</li>
+</ul>
+<h3 id="3">3. 支持热备 – 不中断业务地进行维护<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>说明：</strong>  </p>
+<ul>
+<li>在从库上做备份，不影响主库写入；</li>
+<li>可在从库进行复杂查询、分析、统计任务。</li>
+</ul>
+<p><strong>优势：</strong>  </p>
+<ul>
+<li>避免主库锁表、影响在线用户体验；</li>
+<li>支持更平滑的数据库升级、迁移或大表维护。</li>
+</ul>
+<h3 id="4_1">4. 便于扩展和分布式部署<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><strong>说明：</strong>  </p>
+<ul>
+<li>可以为每个地理区域、业务模块设置多个从库；</li>
+<li>支持分布式查询、跨机房部署、读流量就近调度。</li>
+</ul>
+<h3 id="5-discuz-2025">5. 总结：Discuz! 项目的数据库部署推荐方案（2025年版）<a class="headerlink" href="#5-discuz-2025" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">网站规模</th>
+<th style="text-align: left;">推荐部署形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">小型站点</td>
+<td style="text-align: left;">单实例 MySQL + Redis 缓存</td>
+</tr>
+<tr>
+<td style="text-align: left;">中等站点</td>
+<td style="text-align: left;">主从部署（1 主 N 从）+ Redis + 读写分离</td>
+</tr>
+<tr>
+<td style="text-align: left;">高并发社区论坛</td>
+<td style="text-align: left;">MGR 高可用主集群 + 多只读节点 + Redis + 分库表策略</td>
+</tr>
+<tr>
+<td style="text-align: left;">企业私有部署</td>
+<td style="text-align: left;">可考虑 TiDB（MySQL 协议兼容）或 Vitess（逻辑分布式）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-mysql-master">6. MySQL 主库（Master）配置<a class="headerlink" href="#6-mysql-master" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 编辑主库配置文件</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>vi<span class="w"> </span>/etc/my.cnf<span class="w">  </span><span class="c1"># 打开 MySQL 主配置文件，通常路径为 /etc/my.cnf 或 /etc/mysql/my.cnf</span>
+</span></code></pre></div>
+<p>在 <code>[mysqld]</code> 部分添加以下内容（确保无重复项）：</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">log-bin</span><span class="o">=</span><span class="s">mysql-bin</span><span class="w">  </span><span class="c1"># 启用二进制日志功能，是主从复制的基础</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">server-id</span><span class="o">=</span><span class="s">1</span><span class="w">  </span><span class="c1"># 主服务器唯一 ID，不能与从库重复</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">binlog-do-db</span><span class="o">=</span><span class="s">dzx2</span><span class="w">  </span><span class="c1"># 指定要复制的数据库，避免复制所有数据库</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">expire-logs-days</span><span class="o">=</span><span class="s">7</span><span class="w">  </span><span class="c1"># 设置二进制日志保留 7 天，防止磁盘被日志占满</span>
+</span></code></pre></div>
+<p>创建复制账户：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w">  </span><span class="c1"># 登录主库 MySQL 控制台</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;rep&#39;</span>@<span class="s1">&#39;192.168.1.3&#39;</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="s1">&#39;123&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1"># 授权从库使用复制账号连接主库</span>
+</span></code></pre></div>
+<p>重启 MySQL 服务以应用配置：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>mysqld<span class="w">  </span><span class="c1"># 重启 MySQL 服务，或使用 service mysqld restart</span>
+</span></code></pre></div>
+<h3 id="7">7. 复制数据前，锁表并获取主库同步位置<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w">  </span><span class="c1"># 登录 MySQL 控制台</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>FLUSH<span class="w"> </span>TABLES<span class="w"> </span>WITH<span class="w"> </span>READ<span class="w"> </span>LOCK<span class="p">;</span><span class="w">  </span><span class="c1"># 锁定所有表以保持备份一致性</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>SHOW<span class="w"> </span>MASTER<span class="w"> </span>STATUS<span class="p">;</span><span class="w">  </span><span class="c1"># 获取当前二进制日志文件名和位置，需记录 file 和 position</span>
+</span></code></pre></div>
+<p><em>保持当前窗口打开，不要执行 <code>UNLOCK TABLES</code>，直到完成备份</em></p>
+<p>执行备份操作（任选一种）：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w"> </span>--single-transaction<span class="w"> </span>--databases<span class="w"> </span>dzx2<span class="w"> </span>&gt;<span class="w"> </span>dzx2.sql<span class="w">  </span><span class="c1"># 使用 mysqldump 导出数据</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 或者直接复制数据库文件（需关闭 MySQL）</span>
+</span></code></pre></div>
+<p>解锁表并恢复正常服务：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>UNLOCK<span class="w"> </span>TABLES<span class="p">;</span><span class="w">  </span><span class="c1"># 解锁表，恢复写操作</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">exit</span><span class="w">  </span><span class="c1"># 退出 mysql 控制台</span>
+</span></code></pre></div>
+<p>恢复论坛访问：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 登录 Discuz! 后台 -&gt; 全局 -&gt; 站点信息 -&gt; 开放论坛访问</span>
+</span></code></pre></div>
+<h3 id="8-slave">8. 从库（Slave）配置<a class="headerlink" href="#8-slave" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 编辑从库配置文件</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>vi<span class="w"> </span>/etc/my.cnf<span class="w">  </span><span class="c1"># 打开从库的 MySQL 配置文件</span>
+</span></code></pre></div>
+<p>在 <code>[mysqld]</code> 部分添加以下内容：</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="na">server-id</span><span class="o">=</span><span class="s">2</span><span class="w">  </span><span class="c1"># 从库的唯一 ID，与主库不同</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">master-port</span><span class="o">=</span><span class="s">3306</span><span class="w">  </span><span class="c1"># 主库监听的端口（默认 3306）</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">replicate-do-db</span><span class="o">=</span><span class="s">dzx2</span><span class="w">  </span><span class="c1"># 需要复制的数据库</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="na">replicate-ignore-table</span><span class="o">=</span><span class="s">dzx2.pre_common_session</span><span class="w">  </span><span class="c1"># 排除无意义的临时表（如会话表）</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="na">slave-skip-errors</span><span class="o">=</span><span class="s">1032,1062,126,1114,1146,1048,1396</span><span class="w">  </span><span class="c1"># 自动跳过常见错误，防止复制中断</span>
+</span></code></pre></div>
+<p>重启从库 MySQL：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>mysqld<span class="w">  </span><span class="c1"># 重启 MySQL 以应用配置</span>
+</span></code></pre></div>
+<p>恢复主库备份数据：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w"> </span>&lt;<span class="w"> </span>dzx2.sql<span class="w">  </span><span class="c1"># 恢复从主库导出的 SQL 数据</span>
+</span></code></pre></div>
+<p>配置主从连接参数：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w">  </span><span class="c1"># 登录从库控制台</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>CHANGE<span class="w"> </span>MASTER<span class="w"> </span>TO<span class="w"> </span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nv">MASTER_HOST</span><span class="o">=</span><span class="s1">&#39;192.168.1.2&#39;</span>,<span class="w">  </span><span class="c1"># 主库 IP</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nv">MASTER_USER</span><span class="o">=</span><span class="s1">&#39;rep&#39;</span>,<span class="w">  </span><span class="c1"># 主库创建的复制账户</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nv">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">&#39;123&#39;</span>,<span class="w">  </span><span class="c1"># 复制账户密码</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nv">MASTER_LOG_FILE</span><span class="o">=</span><span class="s1">&#39;mysql-bin.000001&#39;</span>,<span class="w">  </span><span class="c1"># 主库记录的日志文件名</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nv">MASTER_LOG_POS</span><span class="o">=</span><span class="m">154</span><span class="p">;</span><span class="w">  </span><span class="c1"># 主库记录的 POS 位置，注意无引号</span>
+</span></code></pre></div>
+<p>启动从库复制线程：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>START<span class="w"> </span>SLAVE<span class="p">;</span><span class="w">  </span><span class="c1"># 启动 IO 和 SQL 线程以开始复制</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>SHOW<span class="w"> </span>SLAVE<span class="w"> </span>STATUS<span class="se">\G</span><span class="p">;</span><span class="w">  </span><span class="c1"># 检查 Slave_IO_Running 和 Slave_SQL_Running 是否为 Yes</span>
+</span></code></pre></div>
+<p><strong>补充（可选）：my.cnf 设置简化连接信息（部分 MySQL 版本支持）</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>master-host=192.168.1.2  # 设置主库 IP
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>master-user=rep  # 主库复制账户
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>master-password=123  # 密码
+</span></code></pre></div>
+<h3 id="9-discuz">9. Discuz! 中的读写分离配置<a class="headerlink" href="#9-discuz" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbhost&#39;] = &#39;192.168.1.3&#39;;  # 从库 IP</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbuser&#39;] = &#39;rep&#39;;  # 从库连接用户名</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbpw&#39;]   = &#39;123&#39;;  # 密码</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbcharset&#39;] = &#39;utf8&#39;;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;pconnect&#39;] = 0;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbport&#39;] = 3306;</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;weight&#39;] = 1;  # 权重，数值越大被调度概率越高</span>
+</span></code></pre></div>
 <h2 id="3-discuz-x25">3. Discuz! X2.5读写分离<a class="headerlink" href="#3-discuz-x25" title="Permanent link">&para;</a></h2>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="x">// 打开 Discuz! 配置文件</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="x">config/config_global.php  # Discuz! 全局配置文件路径，读写分离参数位于此处</span>
+</span></code></pre></div>
+<h3 id="1_1">1. 配置读写分离的排除表<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="x">$_config[&#39;db&#39;][&#39;common&#39;][&#39;slave_except_table&#39;] = &#39;common_session&#39;;  # 指定哪些表不使用从库读取，防止因同步延迟导致登录状态异常</span>
+</span></code></pre></div>
+<p><strong>架构说明：</strong></p>
+<ul>
+<li><code>common_session</code> 是用户会话表，频繁读写，存在主从同步延迟风险；</li>
+<li>若未排除，用户登录后会出现“未登录”或“掉线”现象。</li>
+</ul>
+<hr />
+<h3 id="2_1">2. 配置第一个从库信息<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbhost&#39;] = &#39;192.168.1.2&#39;;  # 第一个从库的 IP 地址或主机名</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbuser&#39;] = &#39;root&#39;;  # 从库连接用户名，应具备只读权限</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbpw&#39;] = &#39;password&#39;;  # 数据库密码（生产环境应使用只读账户）</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbcharset&#39;] = &#39;gbk&#39;;  # 数据库字符集，需与主库保持一致（常见为 utf8 或 gbk）</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;pconnect&#39;] = &#39;0&#39;;  # 是否启用持久连接，建议关闭以避免连接泄露</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;dbname&#39;] = &#39;discuz&#39;;  # 目标数据库名称</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;1&#39;][&#39;tablepre&#39;] = &#39;pre_&#39;;  # 表前缀，需与主库一致</span>
+</span></code></pre></div>
+<p><strong>架构说明：</strong><br />
+- Discuz! 会根据内置的 <code>slave_except_table</code> 和数据操作类型（SELECT vs INSERT/UPDATE）动态决定是否使用从库；<br />
+- 多个从库将使用 <strong>轮询调度策略</strong>，可通过 <code>weight</code> 参数配置优先级（在 X3 之后支持）。</p>
+<hr />
+<h3 id="3_1">3. 如需添加第二个从库，继续追加如下配置<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;dbhost&#39;] = &#39;192.168.1.3&#39;;  # 第二个从库的 IP</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;dbuser&#39;] = &#39;root&#39;;  # 用户名，通常与主库相同</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;dbpw&#39;] = &#39;password&#39;;  # 密码</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;dbcharset&#39;] = &#39;gbk&#39;;  # 字符集，与主库保持一致</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;pconnect&#39;] = &#39;0&#39;;  # 持久连接开关，建议设为 0</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;dbname&#39;] = &#39;discuz&#39;;  # 数据库名</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="x">$_config[&#39;db&#39;][&#39;slave&#39;][&#39;2&#39;][&#39;tablepre&#39;] = &#39;pre_&#39;;  # 表前缀</span>
+</span></code></pre></div>
+<p><strong>调度说明：</strong><br />
+- 当配置多个从库时，Discuz! 默认在其间轮询调度；<br />
+- 若需按访问量自动分配，可升级到 X3+ 并使用 <code>weight</code> 参数配置负载分担比例。</p>
+<hr />
+<h3 id="4_2">4. 修改完成后保存文件，系统会自动启用读写分离，无需额外操作。<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<hr />
+<p><strong>补充说明：读写分离的适用条件与风险控制</strong></p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>是否必须</th>
+<th>原因说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主从已配置完成</td>
+<td>是</td>
+<td>从库必须能同步主库数据，否则查询数据会不一致</td>
+</tr>
+<tr>
+<td>时间同步准确</td>
+<td>是</td>
+<td>防止从库落后于主库太多，影响论坛用户体验</td>
+</tr>
+<tr>
+<td>会话、缓存排除</td>
+<td>是</td>
+<td>推荐将如 <code>common_session</code> 及临时表排除，避免不一致</td>
+</tr>
+<tr>
+<td>数据库字符集统一</td>
+<td>是</td>
+<td>字符集不一致可能导致乱码或查询失败</td>
+</tr>
+<tr>
+<td>使用 Redis 缓存</td>
+<td>推荐</td>
+<td>可降低主库写压力，减少读写分离同步延迟风险</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="4-discuz-x25">4. Discuz! X2.5安全配置指引<a class="headerlink" href="#4-discuz-x25" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 系统安装阶段安全配置<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 推荐最小化安装系统</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1"># 安装过程软件包选择：全部不选，仅安装最小化系统（无 GUI），降低攻击面</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># 设置 root 密码</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># 密码必须 ≥ 8 位，包含大小写、数字、符号，提高破解成本</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># 精简服务，关闭无用或高危服务</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>chkconfig<span class="w"> </span>kudzu<span class="w"> </span>off<span class="w">          </span><span class="c1"># 关闭硬件变更探测服务</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>chkconfig<span class="w"> </span>cpuspeed<span class="w"> </span>off<span class="w">       </span><span class="c1"># 节能控制，服务器不推荐使用</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>chkconfig<span class="w"> </span>isdn<span class="w"> </span>off<span class="w">           </span><span class="c1"># ISDN 拨号服务</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>chkconfig<span class="w"> </span>portmap<span class="w"> </span>off<span class="w">        </span><span class="c1"># RPC 映射器，NFS 用到，默认关闭</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>chkconfig<span class="w"> </span>nfslock<span class="w"> </span>off<span class="w">        </span><span class="c1"># NFS 文件锁支持</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>chkconfig<span class="w"> </span>rpcidmapd<span class="w"> </span>off<span class="w">      </span><span class="c1"># RPC id 映射守护进程</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>chkconfig<span class="w"> </span>rpcgssd<span class="w"> </span>off<span class="w">        </span><span class="c1"># RPC 安全认证支持</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>chkconfig<span class="w"> </span>bluetooth<span class="w"> </span>off<span class="w">      </span><span class="c1"># 蓝牙服务</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>chkconfig<span class="w"> </span>netfs<span class="w"> </span>off<span class="w">          </span><span class="c1"># 挂载网络文件系统</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>chkconfig<span class="w"> </span>pcscd<span class="w"> </span>off<span class="w">          </span><span class="c1"># 智能卡支持服务</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>chkconfig<span class="w"> </span>apmd<span class="w"> </span>off<span class="w">           </span><span class="c1"># 电源管理（APM）</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>chkconfig<span class="w"> </span>hidd<span class="w"> </span>off<span class="w">           </span><span class="c1"># 蓝牙鼠标支持</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>chkconfig<span class="w"> </span>autofs<span class="w"> </span>off<span class="w">         </span><span class="c1"># 自动挂载服务</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>chkconfig<span class="w"> </span>hplip<span class="w"> </span>off<span class="w">          </span><span class="c1"># HP 打印机服务</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>chkconfig<span class="w"> </span>cups<span class="w"> </span>off<span class="w">           </span><span class="c1"># 打印服务</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>chkconfig<span class="w"> </span>gpm<span class="w"> </span>off<span class="w">            </span><span class="c1"># 控制台鼠标服务</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>chkconfig<span class="w"> </span>xfs<span class="w"> </span>off<span class="w">            </span><span class="c1"># 字体服务</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>chkconfig<span class="w"> </span>avahi-daemon<span class="w"> </span>off<span class="w">   </span><span class="c1"># 本地网络自动发现服务（类似 Bonjour）</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>chkconfig<span class="w"> </span>yum-updatesd<span class="w"> </span>off<span class="w">   </span><span class="c1"># yum 自动更新守护进程</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>chkconfig<span class="w"> </span>firstboot<span class="w"> </span>off<span class="w">      </span><span class="c1"># 安装后首次启动配置</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>chkconfig<span class="w"> </span>haldaemon<span class="w"> </span>off<span class="w">      </span><span class="c1"># 硬件抽象层</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="c1"># 数据挂载加强安全性</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="c1"># 对 /home 或 /data 分区使用挂载选项 nodev,nosuid,nosetuid，禁止执行权限和设备节点</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>mount<span class="w"> </span>-o<span class="w"> </span>remount,nodev,nosuid,nosetuid<span class="w"> </span>/home<span class="w">  </span><span class="c1"># 示例挂载调整命令</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="c1"># 设置所有服务脚本权限为 root:root 且 755</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/etc/init.d/*<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chown<span class="w"> </span>root:root<span class="w"> </span>/etc/init.d/*<span class="w">  </span><span class="c1"># 防止服务脚本被篡改</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="c1"># 端口限制</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="c1"># Web服务器：仅开放 80（HTTP） 和 22（SSH）</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">80</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="w">  </span><span class="c1"># 开放 HTTP</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">22</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="w">  </span><span class="c1"># 开放 SSH</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="c1"># 数据库服务器：仅开放 3306（MySQL） 和 22（SSH）</span>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="w">  </span><span class="c1"># 仅内网访问</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">22</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a>
+</span><span id="__span-20-46"><a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="c1"># 非核心端口应封闭，或设定特定 IP 白名单</span>
+</span><span id="__span-20-47"><a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>udp<span class="w"> </span>--dport<span class="w"> </span><span class="m">161</span><span class="w"> </span>-s<span class="w"> </span><span class="m">10</span>.0.0.0/8<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="w">  </span><span class="c1"># SNMP</span>
+</span><span id="__span-20-48"><a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">5666</span><span class="w"> </span>-s<span class="w"> </span><span class="m">10</span>.0.0.0/8<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="w">  </span><span class="c1"># NRPE</span>
+</span><span id="__span-20-49"><a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a>
+</span><span id="__span-20-50"><a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a><span class="c1"># 禁止 FTP 服务（明文传输不安全）</span>
+</span><span id="__span-20-51"><a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a>chkconfig<span class="w"> </span>vsftpd<span class="w"> </span>off<span class="w">  </span><span class="c1"># 关闭 vsftpd 服务</span>
+</span><span id="__span-20-52"><a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a>
+</span><span id="__span-20-53"><a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a><span class="c1"># 禁止任何服务使用 root 账户运行</span>
+</span><span id="__span-20-54"><a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a><span class="c1"># 建议创建独立账户运行：如 www、mysql、redis 等</span>
+</span><span id="__span-20-55"><a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a>
+</span><span id="__span-20-56"><a id="__codelineno-20-56" name="__codelineno-20-56" href="#__codelineno-20-56"></a><span class="c1"># 内核安全设置（/etc/sysctl.conf）</span>
+</span><span id="__span-20-57"><a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;net.ipv4.tcp_syncookies = 1&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf<span class="w">  </span><span class="c1"># 防止 SYN Flood 攻击</span>
+</span><span id="__span-20-58"><a id="__codelineno-20-58" name="__codelineno-20-58" href="#__codelineno-20-58"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;net.ipv4.conf.all.log_martians = 1&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf<span class="w">  </span><span class="c1"># 记录可疑 ARP 数据包</span>
+</span><span id="__span-20-59"><a id="__codelineno-20-59" name="__codelineno-20-59" href="#__codelineno-20-59"></a>sysctl<span class="w"> </span>-p<span class="w">  </span><span class="c1"># 应用内核参数</span>
+</span></code></pre></div>
+<h3 id="2-php-phpini">2. PHP 配置加强（php.ini）<a class="headerlink" href="#2-php-phpini" title="Permanent link">&para;</a></h3>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="na">disable_functions</span><span class="o">=</span><span class="s">passthru,exec,system,chroot,scandir,chgrp,chown,escapeshellcmd,escapeshellarg,shell_exec,proc_get_status,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,leak,popepassthru,stream_socket_server,popen</span><span class="w">  </span><span class="c1"># 禁用所有危险函数，防止命令执行漏洞</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">register_globals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Off</span><span class="w">  </span><span class="c1"># 防止全局变量覆盖漏洞</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="na">cgi.fix_pathinfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w">  </span><span class="c1"># 防止 Nginx + PHP 的路径解析漏洞</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="na">magic_quotes_gpc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span><span class="w">  </span><span class="c1"># 自动对 GPC 输入进行转义，防止 SQL 注入（已废弃特性）</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="na">allow_url_include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Off</span><span class="w">  </span><span class="c1"># 禁止远程文件包含漏洞</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="na">expose_php</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Off</span><span class="w">  </span><span class="c1"># 禁止暴露 PHP 版本，防止指纹识别</span>
+</span></code></pre></div>
+<h3 id="3_2">3. 数据库安全<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 单机部署 MySQL 时，仅绑定本地地址</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>bind-address<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">127</span>.0.0.1<span class="w">  </span><span class="c1"># 防止外网连接数据库</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># 多服务器部署时仅绑定内网地址</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>bind-address<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">192</span>.168.1.10<span class="w">  </span><span class="c1"># 仅内网可连</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># 每个站点使用独立 php-fpm 池，运行在独立用户下</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1"># /etc/php-fpm.d/site1.conf 中：</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>www_site1<span class="w">  </span><span class="c1"># 站点1专用用户</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="nv">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>www_site1
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="c1"># 每个服务使用独立用户运行</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>useradd<span class="w"> </span>-r<span class="w"> </span>www<span class="w">  </span><span class="c1"># Web 服务用户</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>useradd<span class="w"> </span>-r<span class="w"> </span>mysql<span class="w">  </span><span class="c1"># MySQL 用户</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>useradd<span class="w"> </span>-r<span class="w"> </span>redis<span class="w">  </span><span class="c1"># Redis 用户</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>useradd<span class="w"> </span>-r<span class="w"> </span>memcache<span class="w">  </span><span class="c1"># Memcached 用户</span>
+</span></code></pre></div>
+<h3 id="4-discuz">4. Discuz! 站点目录安全加固<a class="headerlink" href="#4-discuz" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># 探针与管理工具必须临时性使用</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/www/html/phpinfo.php<span class="w">  </span><span class="c1"># 删除探针文件</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>mv<span class="w"> </span>phpMyAdmin/<span class="w"> </span>/root/phpMyAdmin_backup<span class="w">  </span><span class="c1"># 管理程序移出 Web 根目录</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># 禁止站点目录中存在 bak、old、test 目录或文件</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*bak*&quot;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w">  </span><span class="c1"># 删除备份目录</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tar&quot;</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.zip&quot;</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tar.gz&quot;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w">  </span><span class="c1"># 删除压缩包</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="c1"># 删除 install、upgrade、xconvert 等敏感目录</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>rm<span class="w"> </span>-rf<span class="w"> </span>install/<span class="w"> </span>upgrade/<span class="w"> </span>xconvert/<span class="w">  </span><span class="c1"># 清除残留升级脚本</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="c1"># 清理编辑器自动备份文件</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.swp&quot;</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.bak&quot;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="c1"># 设置除以下目录外，其余目录仅允许 root 修改</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>chown<span class="w"> </span>-R<span class="w"> </span>root:root<span class="w"> </span>/var/www/html/
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>chown<span class="w"> </span>-R<span class="w"> </span>www:www<span class="w"> </span>/var/www/html/config/<span class="w">  </span><span class="c1"># 允许 web 写入的目录</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>chown<span class="w"> </span>-R<span class="w"> </span>www:www<span class="w"> </span>/var/www/html/data/
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>chown<span class="w"> </span>-R<span class="w"> </span>www:www<span class="w"> </span>/var/www/html/uc_client/data/
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>chown<span class="w"> </span>-R<span class="w"> </span>www:www<span class="w"> </span>/var/www/html/uc_server/data/
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="c1"># 禁止访问敏感目录下的 PHP 文件（以 Nginx 为例）</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="c1"># /etc/nginx/conf.d/discuz.conf 中添加：</span>
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>location<span class="w"> </span>~<span class="w"> </span>^/<span class="o">(</span>config<span class="p">|</span>data<span class="p">|</span>uc_client/data<span class="p">|</span>uc_server/data<span class="o">)</span>/.*<span class="se">\.</span>php$<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="w">    </span>deny<span class="w"> </span>all<span class="p">;</span><span class="w">  </span><span class="c1"># 拒绝直接访问这些目录下的 PHP 文件</span>
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a><span class="o">}</span>
+</span></code></pre></div>
+<h3 id="5-discuz">5. 总结：Discuz! 安全部署三层策略<a class="headerlink" href="#5-discuz" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层级</th>
+<th style="text-align: left;">策略关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">系统层</td>
+<td style="text-align: left;">关闭不必要服务、限制端口、配置内核安全参数</td>
+</tr>
+<tr>
+<td style="text-align: left;">PHP/MySQL层</td>
+<td style="text-align: left;">禁用危险函数、限制访问地址、独立用户执行</td>
+</tr>
+<tr>
+<td style="text-align: left;">应用层</td>
+<td style="text-align: left;">清除敏感文件、隔离目录权限、Nginx 层禁止访问敏感脚本</td>
+</tr>
+</tbody>
+</table>
 
 
 
