@@ -12,13 +12,13 @@
         <meta name="author" content="Simon Zhan">
       
       
-        <link rel="canonical" href="https://blog.simon29.com/Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E8%90%A5-%E5%89%8D%E5%8F%B0%E5%8A%9F%E8%83%BD/">
+        <link rel="canonical" href="https://blog.simon29.com/Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/">
       
       
-        <link rel="prev" href="../%E8%BF%90%E7%BB%B4-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <link rel="prev" href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/">
       
       
-        <link rel="next" href="../%E8%BF%90%E8%90%A5-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/">
+        <link rel="next" href="../%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>前台功能 - Simon's Blog</title>
+        <title>开发-插件机制 - Simon's Blog</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#-" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              前台功能
+              开发-插件机制
             
           </span>
         </div>
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -616,10 +616,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    开发-插件机制
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -630,6 +652,209 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 准备工作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 准备工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 插件开发总流程（新版推荐）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 插件目录结构（标准）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 文件命名规范（Discuz 最新支持）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pluginxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 插件的插件安装文件 plugin.xml 简述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-incphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 插件执行控制核心入口 .inc.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 插件 Hook 类的结构（新版标准）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 自定义数据表 + Table类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-class_corephp" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. class_core.php 与插件环境初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 调试建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 插件打包发布建议（新版规范）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 总结：Discuz! 插件架构设计优势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 插件参数读取机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 插件参数读取机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 插件参数配置的用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pluginxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 参数的定义来源：plugin.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 参数的存储位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 推荐读取方式：缓存读取
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 特殊配置类型的读取方式（支持分区/用户组配置）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 数据库直接读取（不推荐，仅用于调试或特殊场景）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -777,32 +1002,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    前台功能
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E8%90%A5-%E5%89%8D%E5%8F%B0%E5%8A%9F%E8%83%BD/" class="md-nav__link">
         
   
   
@@ -813,350 +1016,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      论坛
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="论坛">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 论坛首页
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 论坛板块
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 论坛热点
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 在线会员
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 扩展元素
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      门户
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="门户">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 首页
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 频道
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 专题
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 资讯
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      家园
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="家园">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 个人空间
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 动态
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      广播
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="广播">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 发布广播
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 收听
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 特别收听
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 广播大厅
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      群组
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="群组">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 群组首页
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 创建群组
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 群组内容
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 群组管理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      用户
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="用户">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 注册、登录、找回密码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 好友
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 设置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 通知
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 积分
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 用户组
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      手机论坛
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1944,19 +1803,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      论坛
+      1. 准备工作
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="论坛">
+    <nav class="md-nav" aria-label="1. 准备工作">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 论坛首页
+      1. 插件开发总流程（新版推荐）
     </span>
   </a>
   
@@ -1965,7 +1824,121 @@
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 论坛板块
+      2. 插件目录结构（标准）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 文件命名规范（Discuz 最新支持）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pluginxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 插件的插件安装文件 plugin.xml 简述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-incphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 插件执行控制核心入口 .inc.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 插件 Hook 类的结构（新版标准）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 自定义数据表 + Table类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-class_corephp" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. class_core.php 与插件环境初始化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 调试建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 插件打包发布建议（新版规范）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 总结：Discuz! 插件架构设计优势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 插件参数读取机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 插件参数读取机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 插件参数配置的用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pluginxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 参数的定义来源：plugin.xml
     </span>
   </a>
   
@@ -1974,7 +1947,7 @@
           <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 论坛热点
+      3. 参数的存储位置
     </span>
   </a>
   
@@ -1983,7 +1956,7 @@
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 在线会员
+      4. 推荐读取方式：缓存读取
     </span>
   </a>
   
@@ -1992,253 +1965,7 @@
           <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      5. 扩展元素
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      门户
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="门户">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 首页
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 频道
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 专题
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 资讯
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      家园
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="家园">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 个人空间
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 动态
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      广播
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="广播">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 发布广播
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 收听
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 特别收听
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 广播大厅
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      群组
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="群组">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 群组首页
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 创建群组
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 群组内容
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 群组管理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      用户
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="用户">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 注册、登录、找回密码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 好友
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 设置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 通知
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 积分
+      5. 特殊配置类型的读取方式（支持分区/用户组配置）
     </span>
   </a>
   
@@ -2247,7 +1974,7 @@
           <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
-      6. 用户组
+      6. 数据库直接读取（不推荐，仅用于调试或特殊场景）
     </span>
   </a>
   
@@ -2255,15 +1982,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      手机论坛
-    </span>
-  </a>
   
 </li>
       
@@ -2283,135 +2001,432 @@
 
 
 
-<h1 id="_1">前台功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><a href="https://addon.dismall.com/library/x3/index.html#id1">Discuz! X3.4 前台使用</a></p>
-<h2 id="_2">论坛<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 论坛首页<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../assets/2025-05-08-20-53-54.png" /></p>
-<h3 id="2">2. 论坛板块<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>首页居中位置</strong></li>
-<li>管理员可以在后台添加、并设置分区的样式。分区下的版块默认竖排显示，可在后台设置为横排显示。</li>
-<li>可以显示主题数、帖数、新主题数、最新主题与其发布时间和作者等内容。</li>
-<li>版块的图标、名称、简介等在后台 <code>论坛=&gt;版块管理=&gt;版块编辑</code> 下都可以个性化设置。</li>
-</ol>
-<h3 id="3">3. 论坛热点<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>聚合显示热点主题</li>
-<li>可打开或关闭，并设置显示数量：<code>后台 界面-&gt;界面设置-&gt;论坛首页</code></li>
-</ol>
-<h3 id="4">4. 在线会员<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<ol>
-<li>显示当前在线的会员分类和统计</li>
-<li>在<code>后台 界面-&gt;界面设置-&gt;论坛首页</code>进行设置</li>
-</ol>
-<h3 id="5">5. 扩展元素<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<p>可DIY在此区域来展示一些吸引用户或者需要推广的内容</p>
-<h2 id="_3">门户<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="1_1">1. 首页<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>门户类似于cms，拥有频道栏目、专题、文章投稿、审核体系、编辑人员权限分配等基础功能。</li>
-<li>站长可以用“门户”制作一个简单的社区首页，也可以制作成类似于门户网站那样丰富的首页。</li>
-<li>在门户应用下，包括**资讯、专题与频道**三大版块<br />
-<img alt="" src="../assets/2025-05-08-21-09-08.png" /></li>
-</ol>
-<h3 id="2_1">2. 频道<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>门户频道的主要功能是聚合社区精华，把精彩的内容聚合显示在一个页面上展示给用户看，从而吸引用户。</li>
-<li>频道栏目，需要管理员在后台创建，点击<code>后台 =&gt; 门户 =&gt; 频道栏目 =&gt; 添加频道</code><br />
-<img alt="" src="../assets/2025-05-08-21-14-53.png" /></li>
-</ol>
-<h3 id="3_1">3. 专题<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>是服务于集中报道和深度报道的一种展现形式，能集中体现某项热点事件，也可以应用到商家服务。</li>
-<li>需要在后台 门户-&gt;专题管理 下创建，点击创建专题，进入创建专题页面：<br />
-<img alt="" src="../assets/2025-05-08-21-17-39.png" /></li>
-</ol>
-<h3 id="4_1">4. 资讯<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>资讯是指用户及时获得的有价值的信息，包括帖子、日志，也可以是社区管理人员发布的新闻。</li>
-<li>系统提供了评论、表态动作以及邀请等元素增强互动。</li>
-<li>提供给了发布文章、添加相关文章、模块推送、编辑、删除等相关操作来方便站长对资讯的管理。<br />
-<img alt="" src="../assets/2025-05-08-21-20-42.png" /><br />
-<img alt="" src="../assets/2025-05-08-21-20-58.png" /></li>
-</ol>
-<h2 id="_4">家园<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ol>
-<li>家园完全实现了SNS的功能。在家园中，用户通过好友、感兴趣的话题等多种因素进行网络社交拓展，并形成放射性网络。</li>
-<li>作为**社交网络**的每个节点，用户采用多种形式不断扩充丰富的数据，包括发表日志，上传相册、图片等。</li>
-</ol>
-<h3 id="1_2">1. 个人空间<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>个人空间类似于QQ空间，用户可以在此发表日志、上传图片、发布记录等。<br />
-<img alt="" src="../assets/2025-05-08-21-27-06.png" /></li>
-</ol>
-<h3 id="2_2">2. 动态<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p>好友动态页面核心元素是展示好友动态以及发表记录，同时，页面左侧提供了家园的功能导航，右侧提供了任务、道具等运营元素的展示。<br />
-<img alt="" src="../assets/2025-05-08-21-28-20.png" /></p>
-<h2 id="_5">广播<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<ol>
-<li>系统吸收微博优点为论坛所用，新增广播、关注、@好友、评论回流等功能。</li>
-</ol>
-<h3 id="1_3">1. 发布广播<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
-<p>广播类似于微博的发表，用户可以非常方便地分享自己身边一切新鲜事儿。就像发微博一样，直接在发布框输入内容，选择要@的好友，或是直接发布。<br />
-<img alt="" src="../assets/2025-05-08-21-30-04.png" /></p>
-<h3 id="2_3">2. 收听<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
-<p>可以让用户收听自己感兴趣的人，了解收听人的动态。<br />
-<img alt="" src="../assets/2025-05-08-21-30-50.png" /></p>
-<h3 id="3_2">3. 特别收听<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
-<p>系统还提供了“特别收听”，可以将重量级人物加入到“特别收听”列表，在页面可以直接筛选查看到他们的广播</p>
-<h3 id="4_2">4. 广播大厅<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
-<p>在广播大厅，可以看到所有人发布的广播，按时间倒序排列；可以对感兴趣的广播进行转播和回复</p>
-<h2 id="_6">群组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<ol>
-<li>群组功能可以把有共同话题的人聚集在一起，站长可以利用群组功能打造许多细分、垂直的群组，满足不同用户需求，像车友会、影迷会等。</li>
-<li>站长可以根据自己社区的运营情况，先设计好群组要开设哪些分类、等级，在后台做好设置。<br />
-<img alt="" src="../assets/2025-05-08-21-33-04.png" /></li>
-</ol>
-<h3 id="1_4">1. 群组首页<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
-<p>群组首页作为群组的入口，聚合了群组的焦点，展示推荐群组、群组分类，群组的积分排行以及创建群组按钮。<br />
-<img alt="" src="../assets/2025-05-08-21-34-03.png" /></p>
-<h3 id="2_4">2. 创建群组<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../assets/2025-05-08-21-34-43.png" /></p>
-<h3 id="3_3">3. 群组内容<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../assets/2025-05-08-21-35-12.png" /></p>
-<h3 id="4_3">4. 群组管理<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
-<p>系统提供了群组的推广和管理功能<br />
-<img alt="" src="../assets/2025-05-08-21-35-59.png" /></p>
-<h2 id="_7">用户<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>用户是社区的最基本元素，系统提供了灵活成熟的用户组体系、好友体系、积分体系来增强用户茉誉感、归属感，调动用户积极性，辅助站长运营。</p>
-<h3 id="1_5">1. 注册、登录、找回密码<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
-<p>系统提供了两种注册方式，即普通注册和邀请注册。<br />
-1. 普通注册：正确填写用户名、密码、邮箱等各项内容， 验证通过，提交即可；<br />
-2. 邀请注册：若系统只开启了邀请注册，则邀请码为必填项，用户注册时必须持有邀请码才能注册，邀请码可以通过论坛中的已注册用户获取或是在线购买。<br />
-3. 用户可以选择使用用户名、UID、email进行登录。<br />
-4. 如果忘记密码，可点击找回密码，填写注册时使用的Email 提交即可，系统将会将重置密码的链接发送到邮箱，点击重置即可（三天内有效）。</p>
-<h3 id="2_5">2. 好友<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
-<p>好友是将社区中的用户联系起来进行社交拓展的重要元素，用户可以通过“查找好友”结交志趣相投的好友，“可能认识的人”又为您提供和周围用户巧遇的缘分。加为好友后，我们可以打招呼、踩日志、写评论、留言、发短消息等和好友互动。<br />
-- 加为好友：用户可以在个人空间、动态页面等地的好友名片添加用户为好友：<br />
-- 好友请求：当有用户请求加您为好友时，系统将会发送提醒。<br />
-- 好友分组：系统提供了好友分组功能，来方便用户对好友的管理。<br />
-- 好友列表：系统在“好友列表”，提供了全部好友列表、在线成员、就在我附近的朋友、我的访客和我的足迹，方便用户分类查看好友。<br />
-- 可能认识的人<br />
-- 邀请好友。</p>
-<h3 id="3_4">3. 设置<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
-<p>系统提供了用户资料的设置功能，在此用户可以修改头像、个人资料、隐私、密码等项。</p>
-<h3 id="4_4">4. 通知<a class="headerlink" href="#4_4" title="Permanent link">&para;</a></h3>
-<p>消息功能类似于微博的私信，方便用户间私密的交流。</p>
-<h3 id="5_1">5. 积分<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
-<p>积分系统构成了社区的价值体系，在站点中的两大作用就是衡量用户级别和参与站内交易。</p>
-<h3 id="6">6. 用户组<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
-<p>用户组系统构成了社区的用户体系，在社区中的作用是明确用户级别和控制用户权限。</p>
-<h2 id="_8">手机论坛<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>为了帮助站长适应移动互联网发展趋势，Discuz! 推出了手机客户端"掌上论坛"。</p>
-<ol>
-<li>
-<p>将客户端下载安装到手机，首次运行客户端，页面将显示热门论坛的列表。</p>
-</li>
-<li>
-<p><strong>Web版：</strong> 当论坛开启了手机版时，用手机访问论坛将自动跳转到手机版界面，手机版分为标准版和精简版。标准版为全功能手机版式；精简版为去掉小图标、主题列表日期等页面元素的精简版式；两种模式下表情均解析，用户可以根据自己需要切换在标准版、精简版和电脑版之间自由切换。</p>
-</li>
-</ol>
+<h1 id="-">开发-插件机制<a class="headerlink" href="#-" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 准备工作<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 插件开发总流程（新版推荐）<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>Discuz! 插件是一套 高集成度、低侵入性 的扩展机制，适用于功能模块的新增、模板的扩展、数据库的操作和前后台页面的增强。插件开发的标准步骤如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1️⃣</td>
+<td style="text-align: left;">需求分析与功能设计（页面/接口/数据表/语言包）</td>
+</tr>
+<tr>
+<td style="text-align: left;">2️⃣</td>
+<td style="text-align: left;">创建插件基础目录结构（source/plugin/identifier/）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3️⃣</td>
+<td style="text-align: left;">编写插件配置文件（plugin.xml）与语言包</td>
+</tr>
+<tr>
+<td style="text-align: left;">4️⃣</td>
+<td style="text-align: left;">编写功能代码（PHP逻辑、钩子类、控制器）</td>
+</tr>
+<tr>
+<td style="text-align: left;">5️⃣</td>
+<td style="text-align: left;">编写模板文件（HTM）并按需实现 hook 嵌入</td>
+</tr>
+<tr>
+<td style="text-align: left;">6️⃣</td>
+<td style="text-align: left;">（可选）设计自定义数据表 + Table 类封装</td>
+</tr>
+<tr>
+<td style="text-align: left;">7️⃣</td>
+<td style="text-align: left;">后台安装测试插件，调试功能</td>
+</tr>
+<tr>
+<td style="text-align: left;">8️⃣</td>
+<td style="text-align: left;">导出插件 XML + 打包说明文档发布</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 插件目录结构（标准）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>source/plugin/yourpluginid/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── plugin.xml              插件安装配置文件
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── yourpluginid.inc.php    插件主入口（控制器式）
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── hook/                   插件钩子类目录
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── yourpluginid.class.php
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── template/               插件模板文件
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── list.htm
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   └── mobile/
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── table/                  自定义数据表封装类（Table类）
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── table_mytable.php
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── function/               插件专用函数库（可选）
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   └── yourpluginid.func.php
+</span></code></pre></div>
+<h3 id="3-discuz">3. 文件命名规范（Discuz 最新支持）<a class="headerlink" href="#3-discuz" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">文件用途</th>
+<th style="text-align: left;">命名方式</th>
+<th style="text-align: left;">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">可浏览入口页面</td>
+<td style="text-align: left;">xxx.php</td>
+<td style="text-align: left;">index.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">引用逻辑文件</td>
+<td style="text-align: left;">xxx.inc.php</td>
+<td style="text-align: left;">hook.inc.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">自定义函数库</td>
+<td style="text-align: left;">xxx.func.php</td>
+<td style="text-align: left;">yourplugin.func.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">自定义类库</td>
+<td style="text-align: left;">xxx.class.php</td>
+<td style="text-align: left;">yourplugin.class.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">模板文件</td>
+<td style="text-align: left;">.htm</td>
+<td style="text-align: left;">template/list.htm</td>
+</tr>
+<tr>
+<td style="text-align: left;">模板语言包</td>
+<td style="text-align: left;">identifier.lang.php （开发期用）</td>
+<td style="text-align: left;">yourplugin.lang.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">表封装类</td>
+<td style="text-align: left;">table_表名.php</td>
+<td style="text-align: left;">table_mytable.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">插件配置文件</td>
+<td style="text-align: left;">plugin.xml</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>X3.4+ 强调模块化封装，鼓励使用 table + class 架构</p>
+<h3 id="4-pluginxml">4. 插件的插件安装文件 plugin.xml 简述<a class="headerlink" href="#4-pluginxml" title="Permanent link">&para;</a></h3>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;identifier&gt;</span>yourpluginid<span class="nt">&lt;/identifier&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;name&gt;</span>我的插件<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;description&gt;</span>这是一个示例插件<span class="nt">&lt;/description&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&lt;directory&gt;</span>source/plugin/yourpluginid/<span class="nt">&lt;/directory&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&lt;copyright&gt;</span>MyTeam<span class="nt">&lt;/copyright&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&lt;modules&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&lt;extra</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&lt;/modules&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nt">&lt;/plugin&gt;</span>
+</span></code></pre></div>
+<h3 id="5-incphp">5. 插件执行控制核心入口 .inc.php<a class="headerlink" href="#5-incphp" title="Permanent link">&para;</a></h3>
+<p>这是插件被调用时的主控文件，通常用于接收参数、调用方法、加载模板：</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;IN_DISCUZ&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">include</span> <span class="nx">template</span><span class="p">(</span><span class="s1">&#39;yourpluginid:list&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="6-hook">6. 插件 Hook 类的结构（新版标准）<a class="headerlink" href="#6-hook" title="Permanent link">&para;</a></h3>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">class plugin_yourpluginid {</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">    function global_footer() {</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">        return &#39;&lt;div class=&quot;plugin-msg&quot;&gt;Powered by myplugin&lt;/div&gt;&#39;;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">    }</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">class plugin_yourpluginid_forum extends plugin_yourpluginid {</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">    function index_top() {</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">        return &#39;&lt;div class=&quot;plugin-msg&quot;&gt;论坛首页顶部插入内容&lt;/div&gt;&#39;;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">    }</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="x">}</span>
+</span></code></pre></div><br />
+类名结构：</p>
+<ul>
+<li>全局钩子：plugin_插件ID</li>
+<li>模块钩子：plugin_插件ID_模块名</li>
+<li>例如：plugin_demo_forum → 只作用于 forum.php</li>
+</ul>
+<h3 id="7-table">7. 自定义数据表 + Table类<a class="headerlink" href="#7-table" title="Permanent link">&para;</a></h3>
+<p>位置： <code>source/plugin/yourpluginid/table/table_yourtable.php</code></p>
+<div class="language-php highlight"><span class="filename">示例</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">if (!defined(&#39;IN_DISCUZ&#39;)) {</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">    exit(&#39;Access Denied&#39;);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">class table_yourtable extends discuz_table {</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="x">    public function __construct() {</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">        $this-&gt;_table = &#39;yourtable&#39;;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">        $this-&gt;_pk = &#39;id&#39;;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">        parent::__construct();</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">    }</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="x">    public function fetch_all_by_uid($uid) {</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="x">        return DB::fetch_all(&quot;SELECT * FROM %t WHERE uid=%d&quot;, array($this-&gt;_table, $uid));</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="x">    }</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="x">}</span>
+</span></code></pre></div>
+<div class="language-php highlight"><span class="filename">使用方式</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$data = C::t(&#39;#yourpluginid#yourtable&#39;)-&gt;fetch_all_by_uid($_G[&#39;uid&#39;]);</span>
+</span></code></pre></div>
+<h3 id="8-class_corephp">8. class_core.php 与插件环境初始化<a class="headerlink" href="#8-class_corephp" title="Permanent link">&para;</a></h3>
+<p>Discuz 的 class_core.php 是所有插件及系统组件的通用启动文件，插件的运行流程依赖其环境变量和配置。关键功能：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">功能项</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">初始化 IN_DISCUZ</td>
+<td style="text-align: left;">所有文件访问保护标识</td>
+</tr>
+<tr>
+<td style="text-align: left;">定义 DISCUZ_ROOT</td>
+<td style="text-align: left;">当前站点根目录</td>
+</tr>
+<tr>
+<td style="text-align: left;">加载核心函数库</td>
+<td style="text-align: left;">function_core.php</td>
+</tr>
+<tr>
+<td style="text-align: left;">初始化 $_G 超全局</td>
+<td style="text-align: left;">包含用户信息、环境配置、权限、全局设置</td>
+</tr>
+<tr>
+<td style="text-align: left;">建立数据库连接</td>
+<td style="text-align: left;">使用 DB::table() 统一表前缀方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">加载语言包缓存</td>
+<td style="text-align: left;">支持 lang() 全局函数访问模板语言文字</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断用户权限</td>
+<td style="text-align: left;">$_G['adminid'] 判断权限级别</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9">9. 调试建议<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">解决方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">插件无效</td>
+<td style="text-align: left;">检查是否正确安装；类名是否匹配钩子</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hook 无效</td>
+<td style="text-align: left;">模板中未添加 <!--{hook/xxx}--></td>
+</tr>
+<tr>
+<td style="text-align: left;">模板未生效</td>
+<td style="text-align: left;">清除缓存，或是否在 template/插件ID/template/</td>
+</tr>
+<tr>
+<td style="text-align: left;">表结构无效</td>
+<td style="text-align: left;">检查 table 类命名 + 表前缀配置</td>
+</tr>
+<tr>
+<td style="text-align: left;">插件变量不输出</td>
+<td style="text-align: left;">检查是否正确注册语言包/函数调用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10">10. 插件打包发布建议（新版规范）<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">插件目录结构</td>
+<td style="text-align: left;">完整遵守 source/plugin/插件ID/</td>
+</tr>
+<tr>
+<td style="text-align: left;">插件 XML 配置</td>
+<td style="text-align: left;">plugin.xml 必填，插件名称/说明/版本号</td>
+</tr>
+<tr>
+<td style="text-align: left;">多语言支持</td>
+<td style="text-align: left;">使用 .lang.php + {lang key} 模板调用</td>
+</tr>
+<tr>
+<td style="text-align: left;">不侵入核心文件</td>
+<td style="text-align: left;">所有逻辑必须走 hook、模板、API，不修改官方文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">文档说明</td>
+<td style="text-align: left;">包含安装说明、功能说明、兼容性说明、卸载说明等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-discuz">11. 总结：Discuz! 插件架构设计优势<a class="headerlink" href="#11-discuz" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">优势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">高解耦</td>
+<td style="text-align: left;">所有逻辑与核心系统完全隔离</td>
+</tr>
+<tr>
+<td style="text-align: left;">高扩展性</td>
+<td style="text-align: left;">支持页面钩子、模板钩子、类封装</td>
+</tr>
+<tr>
+<td style="text-align: left;">高兼容性</td>
+<td style="text-align: left;">多版本支持，API 稳定，升级安全</td>
+</tr>
+<tr>
+<td style="text-align: left;">高分层</td>
+<td style="text-align: left;">支持控制器/模板/表/函数分离</td>
+</tr>
+<tr>
+<td style="text-align: left;">高定制性</td>
+<td style="text-align: left;">插件即模块，可打包发布和移植</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2_1">2. 插件参数读取机制<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<p>参数读取是插件开发中非常关键的一环，决定了插件是否能够被灵活配置、缓存高效、用户可操作性强。</p>
+<h3 id="1_2">1. 插件参数配置的用途<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>在插件开发中，开发者通常需要让站长自定义一些行为，比如：</p>
+<ul>
+<li>是否启用某个功能开关</li>
+<li>设置接口地址、Token</li>
+<li>每页显示条数等</li>
+</ul>
+<p>这些信息应通过后台插件管理界面配置，避免写死在代码中。</p>
+<h3 id="2-pluginxml">2. 参数的定义来源：<code>plugin.xml</code><a class="headerlink" href="#2-pluginxml" title="Permanent link">&para;</a></h3>
+<p>插件参数配置统一在 plugin.xml 文件中声明，示例如下：</p>
+<p><div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;vars&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&lt;var&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;title&gt;</span>接口地址<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;description&gt;</span>API<span class="w"> </span>基础地址<span class="nt">&lt;/description&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;variable&gt;</span>api_url<span class="nt">&lt;/variable&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&lt;type&gt;</span>text<span class="nt">&lt;/type&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>https://api.example.com/<span class="nt">&lt;/value&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">&lt;/var&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">&lt;var&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">&lt;title&gt;</span>是否启用调试<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">&lt;description&gt;</span>开启后记录调试日志<span class="nt">&lt;/description&gt;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">&lt;variable&gt;</span>debug<span class="nt">&lt;/variable&gt;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">&lt;type&gt;</span>radio<span class="nt">&lt;/type&gt;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>1<span class="nt">&lt;/value&gt;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="nt">&lt;extra&gt;</span>1=开启|0=关闭<span class="nt">&lt;/extra&gt;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="nt">&lt;/var&gt;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nt">&lt;/vars&gt;</span>
+</span></code></pre></div><br />
+添加后，后台 → 插件 → 配置 → 会自动显示这些字段。</p>
+<h3 id="3">3. 参数的存储位置<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>系统会将插件的参数保存到数据库，并生成缓存：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">存储类型</th>
+<th style="text-align: left;">数据位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">数据库</td>
+<td style="text-align: left;">common_plugin 插件基础信息（id/标识/版本）</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">common_pluginvar 插件参数表</td>
+</tr>
+<tr>
+<td style="text-align: left;">内存缓存（推荐）</td>
+<td style="text-align: left;"><code>$_G['cache']['plugin']</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 推荐读取方式：缓存读取<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>这是 Discuz 推荐方式，性能更优，通用于所有插件：<br />
+调用方式：插件主脚本中（plugin.php、钩子类、inc.php）可直接读取，不需额外加载缓存。</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">$pluginvars = $_G[&#39;cache&#39;][&#39;plugin&#39;][&#39;插件标识&#39;];</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">echo $pluginvars[&#39;api_url&#39;]; // 输出插件配置的 api 地址</span>
+</span></code></pre></div>
+<div class="language-php highlight"><span class="filename">示例</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">if (!defined(&#39;IN_DISCUZ&#39;)) exit(&#39;Access Denied&#39;);</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">$pluginvars = $_G[&#39;cache&#39;][&#39;plugin&#39;][&#39;mypluginid&#39;];</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">if ($pluginvars[&#39;debug&#39;]) {</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">    echo &#39;&lt;p&gt;调试模式已开启&lt;/p&gt;&#39;;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">}</span>
+</span></code></pre></div>
+<h3 id="5">5. 特殊配置类型的读取方式（支持分区/用户组配置）<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Discuz 支持基于不同作用域的插件参数配置，如：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">参数作用域</th>
+<th style="text-align: left;">读取方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">整站生效</td>
+<td style="text-align: left;"><code>$_G['cache']['plugin']['插件ID']['参数名']</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">版块（按 fid）</td>
+<td style="text-align: left;">对某个版块设置不同配置</td>
+<td style="text-align: left;"><code>$_G['cache']['forums'][$fid]['plugin']['插件ID']</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">用户组</td>
+<td style="text-align: left;">用户组维度设置参数</td>
+<td style="text-align: left;"><code>$_G['cache']['usergroup'][$groupid]['plugin']['插件ID']</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>$_G['group']['plugin']['插件ID']</code></td>
+</tr>
+</tbody>
+</table>
+<p>说明：</p>
+<ul>
+<li>版块、用户组配置需在 plugin.xml 中将 <type> 设置为 forum 或 group；</li>
+<li>插件必须正确设置参数作用域，系统才会生成对应缓存。</li>
+</ul>
+<h3 id="6">6. 数据库直接读取（不推荐，仅用于调试或特殊场景）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="x">$query = DB::query(&quot;SELECT * FROM &quot;.DB::table(&#39;common_pluginvar&#39;).&quot; WHERE pluginid=&#39;$pluginid&#39;&quot;);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">while($var = DB::fetch($query)) {</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">    $pluginvars[$var[&#39;variable&#39;]] = $var[&#39;value&#39;];</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">}</span>
+</span></code></pre></div>
+<p>缺点：</p>
+<ul>
+<li>不走缓存；</li>
+<li>消耗性能；</li>
+<li>不能处理用户组/版块作用域参数。</li>
+</ul>
 
 
 
@@ -2449,7 +2464,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../%E8%BF%90%E7%BB%B4-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 运维 —— 环境搭建">
+          <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 博文编写指南">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2459,20 +2474,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                运维 —— 环境搭建
+                博文编写指南
               </div>
             </div>
           </a>
         
         
           
-          <a href="../%E8%BF%90%E8%90%A5-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="md-footer__link md-footer__link--next" aria-label="Next: 后台管理">
+          <a href="../%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/" class="md-footer__link md-footer__link--next" aria-label="Next: 开发—数字字典">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                后台管理
+                开发—数字字典
               </div>
             </div>
             <div class="md-footer__button md-icon">

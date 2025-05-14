@@ -1,0 +1,3146 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="这是Simon,Sally和James的博客，分享和记录我们的学习和生活！！">
+      
+      
+        <meta name="author" content="Simon Zhan">
+      
+      
+        <link rel="canonical" href="https://blog.simon29.com/Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%9C%BA%E5%88%B6/">
+      
+      
+        <link rel="prev" href="../%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/">
+      
+      
+        <link rel="next" href="../%E5%BC%80%E5%8F%91%E2%80%94%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>开发 - 模板机制 - Simon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Simon&#39;s Blog" class="md-header__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Simon's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              开发 - 模板机制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  欢迎页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于我
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  博文编写指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discuz笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Material MkDocs学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/python-101/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术开发
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../python-101.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术开发
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../python-101.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术开发
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  学英语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Simon&#39;s Blog" class="md-nav__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    Simon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    欢迎页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于我
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    博文编写指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Discuz笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Discuz笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发-插件机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—数字字典
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    开发 - 模板机制
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发 - 模板机制
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板制作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 模板制作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTML书写规范
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模板概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 扩展新模板
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 缓存机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 缓存机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-template-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板缓存机制（Template Cache）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-css-css-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CSS 缓存机制（CSS Cache）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. CSS扩展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. CSS扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-css-extend_css" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. CSS 扩展机制概述（extend_*.css）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CSS 继承加载机制（加载顺序）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modulecss" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. module.css 的模块化结构与语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-css-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. CSS 书写规范（Discuz 官方推荐）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 标签语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 标签语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板嵌套语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ifelseifelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 逻辑判断语法（if/elseif/else）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 循环语法（loop）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-php-eval-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 执行 PHP 表达式（eval 和 echo）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 插件钩子标签（Hook）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 广告嵌入标签（AD）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 语言包调用标签（lang）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 模板文件结构附录
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 模板文件结构附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Discuz! 模板体系结构总览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-templatedefaultcommon" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 公共模板文件夹 ./template/default/common/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-templatedefaultforum" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 论坛模板文件夹 ./template/default/forum/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BC%80%E5%8F%91%E2%80%94%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—产品框架
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E7%BB%B4-%E5%8D%87%E7%BA%A7%E6%90%AC%E5%AE%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-转换/升级/搬家
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E7%BB%B4-%E6%89%A9%E5%B1%95%E6%9C%8D%E5%8A%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-扩展服务
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E7%BB%B4-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维 —— 环境搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E8%90%A5-%E5%89%8D%E5%8F%B0%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前台功能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E8%90%A5-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    后台管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Material MkDocs学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Material MkDocs学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    排版模块样例
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/1%20%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/2%20%E5%AE%9E%E9%99%85%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实际安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/3%20%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    创建你的站点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/4%20%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发布你的网站
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/5.%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E4%B8%BB%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自定义你的主题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E5%AD%A6%E4%B9%A0/6%20%E6%96%87%E6%A1%A3%E7%AC%A6%E5%90%88%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文档符号约定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    技术开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            技术开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/python-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python 入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/ai-infra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI 部署实践
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    技术开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            技术开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-101.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python 入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-infra.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI 部署实践
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    技术开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            技术开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-101.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python 入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-infra.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI 部署实践
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    学英语
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            学英语
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulary Building 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/%E6%AF%8F%E6%97%A5%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日写作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板制作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 模板制作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTML书写规范
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模板概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 扩展新模板
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 缓存机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 缓存机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-template-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板缓存机制（Template Cache）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-css-css-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CSS 缓存机制（CSS Cache）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. CSS扩展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. CSS扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-css-extend_css" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. CSS 扩展机制概述（extend_*.css）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CSS 继承加载机制（加载顺序）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modulecss" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. module.css 的模块化结构与语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-css-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. CSS 书写规范（Discuz 官方推荐）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 标签语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 标签语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模板嵌套语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ifelseifelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 逻辑判断语法（if/elseif/else）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 循环语法（loop）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-php-eval-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 执行 PHP 表达式（eval 和 echo）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 插件钩子标签（Hook）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 广告嵌入标签（AD）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 语言包调用标签（lang）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 模板文件结构附录
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 模板文件结构附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-discuz" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Discuz! 模板体系结构总览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-templatedefaultcommon" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 公共模板文件夹 ./template/default/common/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-templatedefaultforum" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 论坛模板文件夹 ./template/default/forum/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-">开发 - 模板机制<a class="headerlink" href="#-" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 模板制作<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>模板系统是前端展示的核心，Discuz! 将逻辑与显示彻底分离，开发者可自定义模板风格以匹配品牌、移动端适配、插件兼容等要求。</p>
+<p>模板位置：</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">template</span><span class="o">/</span><span class="k">default</span><span class="o">/</span><span class="w">         </span><span class="c1">// 默认模板</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">template</span><span class="o">/</span><span class="n">mycustom</span><span class="o">/</span><span class="w">        </span><span class="c1">// 自定义模板风格</span>
+</span></code></pre></div>
+<h3 id="1-html">1. HTML书写规范<a class="headerlink" href="#1-html" title="Permanent link">&para;</a></h3>
+<p><strong>HTML 编写规范（强制要求）:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">规范示例</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">属性值使用双引号</td>
+<td style="text-align: left;"><code>&lt;input type="text" value="abc" /&gt;</code></td>
+<td style="text-align: left;">单引号会影响编译与兼容性</td>
+</tr>
+<tr>
+<td style="text-align: left;">自闭合标签使用 /&gt;</td>
+<td style="text-align: left;"><code>&lt;img src="xx.jpg" /&gt;</code></td>
+<td style="text-align: left;">防止浏览器差异性渲染</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTML5 标签支持</td>
+<td style="text-align: left;">✅ 支持 <code>&lt;nav&gt;, &lt;section&gt;</code> 等</td>
+<td style="text-align: left;">但需兼容旧浏览器写法</td>
+</tr>
+<tr>
+<td style="text-align: left;">禁用 JS 内联脚本</td>
+<td style="text-align: left;">❌ 避免 <code>&lt;script&gt;alert(1)&lt;/script&gt;</code></td>
+<td style="text-align: left;">所有动态处理交给模板语法</td>
+</tr>
+</tbody>
+</table>
+<p><strong>模板缩进规范</strong></p>
+<p>Discuz! 模板 .htm 文件使用“逻辑缩进”，而不是 HTML 视觉层级缩进，目的是提升模板的结构清晰度并简化解析。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">规则项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">统一使用 Tab</td>
+<td style="text-align: left;">❌ 禁用空格缩进</td>
+</tr>
+<tr>
+<td style="text-align: left;">逻辑缩进优先</td>
+<td style="text-align: left;">如循环、条件控制块内部缩进</td>
+</tr>
+<tr>
+<td style="text-align: left;">模板块缩进</td>
+<td style="text-align: left;">不依赖 HTML 标签嵌套缩进</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><span class="filename">示例</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;!--{loop $threadlist $thread}--&gt;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &lt;table&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &lt;tr&gt;&lt;td&gt;{$thread[subject]}&lt;/td&gt;&lt;/tr&gt;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &lt;/table&gt;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;!--{/loop}--&gt;
+</span></code></pre></div>
+<h3 id="2">2. 模板概述<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p><strong>模板套系（Template Set）与风格（Style）的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">概念</th>
+<th style="text-align: left;">定义说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">模板套系</td>
+<td style="text-align: left;">指一组完整的模板文件，如 .htm + .css + 图片，存放于 template/模板目录/。是模板系统的“骨架”。</td>
+</tr>
+<tr>
+<td style="text-align: left;">风格（Style）</td>
+<td style="text-align: left;">是在某模板套系基础上，应用具体样式、图片、配色等外观配置的组合，是“外皮”。后台“风格管理”实际配置的是风格。</td>
+</tr>
+</tbody>
+</table>
+<p>结构示意：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>template/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── default/               &lt;- 模板套系（官方默认）
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── common/            &lt;- 公共模板部分
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── forum/             &lt;- 论坛模块模板
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── home/              &lt;- 家园空间模板
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── style/             &lt;- 所有配色（风格）子目录
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   │   ├── t1/style.css   &lt;- 配色方案 1
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   │   ├── t2/style.css   &lt;- 配色方案 2
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   └── style.css          &lt;- 默认 CSS 定义（风格核心样式）
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>├── mytheme/               &lt;- 用户自定义模板套系
+</span></code></pre></div>
+<p><strong>风格管理中的常量机制说明</strong></p>
+<p>Discuz! 支持在 CSS 文件中动态使用常量变量，支持自定义 + 后台控制，方便模板“风格”个性化展示。</p>
+<p>常量与 CSS 动态绑定：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">常量</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">{IMGDIR}</td>
+<td style="text-align: left;">界面基础图片目录 → 对应 $_G['style']['imgdir']</td>
+</tr>
+<tr>
+<td style="text-align: left;">{STYLEIMGDIR}</td>
+<td style="text-align: left;">扩展图片目录 → 对应 $_G['style']['styleimgdir']</td>
+</tr>
+<tr>
+<td style="text-align: left;">{FONTSIZE}</td>
+<td style="text-align: left;">正文字体大小，示例：14px/1.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">{TABLETEXT}</td>
+<td style="text-align: left;">表格文本颜色</td>
+</tr>
+<tr>
+<td style="text-align: left;">{LINK}</td>
+<td style="text-align: left;">链接文字颜色</td>
+</tr>
+<tr>
+<td style="text-align: left;">{BGCOLOR}</td>
+<td style="text-align: left;">背景色</td>
+</tr>
+<tr>
+<td style="text-align: left;">{TESTCODE}</td>
+<td style="text-align: left;">🌟自定义模板变量（需后台添加）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>扩展配色机制说明</strong></p>
+<div class="language-text highlight"><span class="filename">配置路径</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>template/模板标识/style/配色目录/style.css
+</span></code></pre></div>
+<p>新增一个深色主题</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>template/mytheme/style/dark/style.css
+</span></code></pre></div>
+<p><strong>自定义模板变量机制（动态调用 CSS 中变量）</strong></p>
+<p>使用场景： 当你希望允许用户切换字体大小、配色风格、边框颜色等属性时，可使用“模板变量”实现。</p>
+<p>设置方式：</p>
+<ul>
+<li>后台 → 界面 → 风格管理 → 编辑风格；</li>
+<li>“自定义模板变量” → 新增：<ul>
+<li>变量名：TESTCODE</li>
+<li>默认值：#00FF00</li>
+</ul>
+</li>
+<li>在 CSS 中这样使用：</li>
+</ul>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">.</span><span class="nc">btn</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="n">TESTCODE</span><span class="p">}</span><span class="o">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="err">}</span>
+</span></code></pre></div>
+<p>系统会将 {TESTCODE} 动态替换为用户当前风格配置的值。</p>
+<p><strong>版本机制说明（X3.4+）</strong></p>
+<ul>
+<li>所有风格变量从 $_G['style'] 数组中获取；</li>
+<li>所有 {变量} 会在模板编译为 .tpl.php 时被替换；</li>
+<li>所有风格配置会写入缓存（data/cache/style_*）以提升性能；</li>
+<li>插件模板如果引用风格样式，需兼容 {STYLEIMGDIR} 或 {IMGDIR}。</li>
+</ul>
+<p><strong>实际开发建议（风格开发规范）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">建议做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">避免修改 default/ 模板</td>
+<td style="text-align: left;">使用 template/mytheme/ 创建新模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">所有颜色、字号使用常量</td>
+<td style="text-align: left;">在 CSS 中全部使用 {FONTSIZE} 等变量</td>
+</tr>
+<tr>
+<td style="text-align: left;">公共模板统一引用</td>
+<td common_header="common/header" style="text-align: left;" subtemplate="subtemplate">所有页头页脚统一用</td>
+</tr>
+<tr>
+<td style="text-align: left;">模板内不要硬编码 URL</td>
+<td style="text-align: left;">使用 {$_G['siteurl']} 或 {STATICURL}</td>
+</tr>
+<tr>
+<td style="text-align: left;">自定义风格图片</td>
+<td style="text-align: left;">放置在 style/xxx/images/，用 {STYLEIMGDIR}/xxx.png 引用</td>
+</tr>
+<tr>
+<td style="text-align: left;">插件风格继承</td>
+<td style="text-align: left;">插件模板也可调用全局风格变量，避免冲突</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Discuz! 模板套系 &amp; 风格系统优势</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">模板套系</td>
+<td style="text-align: left;">一组 .htm 模板结构定义，负责结构</td>
+</tr>
+<tr>
+<td style="text-align: left;">风格</td>
+<td style="text-align: left;">一套样式文件 + 图片 + 变量配置，负责表现</td>
+</tr>
+<tr>
+<td style="text-align: left;">常量机制</td>
+<td style="text-align: left;">CSS 使用变量绑定样式，方便切换和个性化</td>
+</tr>
+<tr>
+<td style="text-align: left;">配色扩展</td>
+<td style="text-align: left;">支持多主题切换，每个用户可设置偏好风格</td>
+</tr>
+<tr>
+<td style="text-align: left;">开发维护成本</td>
+<td style="text-align: left;">分离结构与样式、避免模板混乱，便于定制化与品牌化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">3. 扩展新模板<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>核心原理：Discuz! 模板系统遵循模板优先级查找策略，通过 结构继承 + 配色扩展 + 可选复写 实现灵活的 UI 层扩展。</p>
+<p>模板优先级加载路径：当系统渲染页面（如 forumdisplay）时，其模板加载逻辑为：</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. 查找当前风格目录（如 template/yourstyle/forum/forumdisplay.htm）
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. 如果不存在 → 回退默认风格目录 template/default/
+</span></code></pre></div><br />
+**结论：**你只需要修改需要变更的模板文件，其余继承默认模板结构。</p>
+<p><strong>扩展模板风格的制作步骤</strong></p>
+<ol>
+<li>新建模板目录结构</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>template/yourstyle/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── common/           ← 可选复写的模块（如 header.htm）
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── forum/            ← 可选复写的模块
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── style/            ← 配色方案目录
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   └── t1/style.css  ← 示例配色方案
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>├── discuz_style_yourstyle.xml  ← 重要：风格定义文件
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>└── style.css         ← 默认样式，不能缺省
+</span></code></pre></div>
+<ol>
+<li>复制并修改 XML 模板描述文件</li>
+</ol>
+<p>从 template/default/discuz_style_default.xml 复制为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>discuz_style_yourstyle.xml
+</span></code></pre></div>
+<p>必填字段：</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[新风格名称]]&gt;</span><span class="nt">&lt;/item&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;templateid&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[10]]&gt;</span><span class="nt">&lt;/item&gt;</span><span class="w"> </span><span class="cm">&lt;!-- 注意不能与已安装ID冲突 --&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;tplname&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[yourstyle]]&gt;</span><span class="nt">&lt;/item&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[./template/yourstyle]]&gt;</span><span class="nt">&lt;/item&gt;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;styleimgdir&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[template/yourstyle/images]]&gt;</span><span class="nt">&lt;/item&gt;</span>
+</span></code></pre></div>
+<p>XML 是后台风格管理识别风格信息的元文件。</p>
+<ol>
+<li>添加可复写模板文件</li>
+</ol>
+<p>只需添加需要复写的模板文件：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>template/yourstyle/common/header.htm
+</span></code></pre></div>
+<p>页面渲染时将使用该 header 模板，其余部分继续引用 template/default/ 中的其他文件。</p>
+<p><strong>扩展配色方案机制</strong></p>
+<p>文件路径：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>template/yourstyle/style/
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├──<span class="w"> </span>t1/style.css
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>├──<span class="w"> </span>t2/style.css
+</span></code></pre></div>
+<p>css文件头部注释结构（必须有）：</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">[</span><span class="nt">name</span><span class="o">]</span><span class="nt">红色主题</span><span class="o">[/</span><span class="nt">name</span><span class="o">]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">[</span><span class="nt">iconbgcolor</span><span class="o">]</span><span class="p">#</span><span class="nn">BA350F</span><span class="o">[/</span><span class="nt">iconbgcolor</span><span class="o">]</span>
+</span></code></pre></div>
+<p>用法说明：</p>
+<ul>
+<li>[name] 定义后台显示的名称；</li>
+<li>[iconbgcolor] 设置在后台管理中显示的预览色块；</li>
+<li>用户可以在“界面设置”中自由切换。</li>
+</ul>
+<p>动态样式加载机制：</p>
+<p>实际前端模板（如 common/header.htm）中，系统自动加载以下样式：</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;data/cache/style_{风格ID}_{配色名}.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+</span></code></pre></div>
+<p>生成 CSS 缓存时会将 style.css 与 extend_*.css 合并，配色方案是编译时合并后注入。</p>
+<p><strong>扩展 CSS 文件机制（动态追加）</strong></p>
+<p>如要扩展已有样式，无需重写整个文件，只需添加扩展文件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>template/yourstyle/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── extend_common.css
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>├── extend_module.css
+</span></code></pre></div>
+<ul>
+<li>扩展文件只写新增 / 覆盖样式；</li>
+<li>编译缓存时将自动合并进 data/template/ 中；</li>
+<li>避免重复复制大量 .htm 文件，只调 UI 即可。</li>
+</ul>
+<h2 id="2_1">2. 缓存机制<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-template-cache">1. 模板缓存机制（Template Cache）<a class="headerlink" href="#1-template-cache" title="Permanent link">&para;</a></h3>
+<ol>
+<li>缓存位置： <code>/data/template/</code></li>
+</ol>
+<p>缓存文件名格式：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>模板编号_模块路径.tpl.php
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>例如：1_forum_discuz.tpl.php
+</span></code></pre></div>
+<ol>
+<li>缓存作用</li>
+</ol>
+<p>Discuz! 会将 .htm 模板编译为 .tpl.php 的纯 PHP 可执行文件，用于直接 include 输出，避免每次解析模板语法。</p>
+<ol>
+<li>调用流程</li>
+</ol>
+<p><img alt="" src="../assets/2025-05-13-12-47-28.png" /></p>
+<p>缓存更新规则：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">是否重新编译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">.htm 文件修改时间更新</td>
+<td style="text-align: left;">✅ 是</td>
+</tr>
+<tr>
+<td style="text-align: left;">.tpl.php 文件被删</td>
+<td style="text-align: left;">✅ 是</td>
+</tr>
+<tr>
+<td style="text-align: left;">手动删除缓存目录</td>
+<td style="text-align: left;">✅ 不影响系统自动重建</td>
+</tr>
+<tr>
+<td style="text-align: left;">模板文件未变动</td>
+<td style="text-align: left;">❌ 否（直接使用缓存）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-css-css-cache">2. CSS 缓存机制（CSS Cache）<a class="headerlink" href="#2-css-css-cache" title="Permanent link">&para;</a></h3>
+<p><strong>1. 缓存位置： <code>/data/cache/</code></strong></p>
+<p>缓存文件命名规则：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>style_风格ID_应用入口_页面模块.css
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>例如：
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>style_1_forum_index.css
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>style_2_forum_forumdisplay.css
+</span></code></pre></div>
+<p><strong>2. 扩展样式文件机制：</strong></p>
+<p>可以通过以下方式为页面增加 定制样式扩展：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>template/mytheme/common/extend_common.css
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>template/mytheme/common/extend_module.css
+</span></code></pre></div>
+<p>这些文件不会被单独加载，而是：在生成缓存文件时，会将其合并追加到最终 style_*.css 缓存中，提升加载效率。</p>
+<p><strong>3.  CSS 扩展格式建议：</strong></p>
+<p>示例：</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c">/** forum:index,forum:forumdisplay **/</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">.</span><span class="nc">mycss</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="n">FONTSIZE</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="err">FONT</span><span class="p">}</span><span class="o">;</span><span class="w"> </span><span class="err">}</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c">/** end **/</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">格式部分</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">forum:index</td>
+<td style="text-align: left;">对应页面入口为 forum.php?mod=index</td>
+</tr>
+<tr>
+<td style="text-align: left;">forum:forumdisplay</td>
+<td style="text-align: left;">对应帖子列表页</td>
+</tr>
+<tr>
+<td style="text-align: left;">{FONTSIZE}</td>
+<td style="text-align: left;">CSS 常量变量，由风格注入</td>
+</tr>
+</tbody>
+</table>
+<p>这样写的好处是：</p>
+<ul>
+<li>不修改模板本身就可以动态扩展样式；</li>
+<li>自动根据页面入口选择加载合适样式；</li>
+<li>可多点控制样式作用范围。</li>
+</ul>
+<p><strong>4. 样式文件编译流程</strong></p>
+<ol>
+<li>系统访问某模块（如论坛首页）；</li>
+<li>加载对应模板缓存，如 <code>forum_index.tpl.php</code>；</li>
+<li>模板中引用样式如html：<code>&lt;link href="data/cache/style_1_forum_index.css" rel="stylesheet" /&gt;</code></li>
+<li>这个文件由系统生成，内容为：<ul>
+<li>common.css + module.css</li>
+<li>当前风格 style.css</li>
+<li>所有 extend_common.css / extend_module.css</li>
+<li>当前页面匹配的 CSS 片段（通过 /** forum:index **/ 识别）</li>
+</ul>
+</li>
+</ol>
+<p><strong>5. 总结：Discuz! 缓存机制设计亮点</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">优点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">模板缓存</td>
+<td style="text-align: left;">模板预编译为 .tpl.php，极大降低服务器模板解析压力</td>
+</tr>
+<tr>
+<td style="text-align: left;">CSS 缓存</td>
+<td style="text-align: left;">自动合并风格 + 公共样式 + 扩展样式，提升渲染性能</td>
+</tr>
+<tr>
+<td style="text-align: left;">动态样式注入</td>
+<td style="text-align: left;">支持按模块、按风格、按用户动态切换</td>
+</tr>
+<tr>
+<td style="text-align: left;">高扩展性</td>
+<td style="text-align: left;">插件/模板/风格均可通过缓存机制统一接入</td>
+</tr>
+<tr>
+<td style="text-align: left;">强兼容</td>
+<td style="text-align: left;">未扩展的部分自动回退到默认模板套系</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-css">3. CSS扩展<a class="headerlink" href="#3-css" title="Permanent link">&para;</a></h2>
+<h3 id="1-css-extend_css">1. CSS 扩展机制概述（extend_*.css）<a class="headerlink" href="#1-css-extend_css" title="Permanent link">&para;</a></h3>
+<p>在 Discuz! 模板系统中，你只需写你要改动的 CSS 样式到扩展文件里，系统会在生成缓存 CSS 文件时自动追加整合。</p>
+<p>路径示例：<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>template/yourstyle/common/extend_common.css
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>template/yourstyle/common/extend_module.css
+</span></code></pre></div><br />
+这些文件的内容会自动合并到系统最终生成的缓存 CSS 文件中，例如：<br />
+<code>/data/cache/style_1_forum_forumdisplay.css</code></p>
+<h3 id="2-css">2. CSS 继承加载机制（加载顺序）<a class="headerlink" href="#2-css" title="Permanent link">&para;</a></h3>
+<p>Discuz! 的样式文件缓存合并是按照以下顺序执行的（后加载优先，覆盖前者）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">加载顺序</th>
+<th style="text-align: left;">来源位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">①</td>
+<td style="text-align: left;">template/default/common/*.css</td>
+</tr>
+<tr>
+<td style="text-align: left;">②</td>
+<td style="text-align: left;">template/yourstyle/common/extend_*.css</td>
+</tr>
+<tr>
+<td style="text-align: left;">③</td>
+<td style="text-align: left;">template/yourstyle/style.css</td>
+</tr>
+<tr>
+<td style="text-align: left;">④</td>
+<td style="text-align: left;">source/plugin/插件ID/template/extend_*.css</td>
+</tr>
+</tbody>
+</table>
+<p>每一级都可以追加/覆盖前一级定义的样式，因此风格主题、插件样式都可以独立维护。</p>
+<h3 id="3-modulecss">3. module.css 的模块化结构与语法<a class="headerlink" href="#3-modulecss" title="Permanent link">&para;</a></h3>
+<p>默认文件路径： <code>template/default/common/module.css</code><br />
+扩展路径： <code>template/yourstyle/common/extend_module.css</code></p>
+<h3 id="4-css-discuz">4. CSS 书写规范（Discuz 官方推荐）<a class="headerlink" href="#4-css-discuz" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">属性书写一行内</td>
+<td 100px_="100px;" 50px_="50px;" height:="height:" style="text-align: left;" width:="width:">.box</td>
+</tr>
+<tr>
+<td style="text-align: left;">属性名与值之间留空格</td>
+<td style="text-align: left;">遵循统一格式</td>
+</tr>
+<tr>
+<td style="text-align: left;">浏览器前缀顺序</td>
+<td style="text-align: left;">-webkit-, -moz-, 标准属性</td>
+</tr>
+<tr>
+<td style="text-align: left;">样式由外到内书写顺序</td>
+<td style="text-align: left;">position → box → border → text → others</td>
+</tr>
+<tr>
+<td style="text-align: left;">不滥用 ID</td>
+<td style="text-align: left;">使用 .class 优先，避免 #id 冲突</td>
+</tr>
+<tr>
+<td style="text-align: left;">缩写类命名规则</td>
+<td style="text-align: left;">例如：.cl 需注释说明为 .clearfix</td>
+</tr>
+<tr>
+<td style="text-align: left;">忌用低效嵌套</td>
+<td style="text-align: left;">❌ ul li a span {} → 推荐 .nav-link {}</td>
+</tr>
+<tr>
+<td style="text-align: left;">忌滥用 !important</td>
+<td style="text-align: left;">仅在必要时使用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. 标签语法<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>模板解析核心逻辑文件为：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>source/class/class_template.php
+</span></code></pre></div>
+<p>Discuz! 模板语言并非标准 PHP，而是自定义语法经过解析器转为 PHP 再执行。下面我们分类详细讲解。</p>
+<h3 id="1_1">1. 模板嵌套语法<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>Discuz! 支持两种模板嵌套方式：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标签类型</th>
+<th style="text-align: left;">功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">subtemplate</td>
+<td style="text-align: left;">编译时将目标模板嵌入当前模板，提升性能</td>
+</tr>
+<tr>
+<td style="text-align: left;">template</td>
+<td style="text-align: left;">运行时 include 模板文件，灵活可变</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cm">&lt;!--{subtemplate common/header}--&gt;</span>  <span class="cm">&lt;!-- 推荐 --&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cm">&lt;!--{template common/header}--&gt;</span>     <span class="cm">&lt;!-- 运行时 include --&gt;</span>
+</span></code></pre></div>
+<p>建议：</p>
+<ul>
+<li>如果模板调用频繁、结构固定，用 subtemplate；</li>
+<li>如果需要根据变量动态切换，用 template。</li>
+</ul>
+<h3 id="2-ifelseifelse">2. 逻辑判断语法（if/elseif/else）<a class="headerlink" href="#2-ifelseifelse" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><span class="filename">基本写法</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cm">&lt;!--{if $_G[&#39;uid&#39;]}--&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>  欢迎回来！
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="cm">&lt;!--{else}--&gt;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  请先登录。
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="cm">&lt;!--{/if}--&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">带多个条件</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cm">&lt;!--{if $_G[&#39;uid&#39;] &amp;&amp; $_G[&#39;group&#39;][&#39;groupid&#39;] == 1}--&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>  管理员专属内容
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cm">&lt;!--{/if}--&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">嵌入属性中的用法（无需额外标签）</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">&lt;</span><span class="nt">td</span><span class="err">{</span><span class="na">if</span> <span class="err">$</span><span class="na">forumcolwidth</span><span class="err">}</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;$forumcolwidth&quot;</span><span class="err">{/</span><span class="na">if</span><span class="err">}</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="3-loop">3. 循环语法（loop）<a class="headerlink" href="#3-loop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">形式</th>
+<th style="text-align: left;">语法格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">有键值</td>
+<td style="text-align: left;"><code>&lt;!--{loop $arr $key $val}--&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">无键值（仅值）</td>
+<td style="text-align: left;"><code>&lt;!--{loop $arr $val}--&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-html highlight"><span class="filename">示例</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cm">&lt;!--{loop $threads $tid $thread}--&gt;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{$thread[&#39;subject&#39;]}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="cm">&lt;!--{/loop}--&gt;</span>
+</span></code></pre></div>
+<h3 id="4-php-eval-echo">4. 执行 PHP 表达式（eval 和 echo）<a class="headerlink" href="#4-php-eval-echo" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><span class="filename">执行 PHP</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cm">&lt;!--{eval $total = count($threadlist);}--&gt;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="cm">&lt;!--{eval echo $total;}--&gt;</span>
+</span></code></pre></div>
+<p><div class="language-html highlight"><span class="filename">推荐使用 echo 输出变量</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>{$thread[&#39;subject&#39;]}      <span class="cm">&lt;!-- 推荐 --&gt;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="cm">&lt;!--{echo $thread[&#39;subject&#39;]}--&gt;</span>  <span class="cm">&lt;!-- 兼容方式 --&gt;</span>
+</span></code></pre></div><br />
+<code>{$var}</code> 与 <code>&lt;!--{echo $var}--&gt;</code> 等效，但花括号语法更清晰，推荐使用。</p>
+<h3 id="5-hook">5. 插件钩子标签（Hook）<a class="headerlink" href="#5-hook" title="Permanent link">&para;</a></h3>
+<p>用于插件扩展模板内容，形式统一为：</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cm">&lt;!--{hook/钩子名}--&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">示例</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cm">&lt;!--{hook/global_usernav_extra2}--&gt;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="cm">&lt;!--{hook/index_top}--&gt;</span>
+</span></code></pre></div>
+<p>插件机制说明：<br />
+- 插件在 XML 中声明了 hook；<br />
+- 在模板对应位置添加 hook 标签；<br />
+- 插件的 HTML、JS、CSS 就会注入到模板。</p>
+<h3 id="6-ad">6. 广告嵌入标签（AD）<a class="headerlink" href="#6-ad" title="Permanent link">&para;</a></h3>
+<p>Discuz! 自带广告管理系统，通过模板标签插入：<code>&lt;!--{ad/headerbanner/wp a_h}--&gt;</code></p>
+<p>常用广告位：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标签</th>
+<th style="text-align: left;">显示位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ad/headerbanner</td>
+<td style="text-align: left;">页头横幅</td>
+</tr>
+<tr>
+<td style="text-align: left;">ad/thread/a_pb</td>
+<td style="text-align: left;">帖子楼层间</td>
+</tr>
+<tr>
+<td style="text-align: left;">ad/footerbanner</td>
+<td style="text-align: left;">页脚横幅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-lang">7. 语言包调用标签（lang）<a class="headerlink" href="#7-lang" title="Permanent link">&para;</a></h3>
+<p>Discuz! 所有文字都可以使用语言包统一管理，国际化、主题风格多语言切换都依赖此机制。</p>
+<div class="language-html highlight"><span class="filename">使用方式</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>{lang forum_category_modedby}
+</span></code></pre></div>
+<div class="language-bash highlight"><span class="filename">加载位置</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>source/language/lang_template.php
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>source/language/模块/lang_xxx.php
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>source/plugin/yourid/language/lang_template.php<span class="w"> </span><span class="c1">#在插件中自定义语言包</span>
+</span></code></pre></div>
+<h2 id="5">5. 模板文件结构附录<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="1-discuz">1. Discuz! 模板体系结构总览<a class="headerlink" href="#1-discuz" title="Permanent link">&para;</a></h3>
+<div class="language-sql highlight"><span class="filename">Discuz! 模板按模块划分，常驻路径如下</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">template</span><span class="o">/</span><span class="k">default</span><span class="o">/</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="err">├──</span><span class="w"> </span><span class="n">common</span><span class="o">/</span><span class="w">        </span><span class="err">公共模板（头尾、导航、提示）</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="err">├──</span><span class="w"> </span><span class="n">forum</span><span class="o">/</span><span class="w">         </span><span class="err">论坛相关（发帖、看帖、评分）</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="err">├──</span><span class="w"> </span><span class="k">group</span><span class="o">/</span><span class="w">         </span><span class="err">群组系统（创建、成员、列表）</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="err">├──</span><span class="w"> </span><span class="n">home</span><span class="o">/</span><span class="w">          </span><span class="err">个人空间（动态、日志、相册）</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="err">├──</span><span class="w"> </span><span class="n">member</span><span class="o">/</span><span class="w">        </span><span class="err">用户模块（注册、登录、资料）</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="err">├──</span><span class="w"> </span><span class="n">portal</span><span class="o">/</span><span class="w">        </span><span class="err">门户系统（频道、文章、专题）</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="err">├──</span><span class="w"> </span><span class="k">search</span><span class="o">/</span><span class="w">        </span><span class="err">搜索结果页面</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="err">├──</span><span class="w"> </span><span class="n">userapp</span><span class="o">/</span><span class="w">       </span><span class="n">UCenter</span><span class="w"> </span><span class="err">相关应用扩展</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="err">├──</span><span class="w"> </span><span class="n">style</span><span class="o">/</span><span class="w">         </span><span class="err">配色目录（风格方案）</span>
+</span></code></pre></div>
+<h3 id="2-templatedefaultcommon">2. 公共模板文件夹  <code>./template/default/common/</code><a class="headerlink" href="#2-templatedefaultcommon" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">文件名</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">header.htm</td>
+<td style="text-align: left;">页头 HTML 输出（包含顶部导航、meta、风格引用）</td>
+</tr>
+<tr>
+<td style="text-align: left;">footer.htm</td>
+<td style="text-align: left;">页脚输出</td>
+</tr>
+<tr>
+<td style="text-align: left;">header_common.htm</td>
+<td style="text-align: left;">页头的通用逻辑代码，如 SEO 信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">header_ajax.htm</td>
+<td style="text-align: left;">用于 AJAX 弹出式页面的头部（注册/登录）</td>
+</tr>
+<tr>
+<td style="text-align: left;">footer_ajax.htm</td>
+<td style="text-align: left;">AJAX 页尾</td>
+</tr>
+<tr>
+<td style="text-align: left;">header_diy.htm</td>
+<td style="text-align: left;">DIY 模式下头部模板（频道/首页）</td>
+</tr>
+<tr>
+<td style="text-align: left;">faq.htm</td>
+<td style="text-align: left;">帮助页</td>
+</tr>
+<tr>
+<td style="text-align: left;">invite.htm</td>
+<td style="text-align: left;">邀请页面模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">preview.htm</td>
+<td style="text-align: left;">页面预览模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">showmessage.htm</td>
+<td style="text-align: left;">提示框模板（系统信息/跳转提示）</td>
+</tr>
+<tr>
+<td style="text-align: left;">userabout.htm</td>
+<td style="text-align: left;">用户中心面板模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">common.css</td>
+<td style="text-align: left;">全局样式表（最基础）</td>
+</tr>
+<tr>
+<td style="text-align: left;">module.css</td>
+<td style="text-align: left;">支持模块化加载的样式（分模块注释块）</td>
+</tr>
+<tr>
+<td style="text-align: left;">widthauto.css</td>
+<td style="text-align: left;">宽屏样式补丁</td>
+</tr>
+<tr>
+<td style="text-align: left;">forum_calendar.css</td>
+<td style="text-align: left;">日历控件样式</td>
+</tr>
+<tr>
+<td style="text-align: left;">forum_moderator.css</td>
+<td style="text-align: left;">管理面板样式表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-templatedefaultforum">3. 论坛模板文件夹  <code>./template/default/forum/</code><a class="headerlink" href="#3-templatedefaultforum" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模板页</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">discuz.htm</td>
+<td style="text-align: left;">论坛首页（forum.php）</td>
+</tr>
+<tr>
+<td style="text-align: left;">forumdisplay.htm</td>
+<td style="text-align: left;">主题列表页面主模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">forumdisplay_list.htm</td>
+<td style="text-align: left;">帖子列表子模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">forumdisplay_passwd.htm</td>
+<td style="text-align: left;">加密板块输入密码模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">forumdisplay_subforum.htm</td>
+<td style="text-align: left;">子版块显示模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewthread.htm</td>
+<td style="text-align: left;">看帖主模板（帖子内容页）</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewthread_fastpost.htm</td>
+<td style="text-align: left;">快速回复框模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewthread_node.htm</td>
+<td style="text-align: left;">楼层结构（多层结构）</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewthread_mod.htm</td>
+<td style="text-align: left;">帖子管理记录显示模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">post.htm</td>
+<td style="text-align: left;">发帖页主模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">post_activity.htm</td>
+<td style="text-align: left;">活动帖发布</td>
+</tr>
+<tr>
+<td style="text-align: left;">post_poll.htm</td>
+<td style="text-align: left;">投票帖发布</td>
+</tr>
+<tr>
+<td style="text-align: left;">post_trade.htm</td>
+<td style="text-align: left;">交易帖发布</td>
+</tr>
+<tr>
+<td style="text-align: left;">post_reward.htm</td>
+<td style="text-align: left;">悬赏帖发布</td>
+</tr>
+<tr>
+<td style="text-align: left;">rate.htm</td>
+<td style="text-align: left;">帖子评分页</td>
+</tr>
+<tr>
+<td style="text-align: left;">recommend.htm</td>
+<td style="text-align: left;">主题推荐页</td>
+</tr>
+<tr>
+<td style="text-align: left;">attachpay.htm</td>
+<td style="text-align: left;">附件金币支付模板</td>
+</tr>
+<tr>
+<td style="text-align: left;">announcement.htm</td>
+<td style="text-align: left;">公告页面</td>
+</tr>
+<tr>
+<td style="text-align: left;">collection_index.htm</td>
+<td style="text-align: left;">淘帖首页</td>
+</tr>
+<tr>
+<td style="text-align: left;">collection_view.htm</td>
+<td style="text-align: left;">专辑内容页</td>
+</tr>
+<tr>
+<td style="text-align: left;">ajax_attachlist.htm</td>
+<td style="text-align: left;">附件异步加载模板</td>
+</tr>
+</tbody>
+</table>
+<p>说明：每种帖子类型如 poll, trade, reward, debate 都有各自的 post_<em>.htm 和 viewthread_</em>.htm 模板，体现 内容发布 和 阅读展示 的完全分离。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 开发—数字字典">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                开发—数字字典
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E5%BC%80%E5%8F%91%E2%80%94%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6/" class="md-footer__link md-footer__link--next" aria-label="Next: 开发—产品框架">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                开发—产品框架
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2025 Simon
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/squidfunk.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/squidfunk" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
