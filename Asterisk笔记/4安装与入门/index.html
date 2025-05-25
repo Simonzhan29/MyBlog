@@ -1,0 +1,4227 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="这是Simon,Sally和James的博客，分享和记录我们的学习和生活！！">
+      
+      
+        <meta name="author" content="Simon Zhan">
+      
+      
+        <link rel="canonical" href="https://blog.simon29.com/Asterisk%E7%AC%94%E8%AE%B0/4%E5%AE%89%E8%A3%85%E4%B8%8E%E5%85%A5%E9%97%A8/">
+      
+      
+        <link rel="prev" href="../3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+      
+      
+        <link rel="next" href="../5%E9%85%8D%E7%BD%AE/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>第四章 安装与入门 - Simon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Simon&#39;s Blog" class="md-header__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Simon's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第四章 安装与入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  欢迎页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于我
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  博文编写指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1%E5%85%B3%E4%BA%8EAsterisk%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Asterisk笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discuz笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../JamesProgram/Program%20of%202025/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  JamesProgram
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Material MkDocs笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  学英语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Simon&#39;s Blog" class="md-nav__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    Simon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    欢迎页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于我
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    博文编写指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Asterisk笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Asterisk笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%E5%85%B3%E4%BA%8EAsterisk%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 关于Asterisk项目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2Asterisk%E7%A4%BE%E5%8C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 Asterisk 社区
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 基础知识
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第四章 安装与入门
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 安装与入门
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-beginning-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 准备安装 Beginning Asterisk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-asterisk-installing-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 安装Asterisk Installing Asterisk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装Asterisk Installing Asterisk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-what-to-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What to Download：下载源码包的选择与版本建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What to Download：下载源码包的选择与版本建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 系统要求（System Requirements）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 下载方式示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 其他相关组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 官方下载路径总览表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 小结：适用于你的环境
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Prerequisites：安装前的依赖和系统要求
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Prerequisites：安装前的依赖和系统要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-checking-asterisk-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Checking Asterisk Requirements（环境检测）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Checking Asterisk Requirements（环境检测）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-asteriskconfiguring-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 准备编译 Asterisk（Configuring Asterisk）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install_prereq" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用 install_prereq 自动安装依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-using-menuselect-to-select-asterisk-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Using Menuselect to Select Asterisk Options（功能组件选择器）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Using Menuselect to Select Asterisk Options（功能组件选择器）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是 Menuselect？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-support-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模块支持级别（Support Levels）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Menuselect 模块类别一览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 命令行控制 Menuselect（推荐用于自动化编译）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-building-and-installing-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Building and Installing Asterisk（核心编译与安装）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Building and Installing Asterisk（核心编译与安装）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 标准编译流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 标准编译流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：编译源码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：安装构建产物
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advanced-build-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 高级构建与安装选项（Advanced Build Options）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 高级构建与安装选项（Advanced Build Options）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 自定义编译参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 自定义编译参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 启用详细编译信息（调试用）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cpu-building-for-non-native-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 禁用原生 CPU 优化 Building for non-native architectures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-installing-to-a-custom-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 安装到自定义目录 Installing to a custom directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-make-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 常用 Make Targets 汇总
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 建议的构建流程（适用于生产部署）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-installing-sample-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Installing Sample Files（安装示例配置）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Installing Sample Files（安装示例配置）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 概述：安装配置示例文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 正确使用建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 示例配置文件结构概览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-agiasterisk-gateway-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. AGI（Asterisk Gateway Interface）接口调用 的核心配置文
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-installing-initialization-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Installing Initialization Scripts（服务启动脚本）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Installing Initialization Scripts（服务启动脚本）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 初始化脚本（Initscript）的作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logrotate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 日志轮转机制（logrotate）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 权限与安全建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-validating-your-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Validating Your Installation（验证安装）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-exploring-sound-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exploring Sound Prompts（语音提示文件配置）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exploring Sound Prompts（语音提示文件配置）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Asterisk 自带提示音包概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 提示音文件目录结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 多种音频格式支持与选择原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-core-show-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 查看转码开销：core show translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-multilingual-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 语言与国际化支持（Multilingual Prompts）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 安装提示音包（Makefile 方式）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 建立第一个入门呼叫流程 Hello World
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 建立第一个入门呼叫流程 Hello World">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-extensionsconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 配置拨号计划：extensions.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选择并配置 SIP 通道驱动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sip-zoiper" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 配置 SIP 软电话（Zoiper）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-asterisk-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 启动 Asterisk 并连接 CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 发起呼叫测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 配置
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Discuz笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Discuz笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发-插件机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—数字字典
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发 - 模板机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E2%80%94%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—产品框架
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E5%8D%87%E7%BA%A7%E6%90%AC%E5%AE%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-转换/升级/搬家
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E6%89%A9%E5%B1%95%E6%9C%8D%E5%8A%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-扩展服务
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维 —— 环境搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E8%90%A5-%E5%89%8D%E5%8F%B0%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前台功能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E8%90%A5-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    后台管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    JamesProgram
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            JamesProgram
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JamesProgram/Program%20of%202025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Program of 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Material MkDocs笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Material MkDocs笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    排版模块样例
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/1%20%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/2%20%E5%AE%9E%E9%99%85%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实际安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/3%20%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    创建你的站点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/4%20%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发布你的网站
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/5.%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E4%B8%BB%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自定义你的主题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/6%20%E6%96%87%E6%A1%A3%E7%AC%A6%E5%90%88%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文档符号约定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    学英语
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            学英语
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulary Building 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/%E6%AF%8F%E6%97%A5%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日写作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-beginning-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 准备安装 Beginning Asterisk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-asterisk-installing-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 安装Asterisk Installing Asterisk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装Asterisk Installing Asterisk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-what-to-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What to Download：下载源码包的选择与版本建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What to Download：下载源码包的选择与版本建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 系统要求（System Requirements）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 下载方式示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 其他相关组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 官方下载路径总览表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 小结：适用于你的环境
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Prerequisites：安装前的依赖和系统要求
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Prerequisites：安装前的依赖和系统要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-checking-asterisk-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Checking Asterisk Requirements（环境检测）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Checking Asterisk Requirements（环境检测）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-asteriskconfiguring-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 准备编译 Asterisk（Configuring Asterisk）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install_prereq" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 使用 install_prereq 自动安装依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-using-menuselect-to-select-asterisk-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Using Menuselect to Select Asterisk Options（功能组件选择器）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Using Menuselect to Select Asterisk Options（功能组件选择器）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是 Menuselect？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-support-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模块支持级别（Support Levels）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Menuselect 模块类别一览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-menuselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 命令行控制 Menuselect（推荐用于自动化编译）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-building-and-installing-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Building and Installing Asterisk（核心编译与安装）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Building and Installing Asterisk（核心编译与安装）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 标准编译流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 标准编译流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：编译源码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：安装构建产物
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advanced-build-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 高级构建与安装选项（Advanced Build Options）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 高级构建与安装选项（Advanced Build Options）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 自定义编译参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 自定义编译参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 启用详细编译信息（调试用）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cpu-building-for-non-native-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 禁用原生 CPU 优化 Building for non-native architectures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-installing-to-a-custom-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 安装到自定义目录 Installing to a custom directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-make-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 常用 Make Targets 汇总
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 建议的构建流程（适用于生产部署）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-installing-sample-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Installing Sample Files（安装示例配置）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Installing Sample Files（安装示例配置）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 概述：安装配置示例文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 正确使用建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 示例配置文件结构概览
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-agiasterisk-gateway-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. AGI（Asterisk Gateway Interface）接口调用 的核心配置文
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-installing-initialization-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Installing Initialization Scripts（服务启动脚本）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Installing Initialization Scripts（服务启动脚本）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 初始化脚本（Initscript）的作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logrotate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 日志轮转机制（logrotate）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 权限与安全建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-validating-your-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Validating Your Installation（验证安装）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-exploring-sound-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exploring Sound Prompts（语音提示文件配置）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exploring Sound Prompts（语音提示文件配置）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Asterisk 自带提示音包概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 提示音文件目录结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 多种音频格式支持与选择原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-core-show-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 查看转码开销：core show translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-multilingual-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 语言与国际化支持（Multilingual Prompts）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 安装提示音包（Makefile 方式）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 建立第一个入门呼叫流程 Hello World
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 建立第一个入门呼叫流程 Hello World">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-extensionsconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 配置拨号计划：extensions.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 选择并配置 SIP 通道驱动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sip-zoiper" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 配置 SIP 软电话（Zoiper）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-asterisk-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 启动 Asterisk 并连接 CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 发起呼叫测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">第四章 安装与入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="1-beginning-asterisk">1. 准备安装 Beginning Asterisk<a class="headerlink" href="#1-beginning-asterisk" title="Permanent link">&para;</a></h2>
+<p>Asterisk 是一个功能极其强大的开源通信平台，它提供了一整套构建语音通信系统（包括 IP PBX、网关、会议系统等）的工具和框架。</p>
+<ul>
+<li>Asterisk 是基于 GPLv2 授权协议发布的开源项目。这意味着任何人都可以自由地获取、修改和再发布 Asterisk 的源代码。这种开放性不仅促进了全球社区的协作，也加速了电信系统功能的创新。</li>
+<li>核心模块由 C 编写，提供极高的性能和对底层系统资源的精细控制。written in the   <a href="http://en.wikipedia.org/wiki/C_programming">C Programming Language</a></li>
+<li>Asterisk 主要在 Linux 上运行，但也可移植到其他 Unix 系统。这种依赖性是基于其对 POSIX 接口的广泛使用。熟悉 Linux 文件系统结构（如 /etc/asterisk）和守护进程控制机制（如 systemd）是部署 Asterisk 的基础。running on   <a href="http://en.wikipedia.org/wiki/Linux">Linux</a>   (or other types of   <a href="http://en.wikipedia.org/wiki/Unix">Unix</a>  )</li>
+<li>Asterisk 是构建企业 IP 电话系统（PBX）的核心组件，支持话务分配、队列、会议桥接、自动语音应答（IVR）、呼叫转移等企业级功能。powering   <a href="http://en.wikipedia.org/wiki/Business_telephone_system">Business Telephone Systems</a></li>
+<li>它并非局限于某一种 VoIP 协议，而是能对接 SIP、IAX、H.323 等标准协议，同时也能与传统 PSTN 网络（通过 FXO/FXS 硬件接口）集成。connecting many different   <a href="http://en.wikipedia.org/wiki/Telephony">Telephony</a>   protocols</li>
+</ul>
+<p><strong>工具箱而非应用程序</strong></p>
+<ul>
+<li>Asterisk 与传统通信软件的最大区别在于，它更像是一个**通信开发平台或框架**。你可以用它构建：</li>
+<li>IP PBX：内建应用支持包括 IVR、语音邮箱、呼叫录音、呼叫队列等，用户可通过 extensions.conf 编写拨号逻辑。</li>
+<li>VoIP 网关：用于连接不同网络之间的协议转换，例如 SIP ↔ PSTN。</li>
+<li>会议系统：通过 confbridge 或 meetme 模块支持多方语音会议。</li>
+<li>更多自定义通信解决方案：例如呼叫中心、语音导航、自动播报系统等。</li>
+</ul>
+<p><strong>学习资源推荐</strong></p>
+<ul>
+<li>
+<p>术语与基础概念</p>
+<ul>
+<li>电信术语表：帮助你理解 PBX、DID、FXO/FXS 等专业术语。<a href="http://en.wikipedia.org/wiki/List_of_telephony_terminology">Telephony Terminology</a></li>
+<li>Asterisk 词汇表：解释系统中常见的配置与模块术语。<a href="http://www.asterisk.org/get-started/glossary">Asterisk Terms Glossary</a></li>
+<li>电信缩略语库：推荐 Mob1le 提供的广泛缩略语列表。<a href="http://www.mob1le.com/acronyms.html">Telecom Acronyms</a>   (very comprehensive)</li>
+</ul>
+</li>
+<li>
+<p>协议学习 Telephony Protocols</p>
+<ul>
+<li><a href="http://www.cisco.com/en/US/docs/voice_ip_comm/cucm/admin/4_0_1/ccmsys/a08procl.html">IP Telephony Protocols Overview</a></li>
+<li>SIP 协议概述<a href="http://en.wikipedia.org/wiki/Session_Initiation_Protocol">SIP Overview</a></li>
+<li>RFC 5411 – “A Hitchhiker's Guide to SIP”：系统梳理 SIP 发展脉络<a href="https://www.rfc-editor.org/rfc/rfc5411.txt">A Hitchhiker's Guide to SIP</a></li>
+</ul>
+</li>
+<li>
+<p>Linux/Unix 基础</p>
+<ul>
+<li><a href="http://linuxnewbieguide.org/">Linux Newbie Guide</a></li>
+<li><a href="http://www.linux.org/forums/beginner-tutorials.53/">Beginner Tutorials</a></li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">Unix Beginner Tutorial</a></li>
+</ul>
+</li>
+<li>
+<p>安装与配置 Asterisk</p>
+<ul>
+<li><a href="http://www.asteriskdocs.org/">Asterisk: The Definitive Guide</a>   3<sup>rd</sup> Edition</li>
+</ul>
+</li>
+<li>
+<p>C 编程基础 Programming</p>
+<ul>
+<li>基础教程 <a href="http://www.cprogramming.com/tutorial/c-tutorial.html">C Programming Tutorial</a></li>
+<li>Learn-C.org 的交互式平台 <a href="http://www.learn-c.org/">Interactive C Tutorial</a></li>
+<li>TutorialsPoint 的速查手册 <a href="http://www.tutorialspoint.com/cprogramming/c_quick_guide.htm">C Programming Quick Guide</a></li>
+</ul>
+</li>
+<li>
+<p>社区支持资源</p>
+<ul>
+<li>邮件列表与 IRC 聊天室：快速获得社区帮助，适合深度技术交流。 <a href="http://www.asterisk.org/community/discuss">Asterisk Mailing List and IRC</a></li>
+<li>Asterisk 论坛：适合初学者提出问题和查看历史问题解答。<a href="https://community.asterisk.org">Asterisk Community Forums</a></li>
+<li>VoIP Users Conference Online Community：持续的技术讨论与应用分享。 <a href="http://vuc.me">Voip Users Conference</a>   main site and on   <a href="https://plus.google.com/communities/114149566116254233716">Google+</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-asterisk-installing-asterisk">2. 安装Asterisk Installing Asterisk<a class="headerlink" href="#2-asterisk-installing-asterisk" title="Permanent link">&para;</a></h2>
+<h3 id="1-what-to-download">1. What to Download：下载源码包的选择与版本建议<a class="headerlink" href="#1-what-to-download" title="Permanent link">&para;</a></h3>
+<p>Downloads of Asterisk are available at <a href="https://downloads.asterisk.org/pub/telephony/asterisk/">https://downloads.asterisk.org/pub/telephony/asterisk/</a>. The currently supported versions of Asterisk will each have a symbolic link to their related release on this server, named <strong>asterisk-{version}-current**</strong>.tar.gz**. All releases ever made for the Asterisk project are available at <a href="https://downloads.asterisk.org/pub/telephony/asterisk/releases/">https://downloads.asterisk.org/pub/telephony/asterisk/releases/</a>. Asterisk 的源码包托管在官方 FTP 服务器。该目录下包含所有历史版本的发布包，以及符号链接指向每个受支持版本的当前稳定版（如 asterisk-22-current.tar.gz），推荐从此处下载，确保获取安全修复和最新补丁。</p>
+<p>The currently supported versions of Asterisk are documented on the <a href="/About-the-Project/Asterisk-Versions">Asterisk Versions</a> page. It is highly recommended that you install one of the currently supported versions, as these versions continue to receive bug and security fixes.</p>
+<p>建议版本选择</p>
+<ul>
+<li>稳定性优先：选择 LTS (Long Term Support) 版本，如 Asterisk 20（当前 LTS）</li>
+<li>新功能优先：选择最新标准版本（如 Asterisk 22）</li>
+<li>不建议使用 EOL（已停止支持）版本，例如 14、16</li>
+</ul>
+<p><strong>当前运行的是 Asterisk 22.1.0，属于标准版本的最新分支，适合探索新特性。</strong></p>
+<h4 id="1-system-requirements">1. 系统要求（System Requirements）<a class="headerlink" href="#1-system-requirements" title="Permanent link">&para;</a></h4>
+<p>在编译前，请参考 Asterisk 的 系统要求文档。虽然 ./configure 会自动检测依赖项，但手动提前安装可以避免反复调试。Review Asterisk's <code>System Requirements</code> in order to determine what needs to be installed for the version of Asterisk you are installing. While Asterisk will look for any missing system requirements during compilation, it's often best to install these prior to configuring and compiling Asterisk.</p>
+<p>也可使用 Asterisk 自带的脚本安装依赖：Asterisk does come with a script, <strong>install_prereq</strong>, to aid in this process. If you'd like to use this script, download Asterisk first, then see <a href="/Getting-Started/Installing-Asterisk/Installing-Asterisk-From-Source/Checking-Asterisk-Requirements">Checking Asterisk Requirements</a> for instructions on using this script to install prerequisites for your version of Asterisk.</p>
+<h4 id="2">2. 下载方式示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>Browse to <a href="https://downloads.asterisk.org/pub/telephony/asterisk">https://downloads.asterisk.org/pub/telephony/asterisk</a>, select <a href="https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-14-current.tar.gz">asterisk-14-current.tar.gz</a>, and save the file on your file system.</p>
+<p>You can also get the latest releases from the downloads page on <a href="http://asterisk.org/downloads">asterisk.org</a>.</p>
+<p>Alternatively, you can us<code>e [wget](https://www.gnu.org/software/wget/)</code> to retrieve the latest release:</p>
+<div class="language-bash highlight"><span class="filename">推荐使用 wget 命令从终端直接下载源码包</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/local/src
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-22-current.tar.gz
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>tar<span class="w"> </span>zxvf<span class="w"> </span>asterisk-22-current.tar.gz
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>asterisk-22*/
+</span></code></pre></div>
+<h4 id="3">3. 其他相关组件<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>在某些应用场景中，Asterisk 需要配合以下组件使用：</p>
+<p>libpri<br />
+用于支持 ISDN PRI 接口卡（T1/E1/J1/BRI）,仅在你使用 DAHDI 接入 ISDN 线路时需要安装。<br />
+The <strong>libpri</strong> library allows Asterisk to communicate with ISDN connections.You'll only need this if you are going to use DAHDI with ISDN interface hardware (such as T1/E1/J1/BRI cards).</p>
+<p>DAHDI（Digium Asterisk Hardware Device Interface）<br />
+支持模拟/数字线路（如 FXO/FXS、T1/E1），提供设备驱动与工具集（如 dahdi_cfg, dahdi_tool），可独立于 Asterisk 使用（第三方应用可调用）。<strong>如果你不使用模拟/数字接口卡（如 Digium/ Sangoma），DAHDI 可不安装</strong></p>
+<h4 id="4">4. 官方下载路径总览表<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asterisk</td>
+<td><a href="https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-22-current.tar.gz">https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-22-current.tar.gz</a></td>
+</tr>
+<tr>
+<td>libpri</td>
+<td><a href="https://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz">https://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz</a></td>
+</tr>
+<tr>
+<td>dahdi-linux</td>
+<td><a href="https://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-current.tar.gz">https://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-current.tar.gz</a></td>
+</tr>
+<tr>
+<td>dahdi-tools</td>
+<td><a href="https://downloads.asterisk.org/pub/telephony/dahdi-tools/dahdi-tools-current.tar.gz">https://downloads.asterisk.org/pub/telephony/dahdi-tools/dahdi-tools-current.tar.gz</a></td>
+</tr>
+<tr>
+<td>dahdi-complete</td>
+<td><a href="https://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz">https://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="5">5. 小结：适用于你的环境<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">组件</th>
+<th style="text-align: left;">是否必须</th>
+<th style="text-align: left;">是否建议安装</th>
+<th style="text-align: left;">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Asterisk 22.x</td>
+<td style="text-align: left;">✅ 必须</td>
+<td style="text-align: left;">✅ 强烈建议</td>
+<td style="text-align: left;">你当前运行的版本，稳定性和功能均衡</td>
+</tr>
+<tr>
+<td style="text-align: left;">libpri</td>
+<td style="text-align: left;">❌ 非必须</td>
+<td style="text-align: left;">⛔ 不建议</td>
+<td style="text-align: left;">若不使用 ISDN 接口卡，可省略</td>
+</tr>
+<tr>
+<td style="text-align: left;">DAHDI</td>
+<td style="text-align: left;">❌ 非必须</td>
+<td style="text-align: left;">⚠️ 可选</td>
+<td style="text-align: left;">若未接入 PSTN 或 FXO/FXS 硬件，可省略；否则需安装 dahdi-linux-complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-prerequisites">2. Prerequisites：安装前的依赖和系统要求<a class="headerlink" href="#2-prerequisites" title="Permanent link">&para;</a></h3>
+<h4 id="1-checking-asterisk-requirements">1. Checking Asterisk Requirements（环境检测）<a class="headerlink" href="#1-checking-asterisk-requirements" title="Permanent link">&para;</a></h4>
+<h5 id="1-asteriskconfiguring-asterisk">1. 准备编译 Asterisk（Configuring Asterisk）<a class="headerlink" href="#1-asteriskconfiguring-asterisk" title="Permanent link">&para;</a></h5>
+<p>步骤一：进入源码目录<br />
+通常 Asterisk 源码解压至 /usr/local/src 目录（或其他用户定义的路径）。Now it's time to compile and install Asterisk. Let's change to the directory which contains the Asterisk source code.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-22-current.tar.gz
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tar<span class="w"> </span>zxvf<span class="w"> </span>asterisk-22-current.tar.gz
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>asterisk-22*/
+</span></code></pre></div>
+<p>步骤二：运行 ./configure 配置脚本,该脚本用于系统探测与配置：。Next, we'll run a command called <strong>./configure</strong>, which will perform a number of checks on the operating system, and get the Asterisk code ready to compile on this particular server.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./configure
+</span></code></pre></div>
+<p>此命令会执行如下操作：</p>
+<ul>
+<li>检查 C 编译器（gcc）、链接器（ld）等工具链</li>
+<li>检查是否已安装 Asterisk 所需的系统库</li>
+<li>根据系统类型生成特定的 Makefile 和配置选项</li>
+<li>自动启用或禁用某些模块支持（如 libxml2、uuid、libssl、libedit）</li>
+<li>若缺少依赖项，configure 会中止并打印警告。</li>
+<li>成功完成后会输出如下标志信息（ASCII Art 与系统信息）：</li>
+</ul>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">configure</span><span class="o">:</span><span class="w"> </span><span class="n">OS</span> <span class="n">type</span>     : <span class="n">linux</span>-<span class="n">gnu</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">configure</span><span class="o">:</span><span class="w"> </span><span class="n">Host</span> <span class="n">CPU</span>    : <span class="n">x</span>86<span class="n">_</span>64
+</span></code></pre></div>
+<ul>
+<li>如果你多次运行 ./configure 可能遇到“缓存未更新”的问题，建议使用以下命令 <code>make distclean</code> 清除构建缓存：<ul>
+<li>清除 configure 缓存信息（如 config.cache）</li>
+<li>删除中间文件（如 Makefile, menuselect.makeopts）</li>
+<li>回退到源码初始状态</li>
+<li>此操作不会删除源码本身，适用于干净重配置。</li>
+</ul>
+</li>
+</ul>
+<p>This will run for a couple of minutes, and warn you of any missing system libraries or other dependencies. Unless you've installed all of the <a href="/Operation/System-Requirements">System Requirements</a> for your version of Asterisk, the <strong>configure</strong> script is likely to fail. If that happens, resolve the missing dependency manually, or use the <a href="#using-install_prereq">install_prereq</a> script to resolve all of the dependencies on your system.</p>
+<p>Once a dependency is resolved, run <strong>configure</strong> again to make sure the missing dependency is fixed.</p>
+<p>!!! tip **  If you have many missing dependencies, you may find yourself running **configure<br />
+    a lot. If that is the case, you'll do yourself a favour by checking the System Requirements or installing all dependencies via the <code>install_prereq</code> script.</p>
+<p>On this PageUpon successful completion of <strong>./configure</strong>, you should see a message that looks similar to the one shown below. (Obviously, your host CPU type may be different than the below.)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>configure: Package configured for:&amp;nbsp;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>configure: OS type &amp;nbsp;: linux-gnu
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>configure: Host CPU : x86_64
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>configure: build-cpu:vendor:os: x86_64 : unknown : linux-gnu :
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>configure: host-cpu:vendor:os: x86_64 : unknown : linux-gnu :
+</span></code></pre></div>
+<h5 id="2-install_prereq">2. 使用 install_prereq 自动安装依赖<a class="headerlink" href="#2-install_prereq" title="Permanent link">&para;</a></h5>
+<p>install_prereq 脚本位于源码目录下的 contrib/scripts/ 中，是官方提供的自动化依赖安装脚本。The <strong>install_prereq</strong> script is included with every release of Asterisk in the <code>contrib/scripts</code> subdirectory. The script has the following options:</p>
+<ul>
+<li><strong>test</strong> - print only the libraries to be installed.</li>
+<li><strong>install</strong> - install package dependencies only. Depending on your distribution of Linux, version of Asterisk, and capabilities you wish to use, this may be sufficient.</li>
+<li><strong>install-unpackaged</strong> - install dependencies that don't have packages but only have tarballs. You may need these dependencies for certain capabilities in Asterisk.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">使用 install_prereq 前，务必更新系统包索引，避免依赖冲突或系统组件被误删</p>
+<p>You should always use your operating system's package management tools to ensure that your system is running the latest software <strong>before</strong> running <code>install_prereq</code>.</p>
+</div>
+<div class="language-bash highlight"><span class="filename">安装脚本</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">cd</span><span class="w"> </span>contrib/scripts
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>./install_prereq<span class="w"> </span>install
+</span></code></pre></div>
+<p>脚本参数说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">作用</th>
+<th style="text-align: left;">适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">test</td>
+<td style="text-align: left;">显示将安装的库，不实际安装</td>
+<td style="text-align: left;">适合预览影响</td>
+</tr>
+<tr>
+<td style="text-align: left;">install</td>
+<td style="text-align: left;">使用系统包管理器安装依赖项</td>
+<td style="text-align: left;">推荐使用</td>
+</tr>
+<tr>
+<td style="text-align: left;">install-unpackaged</td>
+<td style="text-align: left;">安装源码依赖（如部分 codec 库）</td>
+<td style="text-align: left;">使用特定模块时</td>
+</tr>
+</tbody>
+</table>
+<p><strong>检查是否成功</strong></p>
+<p>确认依赖后，再次执行： <code>./configure</code> 如未提示错误，即表示可以进入下一阶段（menuselect 选择模块）。</p>
+<h5 id="3_1">3. 小结<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">命令</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">进入源码目录</td>
+<td style="text-align: left;">cd /usr/local/src/asterisk-22.X.Y</td>
+<td style="text-align: left;">替换为你的版本号</td>
+</tr>
+<tr>
+<td style="text-align: left;">清理缓存（可选）</td>
+<td style="text-align: left;">make distclean</td>
+<td style="text-align: left;">如果需要重新配置</td>
+</tr>
+<tr>
+<td style="text-align: left;">自动安装依赖</td>
+<td style="text-align: left;">cd contrib/scripts &amp;&amp; ./install_prereq install</td>
+<td style="text-align: left;">推荐初学者使用</td>
+</tr>
+<tr>
+<td style="text-align: left;">运行配置脚本</td>
+<td style="text-align: left;">./configure</td>
+<td style="text-align: left;">自动生成 Makefile 等构建系统</td>
+</tr>
+<tr>
+<td style="text-align: left;">检查缺失</td>
+<td style="text-align: left;">依赖提示后用 apt 安装</td>
+<td style="text-align: left;">Debian 系统一般包名一致</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-using-menuselect-to-select-asterisk-options">3. Using Menuselect to Select Asterisk Options（功能组件选择器）<a class="headerlink" href="#3-using-menuselect-to-select-asterisk-options" title="Permanent link">&para;</a></h3>
+<h4 id="1-menuselect">1. 什么是 Menuselect？<a class="headerlink" href="#1-menuselect" title="Permanent link">&para;</a></h4>
+<p>menuselect 是 Asterisk 源码编译阶段的模块配置系统，它控制：</p>
+<ul>
+<li>哪些模块将被编译（如 app_dial, chan_sip, res_musiconhold）</li>
+<li>编译行为的可选特性（如是否启用调试、是否嵌入模块）</li>
+<li>支持哪些语音格式（如 GSM、WAV）</li>
+<li>使用何种声音文件包（如核心提示音、等待音乐）</li>
+</ul>
+<p><strong>这是构建“定制化 Asterisk”的关键步骤 —— 你可以裁剪未使用的模块，提高运行效率与安全性。</strong></p>
+<p>The next step in the build process is to tell Asterisk which modules to compile and install, as well as set various compiler options. These settings are all controlled via a menu-driven system called <strong>Menuselect</strong>. To access the Menuselect system, type:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make<span class="w"> </span>menuselect
+</span></code></pre></div>
+<p>界面说明：</p>
+<ul>
+<li>左侧：模块类别（如 Applications, Channel Drivers）</li>
+<li>右侧：模块列表，支持按需启用/禁用</li>
+<li>[ * ]：已选模块</li>
+<li>[XXX]：不可编译，缺少依赖（查看下方 Depends upon: 提示）</li>
+<li>Tab：切换区域</li>
+<li>Enter：选中或取消模块</li>
+<li>F12 或选择 Save and Exit：保存并退出</li>
+</ul>
+<p>The <strong>Menuselect</strong> menu should look like the screen-shot below. On the left-hand side, you have a list of categories, such as <strong>Applications</strong>, <strong>Channel</strong> <strong>Drivers</strong>, and <strong>PBX</strong> <strong>Modules</strong>. On the right-hand side, you'll see a list of modules that correspond with the select category. At the bottom of the screen you'll see two buttons. You can use the <strong><kbd>Tab</kbd></strong> key to cycle between the various sections, and press the <strong><kbd>Enter</kbd></strong> key to select or unselect a particular module. If you see <strong>[*]</strong> next to a module name, it signifies that the module has been selected. If you see <strong>*XXX</strong> next to a module name, it signifies that the select module cannot be built, as one of its dependencies is missing. In that case, you can look at the bottom of the screen for the line labeled <strong>Depends</strong> <strong>upon</strong>: for a description of the missing dependency.</p>
+<p><img alt="" src="../assets/2025-05-20-15-07-39.png" /></p>
+<p>When you're first learning your way around Asterisk on a test system, you'll probably want to stick with the default settings in <strong>Menuselect</strong>. If you're building a production system, however, you may not wish to build all of the various modules, and instead only build the modules that your system is using.</p>
+<p>When you are finished selecting the modules and options you'd like in <strong>Menuselect</strong>, press <strong><kbd>F12</kbd></strong> to save and exit, or highlight the <strong>Save</strong> <strong>and</strong> <strong>Exit</strong> button and press enter.</p>
+<p><img alt="" src="../assets/2025-05-20-15-09-09.png" /></p>
+<h4 id="2-support-levels">2. 模块支持级别（Support Levels）<a class="headerlink" href="#2-support-levels" title="Permanent link">&para;</a></h4>
+<p><strong>Menuselect</strong> will also show the support level for a selected module or build option. The support level will always be one of <code>core</code>, <code>extended</code>, or <code>deprecated</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">支持级别</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">core</td>
+<td style="text-align: left;">官方核心支持，长期维护</td>
+</tr>
+<tr>
+<td style="text-align: left;">extended</td>
+<td style="text-align: left;">扩展模块，由社区或 Sangoma 支持</td>
+</tr>
+<tr>
+<td style="text-align: left;">deprecated</td>
+<td style="text-align: left;">废弃模块，未来将被移除，慎用</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-menuselect">3. Menuselect 模块类别一览<a class="headerlink" href="#3-menuselect" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类别</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Add-ons</td>
+<td style="text-align: left;">含特殊授权模块（非 GPLv2 兼容）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">呼叫控制逻辑（如 app_dial, app_playback）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bridging Modules</td>
+<td style="text-align: left;">媒体桥接方式（如 bridge_softmix）</td>
+</tr>
+<tr>
+<td style="text-align: left;">CDR / CEL</td>
+<td style="text-align: left;">呼叫记录驱动（数据库对接）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Channel Drivers</td>
+<td style="text-align: left;">协议模块（如 chan_pjsip, chan_iax2）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Codecs</td>
+<td style="text-align: left;">音频/视频编解码（如 G.729, Opus）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Format Interpreters</td>
+<td style="text-align: left;">媒体文件格式支持（如 WAV, GSM）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dialplan Functions</td>
+<td style="text-align: left;">拨号计划函数（如 SET, CALLERID）</td>
+</tr>
+<tr>
+<td style="text-align: left;">PBX Modules</td>
+<td style="text-align: left;">Dialplan 路由逻辑核心</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resource Modules</td>
+<td style="text-align: left;">工具性资源（如 res_musiconhold, res_odbc）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Compiler Flags - Development</td>
+<td style="text-align: left;">编译调试选项（建议开发环境开启）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Voicemail Build Options</td>
+<td style="text-align: left;">语音信箱存储方式（如 ODBC, IMAP）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Utilities / AGI Samples / Module Embedding</td>
+<td style="text-align: left;">工具与样例</td>
+</tr>
+<tr>
+<td style="text-align: left;">Core/Extras Sound Packages</td>
+<td style="text-align: left;">核心提示音、附加语音文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">Music On Hold File Packages</td>
+<td style="text-align: left;">等待音乐素材</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-menuselect">4. 命令行控制 Menuselect（推荐用于自动化编译）<a class="headerlink" href="#4-menuselect" title="Permanent link">&para;</a></h4>
+<p>生成配置文件。Options in  <strong>Menuselect</strong> can be controlled from the command line. <strong>Menuselect</strong> can be built without invoking the user interface via the <code>menuselect.makeopts</code> target,此命令会生成 menuselect.makeopts 文件，记录所有选项。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>make<span class="w"> </span>menuselect.makeopts
+</span></code></pre></div>
+<p>查看帮助：Available options can be viewed using the <code>--help</code> command line parameter:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>menuselect/menuselect --help
+</span></code></pre></div>
+<p>Some of the more common options are shown below.</p>
+<p>!!! tip Menuselect Output**  Asterisk expects all <strong>Menuselect</strong> options to be written to the <strong>menuselect.makeopts</strong> file. When enabling/disabling **Menuselect<br />
+    options via the command line, your output should typically be to that file.</p>
+<p>查看所有可选项：</p>
+<p>To list all options in <strong>Menuselect</strong>, use the <code>--list-options</code> command line parameter:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>menuselect/menuselect --list-options
+</span></code></pre></div>
+<p>查看类别,输出所有类别名（例如 MENUSELECT_APPS、MENUSELECT_CODECS）： To list only the categories, use the <code>--category-list</code> command line parameter:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>menuselect/menuselect --category-list
+</span></code></pre></div>
+<p>To list the options in a category, use the <code>--list-category</code> command line parameter:</p>
+<div class="language-bash highlight"><span class="filename">查看特定类别中的模块</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>menuselect/menuselect<span class="w"> </span>--list-category<span class="w"> </span>MENUSELECT_OPTS_app_voicemail
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>+<span class="w"> </span>FILE_STORAGE
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>-<span class="w"> </span>ODBC_STORAGE
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>-<span class="w"> </span>IMAP_STORAGE
+</span></code></pre></div>
+<ul>
+<li>表示已启用，- 表示禁用</li>
+</ul>
+<p>To enable an option in Menuselect, use the <code>--enable</code> command line parameter:</p>
+<div class="language-bash highlight"><span class="filename">启用单个模块</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>menuselect/menuselect<span class="w"> </span>--enable<span class="w"> </span>IMAP_STORAGE<span class="w"> </span>menuselect.makeopts
+</span></code></pre></div>
+<p>To disable an option in <strong>Menuselect</strong>, use the <code>--disable</code> command line parameter:</p>
+<p>```bash title-="禁用模块"<br />
+menuselect/menuselect --disable app_voicemail menuselect.makeopts<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>An entire category can be enabled in **Menuselect** using the `--enable-category` command line parameter:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>```bash title=&quot;启用整个类别&quot;
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>menuselect/menuselect --enable-category MENUSELECT_CODECS menuselect.makeopts
+</span></code></pre></div></p>
+<p><strong>实战建议（基于生产经验）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">推荐设置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">轻量 SIP 网关</td>
+<td style="text-align: left;">仅启用 chan_pjsip, app_dial, res_rtp_asterisk, format_wav，禁用所有 chan_sip、DAHDI 模块</td>
+</tr>
+<tr>
+<td style="text-align: left;">呼叫中心系统</td>
+<td style="text-align: left;">启用 app_queue, res_agi, cdr_odbc, func_callerid, 所有 core sounds, MOH</td>
+</tr>
+<tr>
+<td style="text-align: left;">调试或开发环境</td>
+<td style="text-align: left;">启用 Compiler Flags - Development &gt; DONT_OPTIMIZE, DEBUG_THREADS, DEBUG_CHANNEL_LOCKS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-building-and-installing-asterisk">4. Building and Installing Asterisk（核心编译与安装）<a class="headerlink" href="#4-building-and-installing-asterisk" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. 标准编译流程<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<h5 id="_2">第一步：编译源码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>Now we can compile and install Asterisk. To compile Asterisk, simply type make at the Linux command line.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>make
+</span></code></pre></div>
+<p>该命令将基于 configure 和 menuselect 所生成的配置文件：</p>
+<ul>
+<li>编译核心模块与所选组件</li>
+<li>生成 Asterisk 可执行程序及其共享库</li>
+<li>时间通常在几分钟至十几分钟之间（视硬件性能）</li>
+</ul>
+<p>The compiling step will take several minutes, and you'll see the various file names scroll by as they are being compiled. Once Asterisk has finished compiling, you'll see a message that looks like:</p>
+<div class="language-diff highlight"><span class="filename">编译完成后终端输出</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="gi">+--------- Asterisk Build Complete ---------+</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="gi">+ Asterisk has successfully been built, and +</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="gi">+ can be installed by running: +</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="gi">+ +</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="gi">+ make install +</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="gi">+-------------------------------------------+</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="gi">+--------- Asterisk Build Complete ---------+</span>
+</span></code></pre></div>
+<h5 id="_3">第二步：安装构建产物<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>On this PageAs the message above suggests, our next step is to install the compiled Asterisk program and modules. To do this, use the <strong>make</strong> <strong>install</strong> command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>此步骤执行以下操作：</p>
+<ul>
+<li>安装二进制程序（/usr/sbin/asterisk）</li>
+<li>安装动态模块（/usr/lib/asterisk/modules/）</li>
+<li>安装头文件（供后续开发）</li>
+<li>创建运行目录（如 /var/run/asterisk）</li>
+</ul>
+<p>When finished, Asterisk will display the following warning:</p>
+<div class="language-diff highlight"><span class="filename">安装完成后会提示</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="gi">+---- Asterisk Installation Complete -------+</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="gi">+ +</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="gi">+ YOU MUST READ THE SECURITY DOCUMENT +</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="gi">+ +</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="gi">+ Asterisk has successfully been installed. +</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="gi">+ If you would like to install the sample +</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="gi">+ configuration files (overwriting any +</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="gi">+ existing config files), run: +</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="gi">+ +</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="gi">+ make samples + # 安装示例配置文件  </span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="gi">+ +</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="gi">+-------------------------------------------+</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="gi">+---- Asterisk Installation Complete -------+</span>
+</span></code></pre></div>
+<div class="admonition warning security precautions">
+<p class="admonition-title">Warning</p>
+<p>As the message above suggests, we very strongly recommend that you read the security documentation before continuing with your Asterisk installation. Failure to read and follow the security documentation can leave your system vulnerable to a number of security issues, including toll fraud. 请务必阅读 Asterisk 的安全文档，配置访问控制（如 AMI 权限、ACL、密码强度），否则将面临恶意呼叫（Toll Fraud）风险。</p>
+</div>
+<h4 id="2-advanced-build-options">2. 高级构建与安装选项（Advanced Build Options）<a class="headerlink" href="#2-advanced-build-options" title="Permanent link">&para;</a></h4>
+<h5 id="1_1">1. 自定义编译参数<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
+<p>In some environments, it may be necessary or useful to modify parts of the build or installation process. Some common scenarios are listed here</p>
+<h5 id="1_2">1 自定义编译参数<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h5>
+<p>Specific flags can be passed to <code>gcc</code> when Asterisk is configured, using the <code>CFLAGS</code> and <code>LDFLAGS</code> environment variables。使用 CFLAGS / LDFLAGS 传递给 gcc 编译器，例如添加 -pg 以便使用 gprof 做性能分析：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>./configure<span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span>-pg<span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span>-pg
+</span></code></pre></div>
+<h5 id="2_1">2 启用详细编译信息（调试用）<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h5>
+<p>To see all of the flags passed to gcc, build using the <code>NOISY_BUILD</code> setting set to <code>YES</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>make<span class="w"> </span><span class="nv">NOISY_BUILD</span><span class="o">=</span>yes
+</span></code></pre></div>
+<h5 id="3-cpu-building-for-non-native-architectures">3 禁用原生 CPU 优化 Building for non-native architectures<a class="headerlink" href="#3-cpu-building-for-non-native-architectures" title="Permanent link">&para;</a></h5>
+<p>Generally, Asterisk attempts to optimize itself for the machine on which it is built on. On some virtual machines with virtual CPU architectures, the defaults chosen by Asterisk's compilation options will cause Asterisk to build but fail to run. To disable native architecture support, disable the <code>BUILD_NATIVE</code> option in menuselect。某些虚拟机环境下（如非 x86_64 或 CPU 识别错误），BUILD_NATIVE 可能导致构建后无法运行：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>menuselect/menuselect<span class="w"> </span>--disable<span class="w"> </span>BUILD_NATIVE<span class="w"> </span>menuselect.makeopts
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>make
+</span></code></pre></div>
+<h5 id="4-installing-to-a-custom-directory">4 安装到自定义目录  Installing to a custom directory<a class="headerlink" href="#4-installing-to-a-custom-directory" title="Permanent link">&para;</a></h5>
+<p>While there are multiple ways to sandbox an instance of Asterisk, the preferred mechanism is to use the <code>--prefix</code> option with the <code>configure</code> script。通过 --prefix 参数指定安装路径（例如沙箱部署或打包环境）：</p>
+<div class="language-bash highlight"><span class="filename">默认路径为 /usr/local</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>./configure<span class="w"> </span>--prefix<span class="o">=</span>/opt/asterisk-22
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>make
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>Note that the default value for <code>prefix</code> is <code>/usr/local</code>.</p>
+<h4 id="3-make-targets">3. 常用 Make Targets 汇总<a class="headerlink" href="#3-make-targets" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">命令</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">make / make all</td>
+<td style="text-align: left;">编译所有已启用模块（默认）</td>
+</tr>
+<tr>
+<td style="text-align: left;">make full</td>
+<td style="text-align: left;">编译并生成开发文档（需 Python）</td>
+</tr>
+<tr>
+<td style="text-align: left;">make install</td>
+<td style="text-align: left;">安装 Asterisk</td>
+</tr>
+<tr>
+<td style="text-align: left;">make samples</td>
+<td style="text-align: left;">安装官方示例配置（覆盖现有 .conf）</td>
+</tr>
+<tr>
+<td style="text-align: left;">make config</td>
+<td style="text-align: left;">安装初始化脚本（如 systemd / init.d）</td>
+</tr>
+<tr>
+<td style="text-align: left;">make clean</td>
+<td style="text-align: left;">删除中间文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">make dist-clean</td>
+<td style="text-align: left;">删除所有构建与配置文件（推荐 clean 编译）</td>
+</tr>
+<tr>
+<td style="text-align: left;">make uninstall</td>
+<td style="text-align: left;">卸载 Asterisk 二进制与模块文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">make uninstall-all</td>
+<td style="text-align: left;">卸载所有内容，包括配置文件、日志等</td>
+</tr>
+<tr>
+<td style="text-align: left;">make progdocs</td>
+<td style="text-align: left;">用 Doxygen 生成 HTML API 文档（位于 doc/）</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注意事项</p>
+<p><code>uninstall-all</code> build target will remove all Asterisk configuration from your system.<br />
+Do not execute <code>uninstall-all</code> unless you are sure that is what you want to do.<br />
+make uninstall-all 是彻底清除，包括 /etc/asterisk 中的配置文件。执行前请确认！<br />
+安全文档必须阅读：尤其是 AMI (manager.conf)、外部接口（如 PJSIP）等。<br />
+不要直接在生产服务器上用 make samples，它会覆盖现有配置。</p>
+</div>
+<h4 id="4_1">4. 建议的构建流程（适用于生产部署）<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/local/src/asterisk-22.X.Y
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr/local/asterisk-22
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>make<span class="w"> </span>menuselect<span class="w">      </span><span class="c1"># 启用需要的模块</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>make
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>make<span class="w"> </span>install
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>make<span class="w"> </span>config
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>make<span class="w"> </span>samples<span class="w">          </span><span class="c1"># 新环境可用，谨慎执行</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>make<span class="w"> </span>progdocs<span class="w">         </span><span class="c1"># 生成开发文档</span>
+</span></code></pre></div>
+<h3 id="5-installing-sample-files">5. Installing Sample Files（安装示例配置）<a class="headerlink" href="#5-installing-sample-files" title="Permanent link">&para;</a></h3>
+<h4 id="1_3">1. 概述：安装配置示例文件<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
+<p>!!! warning Asterisk Sample Configs: not a sample PBX configuration<br />
+    For many of the sample configuration files that <strong>make samples</strong> installs, the configuration contains more than just an example configuration. The sample configuration files historically were used predominately for documentation of available options. As such, they contain many examples of configuring Asterisk that may not be ideal for standard deployments.</p>
+<div class="language-text highlight"><pre><span></span><code>While installing the sample configuration files may be a good starting point for some people, they should not be viewed as recommended configuration for an Asterisk system.
+</code></pre></div>
+<p>Asterisk 提供了一套完整的示例配置文件（*.conf），用于帮助用户了解：</p>
+<ul>
+<li>每个模块的配置语法</li>
+<li>配置项的可用选项与说明</li>
+<li>功能模块之间的协作方式（如 PJSIP ↔ Dialplan ↔ Voicemail）</li>
+</ul>
+<p>To install a set of sample configuration files for Asterisk, type:</p>
+<div class="language-bash highlight"><span class="filename">安装命令</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>make<span class="w"> </span>samples
+</span></code></pre></div>
+<p>执行该命令后：</p>
+<ul>
+<li>默认将所有官方维护的 .conf 示例复制到 /etc/asterisk/</li>
+<li>若已有配置文件存在（如 extensions.conf），系统会先将其重命名为 .old 后缀（保留旧版本）</li>
+</ul>
+<p>Any existing sample files which have been modified will be given a <strong>.old</strong> file extension. For example, if you had an existing file named <strong>extensions.conf</strong>, it would be renamed to <strong>extensions.conf.old</strong> and the sample dialplan would be installed as <strong>extensions.conf</strong>.</p>
+<p>警告：这些不是“建议配置”！<br />
+官方特别强调：</p>
+<ul>
+<li>示例配置文件并非设计用于直接部署在生产系统中！</li>
+</ul>
+<p>原因如下：</p>
+<ul>
+<li>大量注释与历史内容：示例文件本质上是文档，不是最小化的部署模板</li>
+<li>启用了非必要模块：默认启用 SIP、IAX、Voicemail 等所有子系统</li>
+<li>未做任何安全防护：如未配置用户认证、访问控制、加密传输等</li>
+<li>默认端口、匿名访问开启：极易被扫描工具或 SIP 攻击者利用</li>
+</ul>
+<h4 id="2_2">2. 正确使用建议<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">是否建议使用 make samples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">新手学习</td>
+<td style="text-align: left;">✅ 建议，便于阅读配置逻辑</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试系统构建</td>
+<td style="text-align: left;">✅ 可用于构建功能最全的学习环境</td>
+</tr>
+<tr>
+<td style="text-align: left;">生产环境初始化</td>
+<td style="text-align: left;">❌ 禁止直接使用（可能引入安全风险）</td>
+</tr>
+<tr>
+<td style="text-align: left;">自定义模板开发</td>
+<td style="text-align: left;">✅ 建议参考后精简</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3_2">3. 示例配置文件结构概览<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">配置文件</th>
+<th style="text-align: left;">用途说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">sip.conf / pjsip.conf</td>
+<td style="text-align: left;">配置 SIP UA、端口、认证、传输方式等</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions.conf</td>
+<td style="text-align: left;">拨号计划核心逻辑（Dialplan）</td>
+</tr>
+<tr>
+<td style="text-align: left;">voicemail.conf</td>
+<td style="text-align: left;">配置语音信箱账户、密码、通知等</td>
+</tr>
+<tr>
+<td style="text-align: left;">features.conf</td>
+<td style="text-align: left;">启用 DTMF 功能（如转接、监听）</td>
+</tr>
+<tr>
+<td style="text-align: left;">modules.conf</td>
+<td style="text-align: left;">控制模块加载（可禁用未用模块）</td>
+</tr>
+<tr>
+<td style="text-align: left;">logger.conf</td>
+<td style="text-align: left;">配置日志输出格式与等级</td>
+</tr>
+<tr>
+<td style="text-align: left;">cdr.conf / cel.conf</td>
+<td style="text-align: left;">配置通话记录（如 CSV、ODBC 存储）</td>
+</tr>
+<tr>
+<td style="text-align: left;">musiconhold.conf</td>
+<td style="text-align: left;">设置等待音乐的播放列表与格式</td>
+</tr>
+<tr>
+<td style="text-align: left;">manager.conf</td>
+<td style="text-align: left;">启用 AMI（Asterisk Manager Interface）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-agiasterisk-gateway-interface">4. AGI（Asterisk Gateway Interface）接口调用 的核心配置文<a class="headerlink" href="#4-agiasterisk-gateway-interface" title="Permanent link">&para;</a></h4>
+<p>AGI 的调用本质上是 Dialplan 的一部分。你不会在独立的 .conf 文件中启用 AGI，而是在拨号计划中通过 AGI() 应用指令调用脚本，比如：</p>
+<div class="language-ini highlight"><span class="filename">extension.conf拨号计划文件调用AGI</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">[default]</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="na">exten</span><span class="w"> </span><span class="o">=</span><span class="s">&gt; 1001,1,Answer()</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w"> </span><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="s">&gt; n,AGI(hello.agi)</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w"> </span><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="s">&gt; n,Hangup()</span>
+</span></code></pre></div>
+<p>用法说明</p>
+<ul>
+<li>
+<p>AGI(script.agi)<br />
+执行 /var/lib/asterisk/agi-bin/script.agi</p>
+</li>
+<li>
+<p>EAGI(script.agi)<br />
+与 AGI 类似，但在调用脚本时将音频流重定向到 stdin，适合语音识别应用</p>
+</li>
+</ul>
+<p>你可以调用任意语言编写的 AGI 脚本（Perl、Python、PHP、C 等），只要它们符合 AGI 协议规范（通过标准输入输出与 Asterisk 通信）。</p>
+<p>相关的辅助配置（可选）: 虽然 extensions.conf 是主要入口，以下文件可能间接影响 AGI 调用：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">文件</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">res_agi.so</td>
+<td style="text-align: left;">动态模块，提供 AGI 功能支持（需加载）</td>
+</tr>
+<tr>
+<td style="text-align: left;">modules.conf</td>
+<td style="text-align: left;">控制模块是否自动加载。确保未禁用 res_agi</td>
+</tr>
+<tr>
+<td style="text-align: left;">logger.conf</td>
+<td style="text-align: left;">用于记录 AGI 调用日志（特别是调试阶段）</td>
+</tr>
+<tr>
+<td style="text-align: left;">agi.conf</td>
+<td style="text-align: left;">已废弃或极少使用，仅用于某些历史 AGI 配置，通常不必修改</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-installing-initialization-scripts">6. Installing Initialization Scripts（服务启动脚本）<a class="headerlink" href="#6-installing-initialization-scripts" title="Permanent link">&para;</a></h3>
+<h4 id="1-initscript">1. 初始化脚本（Initscript）的作用<a class="headerlink" href="#1-initscript" title="Permanent link">&para;</a></h4>
+<p>Asterisk 默认构建不会自动安装为系统服务。为了让它具备以下功能：</p>
+<ul>
+<li>系统启动时自动运行 Asterisk</li>
+<li>使用 systemctl 或 service 管理启动/停止</li>
+<li>监控 Asterisk 守护进程状态</li>
+<li>统一使用 Linux 的服务管理接口</li>
+</ul>
+<p>Now that you have Asterisk compiled and installed, the last step is to install the initialization script, or <code>initscript</code>. This script starts Asterisk when your server starts, will monitor the Asterisk process in case anything <em>bad</em> happens to it, and can be used to stop or restart Asterisk as well. To install the <code>initscript</code>, use the <strong>make</strong> <strong>config</strong> command.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>make config
+</span></code></pre></div>
+<p>此操作将：<br />
+在基于 Systemd 的系统中（如 Debian 10+）安装：<code>/lib/systemd/system/asterisk.service</code></p>
+<p>验证 systemd 服务是否安装成功：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>systemctl<span class="w"> </span>daemon-reexec
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>asterisk
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>systemctl<span class="w"> </span>start<span class="w"> </span>asterisk
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>systemctl<span class="w"> </span>status<span class="w"> </span>asterisk
+</span></code></pre></div>
+<h4 id="2-logrotate">2. 日志轮转机制（logrotate）<a class="headerlink" href="#2-logrotate" title="Permanent link">&para;</a></h4>
+<p>As your Asterisk system runs, it will generate logfiles. It is recommended to install the <code>logrotation</code> script in order to compress and rotate those files, to save disk space and to make searching them or cataloguing them easier. To do this, use the <strong>make install-logrotate</strong> command.</p>
+<p>Asterisk 运行期间会产生大量日志（默认位于 /var/log/asterisk/），包括：</p>
+<ul>
+<li>full：全量日志</li>
+<li>messages：标准输出信息</li>
+<li>event_log：事件日志（如 AMI）</li>
+</ul>
+<p>为了节省磁盘空间、防止日志爆炸式增长，Asterisk 提供标准 logrotate 脚本：</p>
+<div class="language-bash highlight"><span class="filename">安装命令</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>make<span class="w"> </span>install-logrotate
+</span></code></pre></div>
+<p>该命令将：</p>
+<ul>
+<li>安装 /etc/logrotate.d/asterisk</li>
+<li>设置日志轮转规则：按天/周/月压缩归档，保留若干周期</li>
+</ul>
+<p>可执行以下命令测试： <code>logrotate -d /etc/logrotate.d/asterisk</code></p>
+<div class="language-text highlight"><span class="filename">示例轮转策略内容</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/var/log/asterisk/messages /var/log/asterisk/*log {
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    missingok
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    rotate 7  ;保留 7 个周期（7 天）
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    daily
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    compress  ;压缩旧日志为 .gz
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    notifempty
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>    create 0640 asterisk asterisk
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    sharedscripts
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>    postrotate  ;日志轮转后，通知 Asterisk 重新加载日志模块
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>        /usr/sbin/asterisk -rx &#39;logger reload&#39; &gt; /dev/null 2&gt; /dev/null || true
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>    endscript
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>}
+</span></code></pre></div>
+<h4 id="3_3">3. 权限与安全建议<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h4>
+<p>确保 asterisk 进程以非 root 用户运行：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nv">User</span><span class="o">=</span>asterisk
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nv">Group</span><span class="o">=</span>asterisk
+</span></code></pre></div>
+<ul>
+<li>检查 /etc/systemd/system/asterisk.service.d/ 是否存在覆写配置，可用于指定运行用户、日志路径等</li>
+<li>使用 journalctl -u asterisk 调试服务状态</li>
+<li>推荐禁用自动登录 Asterisk CLI（生产环境中应强认证）</li>
+</ul>
+<h4 id="4_2">4. 小结<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">操作</th>
+<th style="text-align: left;">命令</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">安装 systemd 启动脚本</td>
+<td style="text-align: left;">make config</td>
+<td style="text-align: left;">创建 asterisk.service</td>
+</tr>
+<tr>
+<td style="text-align: left;">启用开机自启动</td>
+<td style="text-align: left;">systemctl enable asterisk</td>
+<td style="text-align: left;">配合 systemd 使用</td>
+</tr>
+<tr>
+<td style="text-align: left;">启动服务</td>
+<td style="text-align: left;">systemctl start asterisk</td>
+<td style="text-align: left;">启动守护进程</td>
+</tr>
+<tr>
+<td style="text-align: left;">安装日志轮转脚本</td>
+<td style="text-align: left;">make install-logrotate</td>
+<td style="text-align: left;">自动维护日志文件大小与数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试轮转脚本</td>
+<td style="text-align: left;">logrotate -d /etc/logrotate.d/asterisk</td>
+<td style="text-align: left;">检查配置正确性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-validating-your-installation">7. Validating Your Installation（验证安装）<a class="headerlink" href="#7-validating-your-installation" title="Permanent link">&para;</a></h3>
+<p>确保 Asterisk 已安装为系统服务（参见前节 make config）。</p>
+<p>To check if Asterisk is running, you can use the Asterisk <code>initscript</code>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>asterisk<span class="w">  </span><span class="p">;</span>检查服务状态
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>/etc/init.d/asterisk<span class="w"> </span>status<span class="w"> </span><span class="p">;</span>或（传统方式）
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>asterisk<span class="w"> </span><span class="o">(</span>pid<span class="w"> </span><span class="m">32117</span><span class="o">)</span><span class="w"> </span>is<span class="w"> </span>running...<span class="w"> </span><span class="p">;</span>输出示例,表示<span class="w"> </span>Asterisk<span class="w"> </span>守护进程已成功启动。
+</span></code></pre></div>
+<p>To start Asterisk, we'll use the <code>initscript</code> again, this time giving it the start action:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>systemctl<span class="w"> </span>start<span class="w"> </span>asterisk
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>/etc/init.d/asterisk<span class="w"> </span>start<span class="w"> </span><span class="p">;</span>或（传统方式）
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>Starting<span class="w"> </span>asterisk:
+</span></code></pre></div>
+<p>When Asterisk starts, it runs as a background service (or daemon), so you typically won't see any response on the command line. We can check the status of Asterisk and see that it's running using the command below. (The process identifier, or pid, will obviously be different on your system.)启动后并不会输出日志到终端 —— 它会在后台以 daemon 模式运行。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>/etc/init.d/asterisk<span class="w"> </span>status
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>asterisk<span class="w"> </span><span class="o">(</span>pid<span class="w"> </span><span class="m">32117</span><span class="o">)</span><span class="w"> </span>is<span class="w"> </span>running...
+</span></code></pre></div>
+<p>And there you have it! You've compiled and installed Asteriske. 进入 CLI 界面验证模块加载：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>asterisk<span class="w"> </span>-rvvv
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>core<span class="w"> </span>show<span class="w"> </span>version
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>core<span class="w"> </span>show<span class="w"> </span>channels
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>module<span class="w"> </span>show
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>logger<span class="w"> </span>show<span class="w"> </span>channels
+</span></code></pre></div>
+<h3 id="8-exploring-sound-prompts">8. Exploring Sound Prompts（语音提示文件配置）<a class="headerlink" href="#8-exploring-sound-prompts" title="Permanent link">&para;</a></h3>
+<h4 id="1-asterisk">1. Asterisk 自带提示音包概述<a class="headerlink" href="#1-asterisk" title="Permanent link">&para;</a></h4>
+<p>Asterisk 内置了大量预录制的语音提示（prompts），用于提供用户交互提示，例如：</p>
+<ul>
+<li>“Please enter the extension of the person you are trying to reach.”</li>
+<li>“You have voicemail.”</li>
+<li>“The number you have dialed is not in service.”</li>
+</ul>
+<p>这些提示语涵盖：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">示例用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">功能提示</td>
+<td style="text-align: left;">IVR 菜单、转接引导、语音信箱</td>
+</tr>
+<tr>
+<td style="text-align: left;">状态说明</td>
+<td style="text-align: left;">通话失败、线路占用、系统错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">趣味提示</td>
+<td style="text-align: left;">彩蛋，如“weasels have eaten our phone system”（鼬鼠吃掉了电话系统）</td>
+</tr>
+</tbody>
+</table>
+<p>Asterisk comes with a wide variety of pre-recorded sound prompts. When you install Asterisk, you can choose to install both core and extra sound packages in several different file formats. Prompts are also available in several languages. To explore the sound files on your system, simply find the sounds directory (this will be  <em>/var/lib/asterisk/sounds*</em> on most systems) and look at the filenames. You'll find useful prompts ("Please enter the extension of the person you are looking for..."), as well as as a number of off-the-wall prompts (such as "Weasels have eaten our phone system", "The office has been overrun with iguanas", and "Try to spend your time on hold not thinking about a blue-eyed polar bear") as well.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sound Prompt Format语音提示格式</p>
+<p>Sound prompts come in a variety of file formats, such as <strong>.wav</strong> and <strong>.ulaw</strong> files. When asked to play a sound prompt from disk, Asterisk plays the sound prompt with the file format that can most easily be converted to the CODEC of the current call. For example, if the inbound call is using the <strong>alaw</strong> CODEC and the sound prompt is available in <strong>.gsm</strong> and <strong>.ulaw</strong> format, Asterisk will play the <strong>.ulaw</strong> file because it requires fewer CPU cycles to transcode to the <strong>alaw CODEC.<br />
+ You can type the command **core show translation</strong> at the Asterisk CLI to see the transcoding times for various CODECs. The times reported (in Asterisk 1.6.0 and later releases) are the number of microseconds it takes Asterisk to transcode one second worth of audio. These times are calculated when Asterisk loads the codec modules, and often vary slightly from machine to machine.  To perform a current calculation of translation times, you can type the command <strong>core show translation recalc 60</strong>.</p>
+</div>
+<h4 id="2_3">2. 提示音文件目录结构<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p>默认存储路径： <code>/var/lib/asterisk/sounds/</code></p>
+<p>目录结构如下：</p>
+<div class="language-r highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">sounds</span><span class="o">/</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>├──<span class="w"> </span><span class="n">en</span><span class="o">/</span><span class="w">                </span><span class="c1"># 英文提示（默认语言）</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="n">digits</span><span class="o">/</span><span class="w">        </span><span class="c1"># 数字读音</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="kc">letters</span><span class="o">/</span><span class="w">       </span><span class="c1"># 字母读音</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>│<span class="w">   </span>└──<span class="w"> </span><span class="n">voicemail</span><span class="o">/</span><span class="w">     </span><span class="c1"># 语音信箱提示</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>├──<span class="w"> </span><span class="n">zh</span><span class="o">/</span><span class="w">                </span><span class="c1"># 中文提示（如已安装）</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>│<span class="w">   </span>└──<span class="w"> </span><span class="n">digits</span><span class="o">/</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>├──<span class="w"> </span><span class="n">es</span><span class="o">/</span><span class="w">                </span><span class="c1"># 西班牙语提示</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>└──<span class="w"> </span><span class="n">custom</span><span class="o">/</span><span class="w">            </span><span class="c1"># 用户自定义提示</span>
+</span></code></pre></div>
+<p>你可以通过以下命令查看提示音文件：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>find<span class="w"> </span>/var/lib/asterisk/sounds<span class="w"> </span>-type<span class="w"> </span>f
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>file<span class="w"> </span>convert<span class="w"> </span>/var/lib/asterisk/sounds/en/tt-weasels.gsm<span class="w"> </span>/tmp/test.wav<span class="w"> </span><span class="p">;</span>或进入CLI
+</span></code></pre></div>
+<h4 id="3_4">3. 多种音频格式支持与选择原则<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h4>
+<p>Asterisk 支持多种音频文件格式（由所启用的格式模块决定）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">格式</th>
+<th style="text-align: left;">文件扩展名</th>
+<th style="text-align: left;">优点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">.ulaw / .alaw</td>
+<td style="text-align: left;">G.711</td>
+<td style="text-align: left;">不压缩，CPU 转码效率高</td>
+</tr>
+<tr>
+<td style="text-align: left;">.gsm</td>
+<td style="text-align: left;">GSM 06.10</td>
+<td style="text-align: left;">体积小，适合低带宽</td>
+</tr>
+<tr>
+<td style="text-align: left;">.wav</td>
+<td style="text-align: left;">PCM / RIFF</td>
+<td style="text-align: left;">通用兼容，较占空间</td>
+</tr>
+<tr>
+<td style="text-align: left;">.g722</td>
+<td style="text-align: left;">宽带语音</td>
+<td style="text-align: left;">更清晰（HD Voice）</td>
+</tr>
+<tr>
+<td style="text-align: left;">.slin</td>
+<td style="text-align: left;">原始 PCM</td>
+<td style="text-align: left;">性能极佳，无需转码</td>
+</tr>
+</tbody>
+</table>
+<p>播放选择逻辑<br />
+当 Asterisk 播放一个提示音时，它优先选择与通话 CODEC 最匹配的音频格式，以减少转码负担。</p>
+<p>示例：<br />
+通话使用 alaw 编解码，系统中存在以下格式的提示音：</p>
+<ul>
+<li>welcome.ulaw</li>
+<li>welcome.gsm</li>
+</ul>
+<p>Asterisk 会优先使用 .ulaw，因为从 ulaw → alaw 的转码开销远小于 gsm → alaw。</p>
+<h4 id="4-core-show-translation">4.  查看转码开销：core show translation<a class="headerlink" href="#4-core-show-translation" title="Permanent link">&para;</a></h4>
+<p>此命令在 Asterisk CLI 中显示不同 CODEC 转换的性能代价（单位为微秒/秒）：<code>core show translation</code></p>
+<p>输出示例：</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">        </span><span class="k">Translation</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="n">formats</span><span class="w"> </span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">microseconds</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="k">second</span><span class="p">)</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">           </span><span class="n">g723</span><span class="w">  </span><span class="n">g729</span><span class="w">  </span><span class="n">gsm</span><span class="w">  </span><span class="n">ulaw</span><span class="w">  </span><span class="n">alaw</span><span class="w">  </span><span class="n">g726</span><span class="w">  </span><span class="n">ilbc</span><span class="w">  </span><span class="n">slin</span><span class="w">  </span><span class="p">...</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="n">g723</span><span class="w">     </span><span class="o">-</span><span class="w">     </span><span class="o">-</span><span class="w">   </span><span class="mi">950</span><span class="w">   </span><span class="mi">320</span><span class="w">   </span><span class="mi">330</span><span class="w">   </span><span class="mi">500</span><span class="w">   </span><span class="mi">800</span><span class="w">   </span><span class="mi">150</span><span class="w">  </span><span class="p">...</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="n">g729</span><span class="w">     </span><span class="o">-</span><span class="w">     </span><span class="o">-</span><span class="w">   </span><span class="mi">980</span><span class="w">   </span><span class="mi">350</span><span class="w">   </span><span class="mi">340</span><span class="w">   </span><span class="mi">520</span><span class="w">   </span><span class="mi">820</span><span class="w">   </span><span class="mi">160</span><span class="w">  </span><span class="p">...</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">    </span><span class="n">gsm</span><span class="w">    </span><span class="mi">940</span><span class="w">   </span><span class="mi">960</span><span class="w">     </span><span class="o">-</span><span class="w">   </span><span class="mi">210</span><span class="w">   </span><span class="mi">200</span><span class="w">   </span><span class="mi">480</span><span class="w">   </span><span class="mi">760</span><span class="w">   </span><span class="mi">130</span><span class="w">  </span><span class="p">...</span>
+</span></code></pre></div>
+<ul>
+<li>越低越好</li>
+<li>转换成本高的组合可能造成延迟、语音质量下降</li>
+</ul>
+<h4 id="5-multilingual-prompts">5. 语言与国际化支持（Multilingual Prompts）<a class="headerlink" href="#5-multilingual-prompts" title="Permanent link">&para;</a></h4>
+<p>Asterisk 支持多语言提示语：</p>
+<ul>
+<li>安装音频包时，可选择语言（如英文 en、中文 zh）</li>
+<li>通过 Dialplan 设置语言环境：</li>
+</ul>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="na">exten</span><span class="w"> </span><span class="o">=</span><span class="s">&gt; 1001,1,Set(CHANNEL(language)=zh)</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w"> </span><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="s">&gt; n,Playback(digits/1)</span><span class="w">    </span><span class="c1">; 使用中文“1”</span>
+</span></code></pre></div>
+<p>多语言场景中推荐使用：</p>
+<ul>
+<li>Set(CHANNEL(language)=<lang>)</li>
+<li>Playback() / Background() 调用标准路径文件</li>
+<li>创建 /var/lib/asterisk/sounds/<lang>/custom/ 目录用于定制提示</li>
+</ul>
+<h4 id="6-makefile">6. 安装提示音包（Makefile 方式）<a class="headerlink" href="#6-makefile" title="Permanent link">&para;</a></h4>
+<p>你可在 menuselect 中选择提示音语言和格式：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>make<span class="w"> </span>menuselect
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>→<span class="w"> </span>Core<span class="w"> </span>Sound<span class="w"> </span>Packages
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>→<span class="w"> </span>Music<span class="w"> </span>On<span class="w"> </span>Hold<span class="w"> </span>File<span class="w"> </span>Packages
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>→<span class="w"> </span>Extra<span class="w"> </span>Sound<span class="w"> </span>Packages
+</span></code></pre></div>
+<p>构建完成后安装提示音文件：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>或手动下载安装：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/src/asterisk-22.X.Y
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>contrib/scripts/get_mp3_source.sh
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<h4 id="7">7. 小结<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">推荐音频格式</th>
+<th style="text-align: left;">CODEC 场景匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SIP 内部通话 (G.711)</td>
+<td style="text-align: left;">.ulaw / .alaw</td>
+<td style="text-align: left;">减少 CPU 转码</td>
+</tr>
+<tr>
+<td style="text-align: left;">低带宽跨网通话</td>
+<td style="text-align: left;">.gsm</td>
+<td style="text-align: left;">减少网络传输</td>
+</tr>
+<tr>
+<td style="text-align: left;">高保真录音</td>
+<td style="text-align: left;">.slin / .g722</td>
+<td style="text-align: left;">提升清晰度</td>
+</tr>
+<tr>
+<td style="text-align: left;">多语言 IVR</td>
+<td style="text-align: left;">CHANNEL(language) 设置 + 多语言包</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-hello-world">3. 建立第一个入门呼叫流程 Hello World<a class="headerlink" href="#3-hello-world" title="Permanent link">&para;</a></h2>
+<p>快速创建你的第一个 SIP 呼叫。You've just installed Asterisk and you have read about basic configuration. Now let's quickly get a phone call working so you can get a taste for a simple phone call to Asterisk.</p>
+<p>先决条件（环境要求） Requirements</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">要素</th>
+<th style="text-align: left;">要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">物理或软电话</td>
+<td style="text-align: left;">与 Asterisk 同局域网（推荐使用 Zoiper）</td>
+</tr>
+<tr>
+<td style="text-align: left;">SIP 驱动</td>
+<td style="text-align: left;">已启用 chan_sip 或 chan_pjsip（通过 make menuselect 配置）</td>
+</tr>
+<tr>
+<td style="text-align: left;">端口联通</td>
+<td style="text-align: left;">默认 SIP 端口（UDP 5060）在防火墙中已放通</td>
+</tr>
+<tr>
+<td style="text-align: left;">Asterisk 安装路径</td>
+<td style="text-align: left;">/etc/asterisk 存在配置文件，或已执行 make samples</td>
+</tr>
+</tbody>
+</table>
+<p>This tutorial assumes the following:</p>
+<ul>
+<li>You have a SIP phone plugged into the same LAN where the Asterisk server is plugged in, or can install the Zoiper softphone used in the example</li>
+<li>If you use your own hardware phone, we assume both the phone and Asterisk can reach each other and are on the same subnet.</li>
+<li>When you built Asterisk, you should have made sure to build the SIP channel driver you wanted to use, which may imply other requirements. For example if you want to use chan_pjsip, then make sure you followed the Installing pjproject guide.</li>
+</ul>
+<p>配置文件准备，确保以下文件存在并具备基础配置：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">配置文件</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">asterisk.conf</td>
+<td style="text-align: left;">主配置文件（可用默认）</td>
+</tr>
+<tr>
+<td style="text-align: left;">modules.conf</td>
+<td style="text-align: left;">模块加载控制（建议启用 autoload=yes）</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions.conf</td>
+<td style="text-align: left;">拨号计划（必配）</td>
+</tr>
+<tr>
+<td style="text-align: left;">sip.conf 或 pjsip.conf</td>
+<td style="text-align: left;">SIP 注册用户及传输层配置（必配其一）</td>
+</tr>
+</tbody>
+</table>
+<p>You should have already run "make samples" if you installed from source, otherwise you may have the sample config files if you installed from packages.</p>
+<p>If you have no configuration files in  <em>/etc/asterisk/*</em> then grab the sample config files from the source directory by navigating to it and running "make samples".</p>
+<p>Files needed for this example:</p>
+<ul>
+<li>asterisk.conf</li>
+<li>modules.conf</li>
+<li>extensions.conf</li>
+<li>sip.conf or pjsip.conf</li>
+</ul>
+<p>You can use the defaults for asterisk.conf and modules.conf, we'll only need to modify extensions.conf and sip.conf or pjsip.conf.</p>
+<p>To get started, go ahead and move to the /etc/asterisk/ directory where the files are located.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>cd /etc/asterisk
+</span></code></pre></div>
+<h3 id="1-extensionsconf">1. 配置拨号计划：extensions.conf<a class="headerlink" href="#1-extensionsconf" title="Permanent link">&para;</a></h3>
+<p>Backup the sample extensions.conf and create a new one 将原文件备份：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">cd</span><span class="w"> </span>/etc/asterisk
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>mv<span class="w"> </span>extensions.conf<span class="w"> </span>extensions.sample
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>vim<span class="w"> </span>extensions.conf
+</span></code></pre></div>
+<p>I'm assuming you use the VI/VIM editor here, after all, it is the best.</p>
+<p>We are going to use a very simple dialplan. A dialplan is simply instructions telling Asterisk what to do with a call.</p>
+<p>Edit your blank extensions.conf to reflect the following:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">[from-internal]</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="na">exten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100,1,Answer()</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">n,Wait(1)</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">n,Playback(hello-world)</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="na">same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">n,Hangup()</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">exten = 100,1,Answer()</td>
+<td style="text-align: left;">应答拨入的分机 100</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wait(1)</td>
+<td style="text-align: left;">等待 1 秒</td>
+</tr>
+<tr>
+<td style="text-align: left;">Playback(hello-world)</td>
+<td style="text-align: left;">播放语音提示 /var/lib/asterisk/sounds/en/hello-world.*</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hangup()</td>
+<td style="text-align: left;">挂断通话</td>
+</tr>
+</tbody>
+</table>
+<p>When a phone dials extension 100, we are telling Asterisk to <strong>Answer</strong> the call, <strong>Wait</strong> one second, then Play (<strong>Playback</strong>) a sound file (hello-world) to the channel and <strong>Hangup</strong>.</p>
+<h3 id="2-sip">2. 选择并配置 SIP 通道驱动<a class="headerlink" href="#2-sip" title="Permanent link">&para;</a></h3>
+<p>Depending on the version of Asterisk in use, you may have the option of more than one SIP channel driver. You'll have to pick one to use for the example.</p>
+<div class="admonition info">
+<p class="admonition-title">你必须二选一配置：chan_sip 或 chan_pjsip</p>
+<ul>
+<li>Asterisk 11 and previous: chan_sip is the primary option.</li>
+<li>Asterisk 12 and beyond: You'll probably want to use chan_pjsip (the newest driver), but you still have the option of using chan_sip as well</li>
+</ul>
+</div>
+<p>Follow the instructions below for the channel driver you chose.</p>
+<p><strong>配置 chan_pjsip（推荐）</strong></p>
+<p>Backup and edit a new blank <strong>pjsip.conf</strong>, just like you did with extensions.conf.</p>
+<p>Then add the following to your pjsip.conf file:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>mv<span class="w"> </span>pjsip.conf<span class="w"> </span>pjsip.sample
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>vim<span class="w"> </span>pjsip.conf
+</span></code></pre></div>
+<div class="language-ini highlight"><span class="filename">具体配置内容</span><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">[transport-udp]</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="na">type</span><span class="o">=</span><span class="s">transport</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="na">protocol</span><span class="o">=</span><span class="s">udp</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="na">bind</span><span class="o">=</span><span class="s">0.0.0.0</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="k">[6001]</span>
+</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="na">type</span><span class="o">=</span><span class="s">endpoint</span>
+</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="na">context</span><span class="o">=</span><span class="s">from-internal</span>
+</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a><span class="na">disallow</span><span class="o">=</span><span class="s">all</span>
+</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="na">allow</span><span class="o">=</span><span class="s">ulaw</span>
+</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="na">auth</span><span class="o">=</span><span class="s">6001</span>
+</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="na">aors</span><span class="o">=</span><span class="s">6001</span>
+</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a>
+</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a><span class="k">[6001]</span>
+</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a><span class="na">type</span><span class="o">=</span><span class="s">auth</span>
+</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a><span class="na">auth_type</span><span class="o">=</span><span class="s">userpass</span>
+</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a><span class="na">password</span><span class="o">=</span><span class="s">unsecurepassword</span>
+</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a><span class="na">username</span><span class="o">=</span><span class="s">6001</span>
+</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>
+</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a><span class="k">[6001]</span>
+</span><span id="__span-46-21"><a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a><span class="na">type</span><span class="o">=</span><span class="s">aor</span>
+</span><span id="__span-46-22"><a id="__codelineno-46-22" name="__codelineno-46-22" href="#__codelineno-46-22"></a><span class="na">max_contacts</span><span class="o">=</span><span class="s">1</span>
+</span></code></pre></div>
+<p>说明：</p>
+<ul>
+<li>endpoint 是具体通话终端配置</li>
+<li>auth 提供 SIP 用户认证信息</li>
+<li>aor（Address of Record）用于定义注册数量和寻址方式</li>
+<li>所有块名相同（[6001]）是为了关联相同实体（支持多块叠加）</li>
+</ul>
+<h3 id="3-sip-zoiper">3. 配置 SIP 软电话（Zoiper）<a class="headerlink" href="#3-sip-zoiper" title="Permanent link">&para;</a></h3>
+<ul>
+<li>安装 Zoiper</li>
+<li>添加 SIP 账户：</li>
+<li>用户名：6001<br />
+        - 密码：unsecurepassword<br />
+        - 域（Domain）：Asterisk 的 IP 地址</li>
+<li>点击 注册，状态应显示 “Registered”</li>
+</ul>
+<p>You can use any SIP phone you want of course, but for this demonstration we'll use Zoiper, a Softphone which just happens to be easily demonstrable.</p>
+<p>You can find the latest version of Zoiper for your platform <a href="http://www.zoiper.com/en/voip-softphone/download/zoiper3">at their website</a>. You can install it on the same system you are running Asterisk on, or it may make more sense to you if you install on another system on the same LAN (though you might find complication with software firewalls in that case).</p>
+<p>Once you have Zoiper installed. Configure a new SIP account in Zoiper.</p>
+<ol>
+<li>Once Zoiper is opened, click the wrench icon to get to settings.</li>
+<li>Click "Add new SIP account"</li>
+<li>Enter 6001 for the account name, click OK</li>
+<li>Enter the IP address of your Asterisk system in the <strong>Domain</strong> field</li>
+<li>Enter 6001 in the <strong>Username</strong> field</li>
+<li>Enter your SIP peer's password in the <strong>Password</strong> field</li>
+<li>Enter whatever you like in <strong>Caller ID Name</strong> or leave it blank</li>
+<li>Click OK</li>
+</ol>
+<p><img alt="" src="../assets/2025-05-21-11-55-02.png" /></p>
+<p>Your results should look like the above screen shot.</p>
+<h3 id="4-asterisk-cli">4. 启动 Asterisk 并连接 CLI<a class="headerlink" href="#4-asterisk-cli" title="Permanent link">&para;</a></h3>
+<p>Back at the Linux shell go ahead and start Asterisk. We'll start Asterisk with a control console (-c) and level 5 verbosity (vvvvv).启动 Asterisk（如果未运行）：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>asterisk<span class="w"> </span>-cvvvvv
+</span></code></pre></div>
+<p>Or if Asterisk is already running, restart Asterisk from the shell and connect to it.或重启服务并附加 CLI：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>asterisk<span class="w"> </span>-rx<span class="w"> </span><span class="s2">&quot;core restart now&quot;</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>asterisk<span class="w"> </span>-rvvvvv
+</span></code></pre></div>
+<h3 id="5_1">5. 发起呼叫测试<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在 Zoiper 中：<br />
+        - 拨打 100<br />
+        - 点击拨号</li>
+<li>正常结果：<br />
+        - Asterisk CLI 显示音频流建立<br />
+        - 播放 hello-world 语音提示<br />
+        - 通话自动挂断</li>
+</ul>
+<p>Go back to the main Zoiper interface, and make sure the account is registered. Select the account from the drop down list and click the <strong>Register</strong> button next to it. If it says registered, you are good to go. If it doesn't register, then double check your configuration.</p>
+<p>Once registered, enter extension 100 and click the Dial button. The call should be made and you should hear the sound file hello-world!</p>
+<p>On the Asterisk CLI, you should see something like:</p>
+<p><img alt="" src="../assets/2025-05-21-11-57-16.png" /></p>
+<h3 id="6">6. 小结<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">编辑 extensions.conf</td>
+<td style="text-align: left;">设置拨号逻辑</td>
+</tr>
+<tr>
+<td style="text-align: left;">编辑 sip.conf 或 pjsip.conf</td>
+<td style="text-align: left;">注册终端</td>
+</tr>
+<tr>
+<td style="text-align: left;">注册软电话</td>
+<td style="text-align: left;">Zoiper 使用账号 6001</td>
+</tr>
+<tr>
+<td style="text-align: left;">启动并进入 Asterisk CLI</td>
+<td style="text-align: left;">查看调试信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">拨号 100 测试</td>
+<td style="text-align: left;">听到 hello-world</td>
+</tr>
+</tbody>
+</table>
+<p>常见错误排查</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">问题</th>
+<th style="text-align: left;">原因</th>
+<th style="text-align: left;">解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Zoiper 显示 Not Registered</td>
+<td style="text-align: left;">Asterisk 未运行或防火墙拦截</td>
+<td style="text-align: left;">检查服务与端口</td>
+</tr>
+<tr>
+<td style="text-align: left;">拨号无反应</td>
+<td style="text-align: left;">没有 extensions.conf 拨号段</td>
+<td style="text-align: left;">确保使用了 from-internal</td>
+</tr>
+<tr>
+<td style="text-align: left;">播放失败</td>
+<td style="text-align: left;">无法找到 hello-world.* 文件</td>
+<td style="text-align: left;">确认提示音已安装</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLI 无输出</td>
+<td style="text-align: left;">使用了静默模式或未连接</td>
+<td style="text-align: left;">启动时加上 -rvvvvv</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第三章 基础知识">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                第三章 基础知识
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../5%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--next" aria-label="Next: 第五章 配置">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                第五章 配置
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2025 Simon
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/squidfunk.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/squidfunk" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
