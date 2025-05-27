@@ -18,7 +18,7 @@
         <link rel="prev" href="../4%E5%AE%89%E8%A3%85%E4%B8%8E%E5%85%A5%E9%97%A8/">
       
       
-        <link rel="next" href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/">
+        <link rel="next" href="../6%E9%83%A8%E7%BD%B2/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>第五章 配置 - Simon's Blog</title>
+        <title>第五章 配置（Configuration） - Simon's Blog</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第五章 配置
+              第五章 配置（Configuration）
             
           </span>
         </div>
@@ -543,6 +543,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -594,7 +600,7 @@
   
   
   <span class="md-ellipsis">
-    第一章 关于Asterisk项目
+    第一章 关于Asterisk项目（About the Project）
     
   </span>
   
@@ -617,7 +623,7 @@
   
   
   <span class="md-ellipsis">
-    第二章 Asterisk 社区
+    第二章 Asterisk 社区（Community）
     
   </span>
   
@@ -640,7 +646,7 @@
   
   
   <span class="md-ellipsis">
-    第三章 基础知识
+    第三章 基础知识（Fundamentals）
     
   </span>
   
@@ -663,7 +669,7 @@
   
   
   <span class="md-ellipsis">
-    第四章 安装与入门
+    第四章 安装与入门（Getting Started）
     
   </span>
   
@@ -695,7 +701,7 @@
   
   
   <span class="md-ellipsis">
-    第五章 配置
+    第五章 配置（Configuration）
     
   </span>
   
@@ -708,7 +714,7 @@
   
   
   <span class="md-ellipsis">
-    第五章 配置
+    第五章 配置（Configuration）
     
   </span>
   
@@ -4199,6 +4205,75 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 部署（Deployment）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%E8%BF%90%E8%90%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 运营（Operation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 开发（Development）
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -8491,7 +8566,7 @@
 
 
 
-<h1 id="_1">第五章 配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="configuration">第五章 配置（Configuration）<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <h2 id="1-core-configuration">1. Core Configuration 核心配置<a class="headerlink" href="#1-core-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="1-asterisk-main-configuration-file">1. Asterisk Main Configuration File 主配置<a class="headerlink" href="#1-asterisk-main-configuration-file" title="Permanent link">&para;</a></h3>
 <h4 id="1">1. 文件概述<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
@@ -16663,6 +16738,78 @@ exten =&gt; 1000,1,NoOp(Start transaction)<br />
 <li>服务端根据 hello 路径调用对应逻辑；</li>
 <li>用户听到 demo-congrats 播放音频。</li>
 </ul>
+<p><strong>“本地服务器”运行 FastAGI</strong></p>
+<p>虽然是“网络协议”，但以下原因使得在本机（localhost）部署 FastAGI Server 是常见、推荐且高效的做法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">原因</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">✅ 避免了进程启动开销</td>
+<td style="text-align: left;">标准 AGI 每次执行都要 fork 出新进程，解释器重新加载脚本，而 FastAGI 是长时间运行的服务端，性能远高于 AGI</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅ 使用 TCP 本地回环（loopback）</td>
+<td style="text-align: left;">127.0.0.1/localhost 连接是轻量的，无需外部网络，几乎等效于 IPC</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅ 与微服务部署兼容</td>
+<td style="text-align: left;">使用 TCP 协议可以方便未来迁移到多台服务器，也适合云原生架构</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅ 更适合 Java、Python 等语言</td>
+<td style="text-align: left;">它们更适合常驻内存、长生命周期的服务（FastAGI Server），不适合每次 fork 执行（AGI）</td>
+</tr>
+</tbody>
+</table>
+<p>性能对比：FastAGI vs 标准 AGI</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指标</th>
+<th style="text-align: left;">AGI（标准）</th>
+<th style="text-align: left;">FastAGI（本地或远程）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">执行模型</td>
+<td style="text-align: left;">每次 fork 进程，加载解释器</td>
+<td style="text-align: left;">长时间运行的服务</td>
+</tr>
+<tr>
+<td style="text-align: left;">延迟</td>
+<td style="text-align: left;">高（启动 + 加载脚本）</td>
+<td style="text-align: left;">低（仅 TCP 连接和处理）</td>
+</tr>
+<tr>
+<td style="text-align: left;">吞吐量</td>
+<td style="text-align: left;">差（高并发时资源紧张）</td>
+<td style="text-align: left;">高（线程池/事件驱动支持）</td>
+</tr>
+<tr>
+<td style="text-align: left;">跨语言兼容</td>
+<td style="text-align: left;">强（脚本式、无依赖）</td>
+<td style="text-align: left;">强（任意语言，只要能跑 TCP 服务）</td>
+</tr>
+<tr>
+<td style="text-align: left;">适合使用语言</td>
+<td style="text-align: left;">Shell/PHP/Perl等轻量脚本</td>
+<td style="text-align: left;">Java、Python、Go 等更合适</td>
+</tr>
+</tbody>
+</table>
+<p><strong>在本地部署 FastAGI，几乎具备 AGI 的简易性 + FastAGI 的性能优势。</strong></p>
+<ul>
+<li>使用本地部署的 FastAGI 兼顾了性能和部署简单性；</li>
+<li>对系统来说，通过 localhost:port 通信几乎没有网络开销；</li>
+<li>日后可以轻松横向扩展为远程部署；</li>
+<li>如果你的业务逻辑复杂、状态多、并发高，应始终优先选择 FastAGI 而不是 AGI。</li>
+</ul>
 <h3 id="3-asterisk-manager-interface-ami">3. Asterisk Manager Interface (AMI) 管理接口<a class="headerlink" href="#3-asterisk-manager-interface-ami" title="Permanent link">&para;</a></h3>
 <h4 id="1-ami">1. AMI 是什么？<a class="headerlink" href="#1-ami" title="Permanent link">&para;</a></h4>
 <p>AMI 是 Asterisk 提供的 TCP/IP 客户端-服务器**管理接口**，允许外部应用程序以结构化方式控制、监控、查询 PBX 的各种运行状态与事件。</p>
@@ -18767,7 +18914,7 @@ On This Page### Install MySQL server package and start the DB service</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../4%E5%AE%89%E8%A3%85%E4%B8%8E%E5%85%A5%E9%97%A8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第四章 安装与入门">
+          <a href="../4%E5%AE%89%E8%A3%85%E4%B8%8E%E5%85%A5%E9%97%A8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第四章 安装与入门（Getting Started）">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -18777,20 +18924,20 @@ On This Page### Install MySQL server package and start the DB service</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                第四章 安装与入门
+                第四章 安装与入门（Getting Started）
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-footer__link md-footer__link--next" aria-label="Next: 开发-插件机制">
+          <a href="../6%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--next" aria-label="Next: 第六章 部署（Deployment）">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                开发-插件机制
+                第六章 部署（Deployment）
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,0 +1,3160 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="这是Simon,Sally和James的博客，分享和记录我们的学习和生活！！">
+      
+      
+        <meta name="author" content="Simon Zhan">
+      
+      
+        <link rel="canonical" href="https://blog.simon29.com/Asterisk%E7%AC%94%E8%AE%B0/6%E9%83%A8%E7%BD%B2/">
+      
+      
+        <link rel="prev" href="../5%E9%85%8D%E7%BD%AE/">
+      
+      
+        <link rel="next" href="../7%E8%BF%90%E8%90%A5/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>第六章 部署（Deployment） - Simon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Simon&#39;s Blog" class="md-header__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Simon's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第六章 部署（Deployment）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  欢迎页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于我
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  博文编写指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1%E5%85%B3%E4%BA%8EAsterisk%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Asterisk笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discuz笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../JamesProgram/Program%20of%202025/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  JamesProgram
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Material MkDocs笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  学英语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Simon&#39;s Blog" class="md-nav__button md-logo" aria-label="Simon's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M99.1 105.4C79 114 68.2 127.2 65.2 144.8c-2.4 14.1-.7 23.2 2 29.4 2.8 6.3 7.9 12.4 16.7 18.6 19.2 13.4 48.3 22.1 84.9 32.5 1 .3 1.9.6 2.9.8 32.7 9.3 72 20.6 100.9 40.7 15.7 10.9 29.9 25.5 38.6 45.1 8.8 19.8 10.8 42 6.6 66.3-7.3 42.5-35.3 71.7-71.8 87.3-35.4 15.2-79.1 17.9-123.7 10.9h-.2c-24-3.9-62.7-17.1-87.6-25.6-4.8-1.7-9.2-3.1-12.8-4.3-16.6-5.7-25.6-23.8-20.1-40.6s23.7-25.8 40.5-20.3Q49.45 388 58 391c25.4 8.6 56.4 19.2 74.4 22.1 36.8 5.7 67.5 2.5 88.5-6.5 20.1-8.6 30.8-21.8 33.9-39.4 2.4-14.1.7-23.2-2-29.4-2.8-6.3-7.9-12.4-16.7-18.6-19.2-13.4-48.3-22.1-84.9-32.5-1-.3-1.9-.6-2.9-.8-32.7-9.3-72-20.6-100.9-40.7-15.7-10.9-29.9-25.5-38.6-45.1-8.8-19.8-10.8-42-6.6-66.3l31.5 5.5-31.6-5.4c7.3-42.5 35.3-71.7 71.8-87.3 35.4-15.2 79.1-17.9 123.7-10.9 13 2 52.4 9.6 66.6 13.4 17.1 4.5 27.2 22.1 22.7 39.2s-22.1 27.2-39.2 22.7c-11.2-3-48.1-10.2-60.1-12l4.9-31.5-4.9 31.5c-36.9-5.8-67.5-2.5-88.6 6.5z"/></svg>
+
+    </a>
+    Simon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    欢迎页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于我
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8D%9A%E6%96%87%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    博文编写指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Asterisk笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Asterisk笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%E5%85%B3%E4%BA%8EAsterisk%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 关于Asterisk项目（About the Project）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2Asterisk%E7%A4%BE%E5%8C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 Asterisk 社区（Community）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 基础知识（Fundamentals）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%E5%AE%89%E8%A3%85%E4%B8%8E%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 安装与入门（Getting Started）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 配置（Configuration）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第六章 部署（Deployment）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 部署（Deployment）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deployment-in-your-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deployment In Your Network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-emergency-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Emergency Calling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ipv6-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. IPv6 Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Performance Tuning 性能调优
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Performance Tuning 性能调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 多线程调度模型优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pjsip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. PJSIP 协议参数调优
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sorcery" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Sorcery 缓存配置（缓存化数据库配置项）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 模块启用优化建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-asterisk-security-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Asterisk Security Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-basic-pbx-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Basic PBX Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-distributed-universal-number-discovery-dundi" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Distributed Universal Number Discovery (DUNDi)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-enhanced-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Enhanced Messaging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Geolocation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-important-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Important Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-internationalization-and-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Internationalization and Localization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-media-experience-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Media Experience Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-pstn-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. PSTN Connectivity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-packet-loss-concealment-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Packet Loss Concealment (PLC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-phone-provisioning-in-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Phone Provisioning in Asterisk 电话自动配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-privacy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Privacy Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-reference-use-cases-for-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Reference Use Cases for Asterisk 使用案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Reference Use Cases for Asterisk 使用案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 背景与用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络与语音接入设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Asterisk 功能设计清单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 分机与组织架构映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ivr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. IVR 示例配置设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 呼叫队列逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 语音信箱策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 会议系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-dialplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 拨号计划建议（Dialplan）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 拨号计划建议（Dialplan）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 具体配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-stirshaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. STIR/SHAKEN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-secure-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Secure Calling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%E8%BF%90%E8%90%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 运营（Operation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 开发（Development）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Discuz笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Discuz笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发-插件机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%95%B0%E5%AD%97%E5%AD%97%E5%85%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—数字字典
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发 - 模板机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E2%80%94%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发—产品框架
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E5%8D%87%E7%BA%A7%E6%90%AC%E5%AE%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-转换/升级/搬家
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E6%89%A9%E5%B1%95%E6%9C%8D%E5%8A%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维-扩展服务
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E7%BB%B4-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    运维 —— 环境搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E8%90%A5-%E5%89%8D%E5%8F%B0%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前台功能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discuz%E7%AC%94%E8%AE%B0/%E8%BF%90%E8%90%A5-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    后台管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    JamesProgram
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            JamesProgram
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JamesProgram/Program%20of%202025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Program of 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Material MkDocs笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Material MkDocs笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/0%20%E6%8E%92%E7%89%88%E6%A8%A1%E5%9D%97%E6%A0%B7%E4%BE%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    排版模块样例
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/1%20%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/2%20%E5%AE%9E%E9%99%85%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实际安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/3%20%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    创建你的站点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/4%20%E5%8F%91%E5%B8%83%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发布你的网站
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/5.%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E4%B8%BB%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自定义你的主题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Material%20MkDocs%E7%AC%94%E8%AE%B0/6%20%E6%96%87%E6%A1%A3%E7%AC%A6%E5%90%88%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文档符号约定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    学英语
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            学英语
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/Vocabulary%20building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulary Building 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E8%8B%B1%E8%AF%AD/%E6%AF%8F%E6%97%A5%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    每日写作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deployment-in-your-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deployment In Your Network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-emergency-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Emergency Calling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ipv6-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. IPv6 Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Performance Tuning 性能调优
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Performance Tuning 性能调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 多线程调度模型优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pjsip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. PJSIP 协议参数调优
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sorcery" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Sorcery 缓存配置（缓存化数据库配置项）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 模块启用优化建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-asterisk-security-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Asterisk Security Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-basic-pbx-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Basic PBX Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-distributed-universal-number-discovery-dundi" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Distributed Universal Number Discovery (DUNDi)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-enhanced-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Enhanced Messaging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Geolocation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-important-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Important Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-internationalization-and-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Internationalization and Localization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-media-experience-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Media Experience Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-pstn-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. PSTN Connectivity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-packet-loss-concealment-plc" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Packet Loss Concealment (PLC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-phone-provisioning-in-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Phone Provisioning in Asterisk 电话自动配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-privacy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Privacy Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-reference-use-cases-for-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Reference Use Cases for Asterisk 使用案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Reference Use Cases for Asterisk 使用案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 背景与用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络与语音接入设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Asterisk 功能设计清单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 分机与组织架构映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ivr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. IVR 示例配置设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 呼叫队列逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 语音信箱策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 会议系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-dialplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 拨号计划建议（Dialplan）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 拨号计划建议（Dialplan）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 具体配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-stirshaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. STIR/SHAKEN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-secure-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Secure Calling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="deployment">第六章 部署（Deployment）<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
+<h2 id="1-deployment-in-your-network">1. Deployment In Your Network<a class="headerlink" href="#1-deployment-in-your-network" title="Permanent link">&para;</a></h2>
+<p>介绍如何将 Asterisk 部署到您的网络中，包括网络拓扑设计、NAT 穿越、端口转发以及与 SIP 代理或 SBC（会话边界控制器）的集成等。</p>
+<h2 id="2-emergency-calling">2. Emergency Calling<a class="headerlink" href="#2-emergency-calling" title="Permanent link">&para;</a></h2>
+<p>指导如何配置 Asterisk 以支持紧急呼叫功能，确保在拨打紧急号码（如 911）时，系统能够正确路由并传递位置信息。</p>
+<h2 id="3-ipv6-support">3. IPv6 Support<a class="headerlink" href="#3-ipv6-support" title="Permanent link">&para;</a></h2>
+<p>说明 Asterisk 对 IPv6 的支持情况，包括如何在 <code>chan_pjsip</code> 和 <code>chan_sip</code> 等通道驱动中配置 IPv6 地址绑定。</p>
+<h2 id="4-performance-tuning">4. Performance Tuning 性能调优<a class="headerlink" href="#4-performance-tuning" title="Permanent link">&para;</a></h2>
+<p>提供性能优化建议，如调整系统参数、优化编解码器选择、配置硬件加速等，以提升 Asterisk 的处理能力和稳定性。</p>
+<h3 id="1">1. 多线程调度模型优化<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>## PJSIP 线程池配置（pjsip.conf）
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[system]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>type=system
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>threadpool_initial_size = 20
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>threadpool_auto_increment = 5
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>threadpool_idle_timeout = 120
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>threadpool_max_size = 100
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>## Stasis 线程池配置（stasis.conf）
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[threadpool]
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>initial_size = 10
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>idle_timeout_sec = 120
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>max_size = 60
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">PJSIP参数</th>
+<th style="text-align: left;">说明</th>
+<th style="text-align: left;">建议值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">initial_size</td>
+<td style="text-align: left;">启动初始线程数</td>
+<td style="text-align: left;">≥ 10（与 UA 数量有关）</td>
+</tr>
+<tr>
+<td style="text-align: left;">auto_increment</td>
+<td style="text-align: left;">扩展线程时的步长</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">idle_timeout</td>
+<td style="text-align: left;">空闲线程回收时间（秒）</td>
+<td style="text-align: left;">120</td>
+</tr>
+<tr>
+<td style="text-align: left;">max_size</td>
+<td style="text-align: left;">最大线程池大小（关键）</td>
+<td style="text-align: left;">≤ 100</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Stasis</th>
+<th style="text-align: left;">涉及模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">控制总线</td>
+<td style="text-align: left;">ARI、AMI、AGI、CDR、CEL、ConfBridge 等</td>
+</tr>
+<tr>
+<td style="text-align: left;">调优建议</td>
+<td style="text-align: left;">设置合适最大线程数，避免线程过多导致系统 thrash（资源争用）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-pjsip">2. PJSIP 协议参数调优<a class="headerlink" href="#2-pjsip" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>## 定时器（pjsip.conf [system]）
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>timer_t1 = 100       ; 请求超时时间（ms）
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>timer_b = 6400       ; INVITE 事务超时（ms）
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>## 识别顺序优化（pjsip.conf [global]）
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>endpoint_identifier_order=username,ip,anonymous
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a># 建议顺序: username → ip → anonymous
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a># 原因： 注册终端优先使用用户名识别，加快匹配速度
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">默认值</th>
+<th style="text-align: left;">建议值</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">timer_t1</td>
+<td style="text-align: left;">500ms</td>
+<td style="text-align: left;">100ms</td>
+<td style="text-align: left;">与 RTT 最远 UA 保持略高</td>
+</tr>
+<tr>
+<td style="text-align: left;">timer_b</td>
+<td style="text-align: left;">32000ms</td>
+<td style="text-align: left;">6400ms</td>
+<td style="text-align: left;">控制 INVITE 生命周期，避免堆积影响内存</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-sorcery">3. Sorcery 缓存配置（缓存化数据库配置项）<a class="headerlink" href="#3-sorcery" title="Permanent link">&para;</a></h3>
+<p>数据库（如 Realtime 配置）读写延迟较高，使用 sorcery.conf 配置缓存，大幅提升性能。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>## 示例：sorcery.conf
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[res_pjsip]
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>endpoint/cache=memory_cache,maximum_objects=3000,...
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>endpoint=realtime,ps_endpoints
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>aor/cache=memory_cache,maximum_objects=3000,...
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>aor=realtime,ps_aors
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>auth/cache=memory_cache,maximum_objects=3000,...
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>auth=realtime,ps_auths
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>contact/cache=memory_cache,...
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>contact=realtime,ps_contacts
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">建议最大对象数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">endpoints/aors/auth</td>
+<td style="text-align: left;">终端数量 + 冗余</td>
+</tr>
+<tr>
+<td style="text-align: left;">contacts/identify</td>
+<td style="text-align: left;">连接频繁，设置合理上限</td>
+</tr>
+</tbody>
+</table>
+<p>缓存刷新机制</p>
+<p>可通过：</p>
+<ul>
+<li>CLI：sorcery memory cache ... 命令</li>
+<li>AMI：SorcerymemoryCache* 系列命令</li>
+</ul>
+<p>在数据库更新后主动刷新缓存，确保配置变更即时生效。</p>
+<h3 id="4">4. 模块启用优化建议<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>在非必要场景下关闭高消耗模块（如 CDR、CEL）：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">noload</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>cdr.so
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">noload</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>cel.so
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 特别是在高并发或资源紧张环境中，有助于释放 CPU 和 I/O。</span>
+</span></code></pre></div>
+<h3 id="5">5. 总结<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">优化区域</th>
+<th style="text-align: left;">优先级</th>
+<th style="text-align: left;">建议动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PJSIP 线程池</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">设置合理 max_size，防止线程过多</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stasis 线程池</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">配合 ARI/AMI 负载调整</td>
+</tr>
+<tr>
+<td style="text-align: left;">Timer 参数</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">降低堆栈反应延迟，释放事务资源</td>
+</tr>
+<tr>
+<td style="text-align: left;">Endpoint 匹配顺序</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">优化识别速率</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sorcery 缓存</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">减少数据库访问开销</td>
+</tr>
+<tr>
+<td style="text-align: left;">模块加载控制</td>
+<td style="text-align: left;">可选</td>
+<td style="text-align: left;">视业务情况精简模块</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-asterisk-security-framework">5. Asterisk Security Framework<a class="headerlink" href="#5-asterisk-security-framework" title="Permanent link">&para;</a></h2>
+<p>概述 Asterisk 的安全框架，包括身份验证、访问控制、加密通信等，帮助管理员构建安全的通信环境。</p>
+<h2 id="6-basic-pbx-functionality">6. Basic PBX Functionality<a class="headerlink" href="#6-basic-pbx-functionality" title="Permanent link">&para;</a></h2>
+<p>介绍 Asterisk 作为 PBX 的基本功能，如呼叫转移、语音信箱、自动话务员（IVR）等，以及如何在拨号计划中实现这些功能。</p>
+<h2 id="7-distributed-universal-number-discovery-dundi">7. Distributed Universal Number Discovery (DUNDi)<a class="headerlink" href="#7-distributed-universal-number-discovery-dundi" title="Permanent link">&para;</a></h2>
+<p>解释 DUNDi 的工作原理和配置方法，DUNDi 是一种分布式的号码发现协议，可用于在多个 Asterisk 系统之间共享拨号信息。</p>
+<h2 id="8-enhanced-messaging">8. Enhanced Messaging<a class="headerlink" href="#8-enhanced-messaging" title="Permanent link">&para;</a></h2>
+<p>描述 Asterisk 对增强消息功能的支持，包括即时消息（IM）、短信（SMS）等，以及如何与外部消息服务集成。</p>
+<h2 id="9-geolocation">9. Geolocation<a class="headerlink" href="#9-geolocation" title="Permanent link">&para;</a></h2>
+<p>指导如何在 Asterisk 中配置地理位置服务，以便在紧急呼叫或其他需要位置信息的场景中提供支持。</p>
+<h2 id="10-important-security-considerations">10. Important Security Considerations<a class="headerlink" href="#10-important-security-considerations" title="Permanent link">&para;</a></h2>
+<p>列出部署 Asterisk 时需要注意的重要安全事项，如防止未授权访问、保护敏感数据、定期更新系统等。</p>
+<h2 id="11-internationalization-and-localization">11. Internationalization and Localization<a class="headerlink" href="#11-internationalization-and-localization" title="Permanent link">&para;</a></h2>
+<p>说明如何对 Asterisk 进行国际化和本地化设置，包括语言包的安装、日期和时间格式的调整等，以适应不同地区的需求。</p>
+<h2 id="12-media-experience-score">12. Media Experience Score<a class="headerlink" href="#12-media-experience-score" title="Permanent link">&para;</a></h2>
+<p>介绍媒体体验评分机制，用于评估通话质量，并提供优化建议，以提升用户的语音和视频通信体验。</p>
+<h2 id="13-pstn-connectivity">13. PSTN Connectivity<a class="headerlink" href="#13-pstn-connectivity" title="Permanent link">&para;</a></h2>
+<p>讲解如何将 Asterisk 与公共交换电话网络（PSTN）连接，包括使用模拟或数字接口卡、配置中继线路等。</p>
+<h2 id="14-packet-loss-concealment-plc">14. Packet Loss Concealment (PLC)<a class="headerlink" href="#14-packet-loss-concealment-plc" title="Permanent link">&para;</a></h2>
+<p>描述 Asterisk 中的丢包隐藏技术，用于在网络不稳定时减少语音质量的下降，提升通话的清晰度。</p>
+<h2 id="15-phone-provisioning-in-asterisk">15. Phone Provisioning in Asterisk 电话自动配置<a class="headerlink" href="#15-phone-provisioning-in-asterisk" title="Permanent link">&para;</a></h2>
+<p>提供电话自动配置的指南，包括如何为 SIP 电话设置配置文件、使用 DHCP 选项等，以简化设备部署过程。</p>
+<p>Asterisk 提供一个基本的电话自动配置模块 res_phoneprov，用于为特定 SIP 设备（如 Polycom）生成配置文件。</p>
+<p>其核心原理为：</p>
+<ul>
+<li>模板机制：通过模板文件和变量替换生成动态配置。</li>
+<li>来源数据：主要从 phoneprov.conf 和 users.conf 读取信息。</li>
+<li>目标用途：支持“一个用户绑定一个设备”的配置（限制性使用场景）。</li>
+</ul>
+<h2 id="16-privacy-configuration">16. Privacy Configuration<a class="headerlink" href="#16-privacy-configuration" title="Permanent link">&para;</a></h2>
+<p>指导如何配置 Asterisk 以保护用户隐私，包括匿名呼叫、号码隐藏、加密通信等功能的实现。</p>
+<h2 id="17-reference-use-cases-for-asterisk">17. Reference Use Cases for Asterisk 使用案例<a class="headerlink" href="#17-reference-use-cases-for-asterisk" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 背景与用途<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>该文档基于虚构企业 Super Awesome Company (SAC) 构建了一个完整的 Asterisk 典型应用参考场景，涵盖：</p>
+<ul>
+<li>企业组织架构</li>
+<li>内外部呼叫设计</li>
+<li>分机与 DID 号码映射</li>
+<li>呼叫队列、IVR、语音信箱、会议等 PBX 功能需求</li>
+<li>网络与 SIP Trunk 接入配置建议</li>
+</ul>
+<p>目标读者：希望参考实际场景部署 Asterisk 的系统架构师或管理员。</p>
+<h3 id="2">2. 网络与语音接入设计<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>网络结构</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">配置说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">外部 IP</td>
+<td style="text-align: left;">203.0.113.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">内部网络段</td>
+<td style="text-align: left;">10.0.0.0/8</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAT 路由设备</td>
+<td style="text-align: left;">Linksys WRT54G “Old Unreliable”</td>
+</tr>
+<tr>
+<td style="text-align: left;">接入方式</td>
+<td style="text-align: left;">Metro Ethernet</td>
+</tr>
+</tbody>
+</table>
+<p>SAC 使用 NAT 环境部署 Asterisk，并通过 SIP Trunk 接入 Digium 提供的公网电话服务。</p>
+<p>电话接入资源</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">数量与范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DID 号码池</td>
+<td style="text-align: left;">256-555-1100 ~ 256-555-1299</td>
+</tr>
+<tr>
+<td style="text-align: left;">每人分配 DID</td>
+<td style="text-align: left;">是，直接映射至桌面话机</td>
+</tr>
+<tr>
+<td style="text-align: left;">SIP Trunk</td>
+<td style="text-align: left;">Digium 提供</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-asterisk">3. Asterisk 功能设计清单<a class="headerlink" href="#3-asterisk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">功能点</th>
+<th style="text-align: left;">实现方式说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">内线短号拨号</td>
+<td style="text-align: left;">使用 4 位分机（取自 DID 后四位）</td>
+</tr>
+<tr>
+<td style="text-align: left;">外线通话</td>
+<td style="text-align: left;">支持 7 位 / 10 位 / 1+10 位拨号，进行号码规范化</td>
+</tr>
+<tr>
+<td style="text-align: left;">语音信箱</td>
+<td style="text-align: left;">超时或忙线转入；语音转发至邮件</td>
+</tr>
+<tr>
+<td style="text-align: left;">自动话务员 IVR</td>
+<td style="text-align: left;">主号码进入；多级菜单引导</td>
+</tr>
+<tr>
+<td style="text-align: left;">呼叫队列</td>
+<td style="text-align: left;">销售 / 客户支持；超过设定等待时间转接接线员</td>
+</tr>
+<tr>
+<td style="text-align: left;">接线员</td>
+<td style="text-align: left;">Temple Morgan；统一处理等待过久的客户</td>
+</tr>
+<tr>
+<td style="text-align: left;">会议室</td>
+<td style="text-align: left;">6500（外部+内部）、6000（内部专用）</td>
+</tr>
+<tr>
+<td style="text-align: left;">远程语音信箱</td>
+<td style="text-align: left;">通过 256-555-1234 拨入，输入分机+PIN</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 分机与组织架构映射<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>每个员工均分配一个：</p>
+<ul>
+<li>DID（10位）</li>
+<li>内部分机（4位，DID 后四位）</li>
+<li>桌面话机（Digium D70）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">姓名</th>
+<th style="text-align: left;">内线</th>
+<th style="text-align: left;">DID</th>
+<th style="text-align: left;">部门/角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Lindsey Freddie</td>
+<td style="text-align: left;">1107</td>
+<td style="text-align: left;">256-555-1107</td>
+<td style="text-align: left;">总裁</td>
+</tr>
+<tr>
+<td style="text-align: left;">Penelope Bronte</td>
+<td style="text-align: left;">1103</td>
+<td style="text-align: left;">256-555-1103</td>
+<td style="text-align: left;">工程总监</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dusty Williams</td>
+<td style="text-align: left;">1115</td>
+<td style="text-align: left;">256-555-1115</td>
+<td style="text-align: left;">客户支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-ivr">5. IVR 示例配置设计<a class="headerlink" href="#5-ivr" title="Permanent link">&para;</a></h3>
+<p>主 IVR 功能<br />
+入口：256-555-1100 或 1100<br />
+提示语音内容包括：<br />
+1 - 销售<br />
+2 - 客服<br />
+3 - 财务<br />
+4 - 公司目录<br />
+0 - 接线员<br />
+无输入重播两次，仍无响应则挂断。</p>
+<h3 id="6">6. 呼叫队列逻辑<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>销售队列（1200）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">配置值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">组成员</td>
+<td style="text-align: left;">Terry, Garnet, Franny</td>
+</tr>
+<tr>
+<td style="text-align: left;">策略</td>
+<td style="text-align: left;">ringall</td>
+</tr>
+<tr>
+<td style="text-align: left;">超时处理</td>
+<td style="text-align: left;">5 分钟转接至 Operator</td>
+</tr>
+</tbody>
+</table>
+<p>客服队列（1250）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">配置值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">组成员</td>
+<td style="text-align: left;">Maria, Dusty, Tommie</td>
+</tr>
+<tr>
+<td style="text-align: left;">策略</td>
+<td style="text-align: left;">ringall</td>
+</tr>
+<tr>
+<td style="text-align: left;">超时处理</td>
+<td style="text-align: left;">20 分钟转接至 Operator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7">7. 语音信箱策略<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>内部转入语音信箱使用 Busy/Unavailable Greeting 区分状态。</li>
+<li>语音邮件通过 Asterisk 发送邮件至用户邮箱。</li>
+<li>内部员工拨打 8000 可直接进入个人语音信箱（免输入分机+PIN）。</li>
+<li>外部拨打 256-555-1234 访问语音信箱，需输入分机+PIN。</li>
+</ul>
+<h3 id="8">8. 会议系统<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">会议室</th>
+<th style="text-align: left;">分机</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">公共会议</td>
+<td style="text-align: left;">6500</td>
+<td style="text-align: left;">员工+客户</td>
+</tr>
+<tr>
+<td style="text-align: left;">内部会议</td>
+<td style="text-align: left;">6000</td>
+<td style="text-align: left;">员工内部使用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-dialplan">9. 拨号计划建议（Dialplan）<a class="headerlink" href="#9-dialplan" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>## 使用分机匹配规则简化内部拨号：
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>exten =&gt; _11XX,1,Dial(SIP/${EXTEN})
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>## DID 到分机映射：
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>exten =&gt; _25655511XX,1,Goto(default,${EXTEN:7},1)
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>## 出站拨号规范化：
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a># 7 位补区号
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a># 10 位或 1+10 位原样拨出
+</span></code></pre></div>
+<h4 id="10">10. 具体配置<a class="headerlink" href="#10" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><span class="filename">pjsip.conf配置</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>;=============== Global and transport configuration =================
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[transport-udp]
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>type=transport
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>protocol=udp
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>bind=0.0.0.0:5060
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>; 示例用户：6001，可重复定义 6002 ~ 6015
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>[6001](endpoint-template)
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>auth=6001
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>aors=6001
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>callerid=User Two &lt;6001&gt;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>context=internal
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>disallow=all
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>allow=ulaw
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>[6001]
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>type=auth
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>auth_type=userpass
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>username=6001
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>password=securepass6001
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>[6001]
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>type=aor
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>max_contacts=1
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">extensions.conf配置</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[general]
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>static=yes
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>writeprotect=no
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>[globals]
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>OPERATOR=1111
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>[internal]
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>; Inbound DID mapping：将 DID 映射到内部 4 位分机
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>exten =&gt; _25655511XX,1,Goto(internal,${EXTEN:7},1)
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>; 本地 4 位分机拨号逻辑
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>exten =&gt; _11XX,1,Dial(PJSIP/${EXTEN},30)
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a> same =&gt; n,Voicemail(${EXTEN},u)
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a> same =&gt; n,Hangup()
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>; 员工内部访问语音信箱
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>exten =&gt; 8000,1,VoiceMailMain(${CALLERID(num)}@default)
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a> same =&gt; n,Hangup()
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>; 外部员工远程访问语音信箱
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>[default]
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>exten =&gt; 1234,1,Answer()
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a> same =&gt; n,VoiceMailMain()
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a> same =&gt; n,Hangup()
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>; 销售队列入口（5 分钟无应答转接至接线员）
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>exten =&gt; 1200,1,Queue(sales,t,,,300)
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a> same =&gt; n,Goto(internal,${OPERATOR},1)
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>; 客户服务队列入口（20 分钟无应答转接至接线员）
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>exten =&gt; 1250,1,Queue(support,t,,,1200)
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a> same =&gt; n,Goto(internal,${OPERATOR},1)
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>; 主 IVR 菜单入口（来自外部主号码或拨 1100）
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>exten =&gt; 1100,1,Answer()
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a> same =&gt; n,Set(TIMEOUT(digit)=3)
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a> same =&gt; n,Set(TIMEOUT(response)=5)
+</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a> same =&gt; n(start),Background(main-menu)
+</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a> same =&gt; n,WaitExten(5)
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a> same =&gt; n,Playback(goodbye)
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a> same =&gt; n,Hangup()
+</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>
+</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>; IVR 选项映射
+</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>exten =&gt; 1,1,Goto(internal,1200,1)        ; 销售队列
+</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>exten =&gt; 2,1,Goto(internal,1250,1)        ; 客服队列
+</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>exten =&gt; 3,1,Dial(PJSIP/1106,30)          ; 财务
+</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a> same =&gt; n,Voicemail(1106,u)
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>exten =&gt; 4,1,Directory(default)           ; 公司目录
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>exten =&gt; 0,1,Goto(internal,${OPERATOR},1) ; 接线员
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>; 会议室
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>exten =&gt; 6000,1,ConfBridge(employee_conf)
+</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>exten =&gt; 6500,1,ConfBridge(public_conf)
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">voicemail.conf配置</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[general]
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>format=wav49|gsm|wav
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>serveremail=voicemail@example.com
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>attach=yes
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>sendvoicemail=yes
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>emailbody=You have a new voicemail from ${VM_CALLERID}
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>[default]
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>1101 =&gt; 1234, Maria Berny, maria@example.com
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>1102 =&gt; 1234, Tommie Briar, tommie@example.com
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>1103 =&gt; 1234, Penelope Bronte, penelope@example.com
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>1104 =&gt; 1234, Richard Casey, richard@example.com
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>1105 =&gt; 1234, Garnet Claude, garnet@example.com
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>1106 =&gt; 1234, Aaron Courtney, aaron@example.com
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>1107 =&gt; 1234, Lindsey Freddie, lindsey@example.com
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>1108 =&gt; 1234, Colby Hildred, colby@example.com
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>1109 =&gt; 1234, Terry Jules, terry@example.com
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>1110 =&gt; 1234, Hollis Justy, hollis@example.com
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>1111 =&gt; 1234, Temple Morgan, temple@example.com
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>1112 =&gt; 1234, Franny Ocean, franny@example.com
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>1113 =&gt; 1234, Laverne Roberts, laverne@example.com
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>1114 =&gt; 1234, Sal Smith, sal@example.com
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>1115 =&gt; 1234, Dusty Williams, dusty@example.com
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">queues.conf配置</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[general]
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>persistentmembers = yes
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>[sales]
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>strategy = ringall
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>timeout = 15
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>retry = 5
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>wrapuptime = 0
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>maxlen = 0
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>member =&gt; PJSIP/1109 ; Terry Jules
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>member =&gt; PJSIP/1105 ; Garnet Claude
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>member =&gt; PJSIP/1112 ; Franny Ocean
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>[support]
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>strategy = ringall
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>timeout = 15
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>retry = 5
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>wrapuptime = 0
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>maxlen = 0
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>member =&gt; PJSIP/1101 ; Maria Berny
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>member =&gt; PJSIP/1115 ; Dusty Williams
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>member =&gt; PJSIP/1102 ; Tommie Briar
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">confbridge.conf配置</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[general]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>; 默认桥接参数，所有会议室共用
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>; 无需特殊配置
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>[default_user]
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>type=user
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>dtmf_passthrough=yes
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>announce_user_count=yes
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>wait_marked=yes
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>end_marked=yes
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>mute=no
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>[sample_user_menu]
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>type=menu
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>*=playback_and_continue(conf-usermenu)
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>1=toggle_mute
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>4=decrease_listening_volume
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>6=increase_listening_volume
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>7=decrease_talking_volume
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>9=increase_talking_volume
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>[default_bridge]
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>type=bridge
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>video_mode=sfu
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>record_conference=no
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a># 使用 video_mode=sfu 以支持 WebRTC 视频会议（特别是 CMP2K 案例）
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a># sample_user_menu 可在会议中控制音量、静音等功能
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">features.conf配置</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[general]
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>parkext =&gt; 700
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>parkpos =&gt; 701-720
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>context =&gt; parkedcalls
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>courtesytone = beep
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>xfersound = beep
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>xferfailsound = beeperr
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>[featuremap]
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>blindxfer =&gt; #1
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>attendedxfer =&gt; #2
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>automon =&gt; *1
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>disconnect =&gt; *0
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>[applicationmap]
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>; 自定义功能键绑定（可选）
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>## 启用通话中的快速按键操作，如：
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>; #1：盲转
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>; #2：咨询转接
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>; *1：单通自动录音
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>; *0：强制挂机
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">modules.conf配置</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[modules]
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>autoload=yes ; 启用自动模块加载
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>; 优先预加载所需函数（避免 res_phoneprov 等模块依赖失败）
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>; 保证关键模块优先加载，防止依赖失败
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>preload = func_strings.so
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>preload = res_odbc.so
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>preload = res_http_websocket.so
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>preload = res_pjsip.so
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>preload = res_pjsip_endpoint_identifier_ip.so
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>; 禁用不使用的模块（可选）
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>; 可禁用未使用协议通道以节省资源
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>noload = chan_oss.so
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>noload = chan_skinny.so
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>noload = chan_mgcp.so
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>; 按需加载增强模块
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>; load 可明确启用某些核心应用（尤其是会议、WebRTC）
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>load = app_confbridge.so
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>load = res_parking.so
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>load = res_rtp_asterisk.so
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>load = res_pjsip_registrar.so
+</span></code></pre></div>
+<h2 id="18-stirshaken">18. STIR/SHAKEN<a class="headerlink" href="#18-stirshaken" title="Permanent link">&para;</a></h2>
+<p>解释 STIR/SHAKEN 框架的概念和在 Asterisk 中的实现，用于防止来电号码欺骗，确保呼叫者身份的真实性。</p>
+<h2 id="19-secure-calling">19. Secure Calling<a class="headerlink" href="#19-secure-calling" title="Permanent link">&para;</a></h2>
+<p>介绍如何在 Asterisk 中实现安全通话，包括使用 TLS 和 SRTP 加密协议，保护语音通信的机密性和完整性。</p>
+<h2 id="20-troubleshooting">20. Troubleshooting<a class="headerlink" href="#20-troubleshooting" title="Permanent link">&para;</a></h2>
+<p>提供故障排除指南，帮助管理员诊断和解决常见的 Asterisk 问题，如通话质量差、注册失败、呼叫无法建立等。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../5%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第五章 配置（Configuration）">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                第五章 配置（Configuration）
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../7%E8%BF%90%E8%90%A5/" class="md-footer__link md-footer__link--next" aria-label="Next: 第七章 运营（Operation)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                第七章 运营（Operation)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2025 Simon
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/squidfunk.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/squidfunk" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
